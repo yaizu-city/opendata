@@ -1,6 +1,6 @@
 # 焼津市オープンデータ
 
-[サイト(https://github.com/yaizu-city)について（利用規約）](https://github.com/yaizu-city/about)
+[サイト(https://github.com/yaizu-city)について（利用規約）](https://github.com/yaizu-city)
 
 焼津市では、以下のデータをオープンデータとして提供しています。
 
