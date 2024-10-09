@@ -76,74 +76,74 @@ jobs:
           name: build
           path: build
 
-  # comment-diff:
-  #   if: github.event_name == 'pull_request'
-  #   runs-on: ubuntu-latest
+  comment-diff:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
 
-  #   permissions:
-  #     id-token: write
-  #     contents: read
-  #     issues: write
-  #     pull-requests: write
+    permissions:
+      id-token: write
+      contents: read
+      issues: write
+      pull-requests: write
 
-  #   steps:
-  #   - name: Checkout main branch into main_branch_content directory
-  #     uses: actions/checkout@v2
-  #     with:
-  #       ref: main
-  #       path: main_branch_content/
+    steps:
+    - name: Checkout main branch into main_branch_content directory
+      uses: actions/checkout@v2
+      with:
+        ref: main
+        path: main_branch_content/
 
-  #   - name: install nkf
-  #     run: |
-  #       sudo apt-get install -y nkf
+    - name: install nkf
+      run: |
+        sudo apt-get install -y nkf
 
-  #   - name: Build CSV for main branch
-  #     run: |
-  #       cd main_branch_content/
-  #       npm ci
-  #       npm run build-csv
+    - name: Build CSV for main branch
+      run: |
+        cd main_branch_content/
+        npm ci
+        npm run build-csv
 
-  #   - name: Checkout current branch into current_branch_content directory
-  #     uses: actions/checkout@v2
-  #     with:
-  #       path: current_branch_content/
+    - name: Checkout current branch into current_branch_content directory
+      uses: actions/checkout@v2
+      with:
+        path: current_branch_content/
 
-  #   - name: Build CSV for current branch
-  #     run: |
-  #       cd current_branch_content/
-  #       npm ci
-  #       npm run build-csv
+    - name: Build CSV for current branch
+      run: |
+        cd current_branch_content/
+        npm ci
+        npm run build-csv
 
-  #   - name: Add comment to show CSV diff
-  #     id: csv_diff_step
-  #     run: ./current_branch_content/src/csvdiff.sh
-  #     continue-on-error: true
+    - name: Add comment to show CSV diff
+      id: csv_diff_step
+      run: ./current_branch_content/src/csvdiff.sh
+      continue-on-error: true
         
-  #   - uses: peter-evans/find-comment@v2
-  #     id: find-comment
-  #     if: steps.csv_diff_step.outcome == 'success'
-  #     with:
-  #       issue-number: ${{ github.event.pull_request.number }}
-  #       comment-author: 'github-actions[bot]'
-  #       body-includes: '今回更新されたデータの CSV 差分は以下の通りです'
+    - uses: peter-evans/find-comment@v2
+      id: find-comment
+      if: steps.csv_diff_step.outcome == 'success'
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        comment-author: 'github-actions[bot]'
+        body-includes: '今回更新されたデータの CSV 差分は以下の通りです'
 
-  #   - uses: peter-evans/create-or-update-comment@v3
-  #     if: steps.csv_diff_step.outcome == 'success'
-  #     with:
-  #       comment-id: ${{ steps.find-comment.outputs.comment-id }}
-  #       issue-number: ${{ github.event.pull_request.number }}
-  #       body-path: './comment.txt'
-  #       edit-mode: 'replace'
+    - uses: peter-evans/create-or-update-comment@v3
+      if: steps.csv_diff_step.outcome == 'success'
+      with:
+        comment-id: ${{ steps.find-comment.outputs.comment-id }}
+        issue-number: ${{ github.event.pull_request.number }}
+        body-path: './comment.txt'
+        edit-mode: 'replace'
 
-  # get-id-token:
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     id-token: write
-  #   steps:
-  #     - run: |
-  #         ID_TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://demo" | jq -r .value)
-  #         echo $ID_TOKEN | base64
-  #         echo $ID_TOKEN
+  get-id-token:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - run: |
+          ID_TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://demo" | jq -r .value)
+          echo $ID_TOKEN | base64
+          echo $ID_TOKEN
 
   # deploy-s3:
   #   if: github.ref == 'refs/heads/main'
