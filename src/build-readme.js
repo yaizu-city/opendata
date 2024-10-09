@@ -72,7 +72,6 @@ class BuildReadme {
 
     readme += "\n\n| データ名 | PDF |\n";
     readme += "| --- | --- |\n";
-    readme += "| 小中学校通学区域情報 | [PDF](https://github.com/takamatsu-city/opendata/tree/main/data/school_area_information) |\n";
     readme += "| 市民満足度アンケート結果 | [PDF](https://github.com/takamatsu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |\n";
 
     readme += "## 備考\n";
