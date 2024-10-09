@@ -3,6 +3,11 @@ const { parse } = require('csv-parse');
 const glob = require('glob');
 const path = require('path');
 
+// standard-data-categories.jsonが存在しない場合は処理を終了
+if (!fs.existsSync('./standard-data-categories.json')) {
+  process.exit(0);
+}
+
 const categories = require('./standard-data-categories.json');
 
 for (let i = 0; i < categories.length; i++) {
