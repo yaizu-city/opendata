@@ -16,18 +16,18 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
-| AED設置場所(0002) | [フォルダ](https://github.com/takamatsu-city/opendata/tree/main/data/aed_location) | [CSV](https://opendata.takamatsu-fact.com/aed_location/data.csv) |[GeoJSON](https://opendata.takamatsu-fact.com/aed_location/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://opendata.takamatsu-fact.com/aed_location/data.csv) |
+| AED設置場所(0002) | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/aed_location) | [CSV](https://yaizu-city.github.io/opendata/aed_location/data.csv) |[GeoJSON](https://yaizu-city.github.io/opendata/aed_location/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-city.github.io/opendata/aed_location/data.csv) |
 
 以下のデータは位置情報を含まないデータです。
 
 | データ名 | フォルダ | CSV | JSON |
 | --- | --- | --- | --- |
-| ごみ分別一覧(0074) | [フォルダ](https://github.com/takamatsu-city/opendata/tree/main/data/garbage_separation_list) | [CSV](https://opendata.takamatsu-fact.com/garbage_separation_list/data.csv) | [JSON](https://opendata.takamatsu-fact.com/garbage_separation_list/data.json) |
+| ごみ分別一覧(0074) | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/garbage_separation_list) | [CSV](https://yaizu-city.github.io/opendata/garbage_separation_list/data.csv) | [JSON](https://yaizu-city.github.io/opendata/garbage_separation_list/data.json) |
 
 
 | データ名 | PDF |
 | --- | --- |
-| 市民満足度アンケート結果 | [PDF](https://github.com/takamatsu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |
+| 市民満足度アンケート結果 | [PDF](https://github.com/yaizu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
