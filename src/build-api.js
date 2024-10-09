@@ -12,7 +12,6 @@ class BuildApi {
     for (let i = 0; i < locationDataCategories.length; i++) {
       const category = locationDataCategories[i];
 
-      const csvFile = glob.sync(`data/${category.category}/*.csv`)[0];
       const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.csv`;
       const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.geojson`;
 
