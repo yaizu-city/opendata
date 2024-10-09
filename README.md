@@ -27,7 +27,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 | データ名 | PDF |
 | --- | --- |
-| 小中学校通学区域情報 | [PDF](https://github.com/takamatsu-city/opendata/tree/main/data/school_area_information) |
 | 市民満足度アンケート結果 | [PDF](https://github.com/takamatsu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
