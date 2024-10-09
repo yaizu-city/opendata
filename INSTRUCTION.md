@@ -3,7 +3,7 @@
 ## 新規データの追加方法
 
 ### 1. ディレクトリを作成
-- https://github.com/takamatsu-city/opendata/tree/main/data に移動して下さい。
+- https://github.com/yaizu-city/opendata/tree/main/data に移動して下さい。
 - 「Create new file」 をクリックして下さい。
 <img width="1257" alt="スクリーンショット 2023-05-18 17 05 16" src="https://github.com/takamatsu-city/opendata/assets/8760841/0b261634-11e9-46fc-8cc7-cd505d1e07b2">
 
