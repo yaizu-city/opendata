@@ -2,10 +2,6 @@
 set -eu
 
 PR_ID=$(echo $GITHUB_REF | sed -e 's/[^0-9]//g')
-# error-file.txt が存在すればエラーをコメントする
-if [ ! -e "./error-file.txt" ]; then
-  exit 0
-fi
 DIR=$(cat ./error-file.txt)
 DIR=${DIR#"/home/runner/work/${REPO}/${REPO}/"}
 URL="https://github.com/${OWNER}/${REPO}/blob/${BRANCH}/${DIR}"
