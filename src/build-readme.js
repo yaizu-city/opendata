@@ -20,10 +20,10 @@ class BuildReadme {
 
       const csvFile = glob.sync(`data/${category.category}/*.csv`)[0];
       
-      const csvFolderUrl = `https://github.com/takamatsu-city/opendata/tree/main/data/${category.category}`;
+      const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
 
-      const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.csv`;
-      const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.geojson`;
+      const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.csv`;
+      const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
       const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
 
       const filename = path.basename(category.filename, '.xlsx');
@@ -38,9 +38,9 @@ class BuildReadme {
     for (let i = 0; i < standardDataCategories.length; i++) {
       const category = standardDataCategories[i];
       
-      const csvFolderUrl = `https://github.com/takamatsu-city/opendata/tree/main/data/${category.category}`;
-      const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.json`;
-      const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.csv`;
+      const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
+      const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.json`;
+      const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.csv`;
       
       if (category.category === "city_planning_basic_survey_information") {
 
@@ -53,8 +53,8 @@ class BuildReadme {
 
         allFileNames.map(filename => {
           
-          const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/${filename}.json`;
-          const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/${filename}.csv`;
+          const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/${filename}.json`;
+          const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/${filename}.csv`;
 
           const subCategory = filename.split('_')[1];
           if (filename === allFileNames[0]) {
@@ -72,7 +72,7 @@ class BuildReadme {
 
     readme += "\n\n| データ名 | PDF |\n";
     readme += "| --- | --- |\n";
-    readme += "| 市民満足度アンケート結果 | [PDF](https://github.com/takamatsu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |\n";
+    readme += "| 市民満足度アンケート結果 | [PDF](https://github.com/yaizu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |\n";
 
     readme += "## 備考\n";
     readme += "- Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。\n"
