@@ -17,6 +17,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
 | AED設置場所(0002) | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/aed_location) | [CSV](https://yaizu-city.github.io/opendata/aed_location/data.csv) |[GeoJSON](https://yaizu-city.github.io/opendata/aed_location/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-city.github.io/opendata/aed_location/data.csv) |
+| 環境施設(data) | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/environmental_facilities) | [CSV](https://yaizu-city.github.io/opendata/environmental_facilities/data.csv) |[GeoJSON](https://yaizu-city.github.io/opendata/environmental_facilities/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-city.github.io/opendata/environmental_facilities/data.csv) |
 
 以下のデータは位置情報を含まないデータです。
 
