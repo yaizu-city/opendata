@@ -20,6 +20,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 環境施設 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/environmental_facilities) | [CSV](https://yaizu-city.github.io/opendata/environmental_facilities/data.csv) |[GeoJSON](https://yaizu-city.github.io/opendata/environmental_facilities/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-city.github.io/opendata/environmental_facilities/data.csv) |
 | 都市計画道路 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/toshikeikaku) | [CSV](https://yaizu-city.github.io/opendata/toshikeikaku/data.csv) |[GeoJSON](https://yaizu-city.github.io/opendata/toshikeikaku/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-city.github.io/opendata/toshikeikaku/data.csv) |
 
+
 以下のデータは位置情報を含まないデータです。
 
 | データ名 | フォルダ | CSV | JSON |
