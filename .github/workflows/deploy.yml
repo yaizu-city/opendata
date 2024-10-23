@@ -58,6 +58,7 @@ jobs:
       - run: npm run build-location-data
 
       # shapeファイルを GeoJSON に変換
+      - run: ls ./src
       - run: bash ./src/shape2geojson.sh
         # continue-on-error: true
         # id: shape2geojson-step
