@@ -29,7 +29,7 @@ jobs:
         with:
           fetch-depth: 0
           # token: ${{ secrets.GEOLONIA_BOT_PAT_TOKEN }}
-        
+
       - run: npm ci
       # gitに日本語ファイル名に対応させる。
       - run: git config --global core.quotepath false
@@ -57,8 +57,12 @@ jobs:
       # CSV を GeoJSON に変換
       - run: npm run build-location-data
 
+      - name: Install GDAL (for ogr2ogr)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gdal-bin
+
       # shapeファイルを GeoJSON に変換
-      - run: ls ./src
       - run: bash ./src/shape2Geojson.sh
         # continue-on-error: true
         # id: shape2geojson-step
