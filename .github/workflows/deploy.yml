@@ -38,6 +38,8 @@ jobs:
 
       - run: npm run build-config-json
       - run: npm run test
+
+      # Excel を CSV に変換
       - run: npm run build-csv
         continue-on-error: true
         id: build-step
@@ -52,7 +54,14 @@ jobs:
           REPO: "${{ github.event.repository.name }}"
           BRANCH: "${{ github.event.pull_request.head.ref }}"
 
+      # CSV を GeoJSON に変換
       - run: npm run build-location-data
+
+      # shapeファイルを GeoJSON に変換
+      - run: ./src/shape2geojson.sh
+        # continue-on-error: true
+        # id: shape2geojson-step
+
       - run: npm run build-standard-data
       - run: npm run build-api
       - run: npm run build-data-updates
