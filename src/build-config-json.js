@@ -31,10 +31,10 @@ const buildConfigJSON = async (filePaths, targetPath) => {
 
   const targetDir = targetPath || __dirname
 
-  // filename（データ番号） でソート
-  locationData.sort((a, b) => a.filename.localeCompare(b.filename));
-  standardData.sort((a, b) => a.filename.localeCompare(b.filename));
-  pdfData.sort((a, b) => a.filename.localeCompare(b.filename));
+  // name（データ名） でソート
+  locationData.sort((a, b) => a.name.localeCompare(b.name));
+  standardData.sort((a, b) => a.name.localeCompare(b.name));
+  pdfData.sort((a, b) => a.name.localeCompare(b.name));
 
   if (locationData.length > 0) fs.writeFileSync(path.join(targetDir, 'location-data-categories.json'), JSON.stringify(locationData));
   if (standardData.length > 0) fs.writeFileSync(path.join(targetDir, 'standard-data-categories.json'), JSON.stringify(standardData));
