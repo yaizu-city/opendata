@@ -59,7 +59,7 @@ jobs:
 
       # shapeファイルを GeoJSON に変換
       - run: ls ./src
-      - run: bash ./src/shape2geojson.sh
+      - run: bash ./src/shape2Geojson.sh
         # continue-on-error: true
         # id: shape2geojson-step
 
