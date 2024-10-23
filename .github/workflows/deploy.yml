@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          # token: ${{ secrets.GEOLONIA_BOT_PAT_TOKEN }}
+          token: ${{ secrets.GEOLONIA_BOT_PAT_TOKEN }}
 
       - run: npm ci
       # gitに日本語ファイル名に対応させる。
