@@ -74,8 +74,8 @@ jobs:
       - name: Update README
         if: github.event_name == 'pull_request'
         run: |
-          git config --global user.name "geolonia-bot"
-          git config --global user.email "geolonia-bot@users.noreply.github.com"
+          git config --global user.name "naogify"
+          git config --global user.email "naogify@users.noreply.github.com"
           git checkout $GITHUB_HEAD_REF; \
           npm run build-readme; \
           if ! git diff --quiet README.md; then \
