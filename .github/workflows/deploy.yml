@@ -30,6 +30,7 @@ jobs:
           fetch-depth: 0
           # token: ${{ secrets.GEOLONIA_BOT_PAT_TOKEN }}
         
+      - run: pwd
       - run: npm ci
       # gitに日本語ファイル名に対応させる。
       - run: git config --global core.quotepath false
@@ -58,7 +59,7 @@ jobs:
       - run: npm run build-location-data
 
       # shapeファイルを GeoJSON に変換
-      - run: ./src/shape2geojson.sh
+      - run: bash ./src/shape2geojson.sh
         # continue-on-error: true
         # id: shape2geojson-step
 
