@@ -32,7 +32,6 @@
 {
   "category": "public_toilet", // 1. で作成したディレクトリ名
   "name": "公衆トイレ", // データ名
-  "filename": "data.csv", // ファイル名
   "description": "" // 説明
   "historical": false // 時系列のデータを含む場合は true
 },

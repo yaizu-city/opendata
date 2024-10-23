@@ -15,11 +15,8 @@ class BuildApi {
       const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.csv`;
       const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.geojson`;
 
-      const id = path.basename(category.filename, '.xlsx');
-
       data.push(
         {
-          "id": id,
           "name": category.name,
           "csv": csvFileUrl,
           "json": jsonFileUrl,
@@ -31,7 +28,7 @@ class BuildApi {
     for (let i = 0; i < standardDataCategories.length; i++) {
       const category = standardDataCategories[i];
 
-      const csvFilesPattern = `data/${category.category}/${category.filename}*.csv`;
+      const csvFilesPattern = `data/${category.category}/*.csv`;
 
       // 最新順にソート
       const csvFiles = glob.sync(csvFilesPattern).reverse();
@@ -51,7 +48,6 @@ class BuildApi {
 
       data.push(
         {
-          "id": category.filename,
           "name": category.name,
           "csv": csvs.length > 1 ? [defaultCsvFileUrl].concat(csvs) : defaultCsvFileUrl,
           "json": jsons.length > 1 ? [defaultJsonFileUrl].concat(jsons) : defaultJsonFileUrl,

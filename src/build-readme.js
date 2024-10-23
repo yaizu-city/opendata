@@ -26,9 +26,7 @@ class BuildReadme {
       const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
       const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
 
-      const filename = path.basename(category.filename, '.xlsx');
-
-      readme += `| ${category.name}(${filename}) | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) |[GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
+      readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) |[GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
     }
 
     readme += "\n以下のデータは位置情報を含まないデータです。\n\n";
@@ -44,8 +42,8 @@ class BuildReadme {
       
       if (category.category === "city_planning_basic_survey_information") {
 
-        const csvFiles = glob.sync(`data/${category.category}/${category.filename}*.csv`);
-        const xlsxFiles = glob.sync(`data/${category.category}/${category.filename}*.xlsx`);
+        const csvFiles = glob.sync(`data/${category.category}/*.csv`);
+        const xlsxFiles = glob.sync(`data/${category.category}/*.xlsx`);
         const mixedFiles = csvFiles.concat(xlsxFiles);
 
         // データのファイル名から拡張子を削除し、重複を削除する
@@ -58,15 +56,15 @@ class BuildReadme {
 
           const subCategory = filename.split('_')[1];
           if (filename === allFileNames[0]) {
-            readme += `| ${category.name}(${category.filename}) | [フォルダ](${csvFolderUrl}) | [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |\n`;
           } else {
             readme += `||| [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |\n`;
           } 
         });
       } else if (category.historical) {
-        readme += `| ${category.name}(${category.filename}) | [フォルダ](${csvFolderUrl}) | [CSV(最新データ)](${csvFileUrl}) | [JSON(最新データ)](${jsonFileUrl}) |\n`;
+        readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV(最新データ)](${csvFileUrl}) | [JSON(最新データ)](${jsonFileUrl}) |\n`;
       } else {
-        readme += `| ${category.name}(${category.filename}) | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [JSON](${jsonFileUrl}) |\n`;  
+        readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [JSON](${jsonFileUrl}) |\n`;  
       }
     }
 
