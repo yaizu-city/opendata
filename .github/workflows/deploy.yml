@@ -30,7 +30,6 @@ jobs:
           fetch-depth: 0
           # token: ${{ secrets.GEOLONIA_BOT_PAT_TOKEN }}
         
-      - run: pwd
       - run: npm ci
       # gitに日本語ファイル名に対応させる。
       - run: git config --global core.quotepath false
