@@ -4,8 +4,8 @@ set -ex
 find . -name "*.shp" | while read -r shpfile; do
 
     echo "Convert Shape to GeoJSON: $shpfile"
-    
-    base=$(dirname "$shpfile")/$(basename "$shpfile" .shp)
+
+    base=$(dirname "$shpfile")/$(basename "$shpfile" .SHP)
 
     # .prj ファイルが Shift_JIS だと ogr2ogr でエラーが出るので UTF-8 に変換
     if [ -f "${base}.prj" ]; then
