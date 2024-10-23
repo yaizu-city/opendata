@@ -81,7 +81,7 @@ jobs:
           if ! git diff --quiet README.md; then \
             git add README.md; \
             git commit -m "Update README By GitHub Actions"; \
-            git push; \
+            git push -f; \
           fi
 
       - uses: actions/upload-artifact@v3
