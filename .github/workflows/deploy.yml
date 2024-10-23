@@ -75,7 +75,9 @@ jobs:
           git config --global user.email "geolonia-bot@users.noreply.github.com"
           if ! git diff --quiet README.md; then \
             git status; \
+            git stash; \
             git checkout $GITHUB_HEAD_REF; \
+            git stash pop; \
             git add README.md; \
             git commit -m "Update README By GitHub Actions"; \
             git push; \
