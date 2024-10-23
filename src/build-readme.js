@@ -19,6 +19,7 @@ class BuildReadme {
       const category = locationDataCategories[i];
 
       const csvFile = glob.sync(`data/${category.category}/*.csv`)[0];
+      const shapeFile = glob.sync(`data/${category.category}/*.shp`)[0];
       
       const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
 
@@ -26,7 +27,12 @@ class BuildReadme {
       const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
       const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
 
-      readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) |[GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
+      if (shapeFile) {
+        // Shapefile がある場合は CSVと編集のリンクを表示しない
+        readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | |\n`;
+      } else {
+        readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) |[GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
+      }
     }
 
     readme += "\n以下のデータは位置情報を含まないデータです。\n\n";
