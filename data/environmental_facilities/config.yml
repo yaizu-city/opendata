@@ -1,5 +1,4 @@
 category: environmental_facilities
 name: 環境施設
-filename: data.xlsx
 description: 'これは環境施設のデータです'
 dataType: location
