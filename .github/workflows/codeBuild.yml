@@ -15,12 +15,10 @@ jobs:
       contents: write
       id-token: write
 
-    steps:
-      - uses: actions/checkout@v3
-  
+    steps:  
       - name: Install GDAL (for ogr2ogr)
         run: |
           sudo apt-get update
           sudo apt-get install -y gdal-bin
 
-      - run: gdal-config --version
+      - run: gdalinfo --version
