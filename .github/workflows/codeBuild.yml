@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  build-tile:
     runs-on: codebuild-yaizu-city-opendata-${{ github.run_id }}-${{ github.run_attempt }}
 
     permissions:
