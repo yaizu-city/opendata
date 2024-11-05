@@ -51,8 +51,8 @@ jobs:
 
       - name: Build Tile
         run: |
-          bash ./bin/download.sh
           cd ./bin
+          bash ./download.sh
           npm ci
           curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
           bash ./main.sh . config.xlsx
