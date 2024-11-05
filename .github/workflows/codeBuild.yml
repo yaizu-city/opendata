@@ -16,8 +16,11 @@ jobs:
       id-token: write
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Install packages
+      - name: Install packages + GDAL
         run: |
           apt-get update && \
           apt-get install -y \
@@ -29,6 +32,9 @@ jobs:
           make \
           libsqlite3-dev \
           zlib1g-dev \
+          gdal-bin \
+          node \
+          npm
 
       - name: Install Tippicanoe
         run: |
@@ -41,13 +47,12 @@ jobs:
 
       - run: |
           tippecanoe --version
+          ogr2ogr --version
 
-      # - name: Install GDAL (for ogr2ogr)
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y gdal-bin
-
-      # - run: |
-      #     gdalinfo --version
-      #     ogr2ogr --version
-  
+      - name: Build Tile
+        run: |
+          bash ./bin/download.sh
+          cd ./bin
+          npm ci
+          curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
+          bash ./main.sh . config.xlsx
