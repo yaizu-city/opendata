@@ -6,8 +6,8 @@ curl https://raw.githubusercontent.com/geolonia/smartcity-smartmap-v2-cli/main/m
 curl https://raw.githubusercontent.com/geolonia/smartcity-smartmap-v2-cli/main/package.json -O
 
 # bin ディレクトリにダウンロード
-curl https://raw.githubusercontent.com/geolonia/smartcity-smartmap-v2-cli/main/configToMenuYAML.js -O
+curl https://raw.githubusercontent.com/geolonia/smartcity-smartmap-v2-cli/main/bin/configToMenuYAML.js -O
 mv configToMenuYAML.js bin/
 
-curl https://raw.githubusercontent.com/geolonia/smartcity-smartmap-v2-cli/main/xlsx2json.js -O
+curl https://raw.githubusercontent.com/geolonia/smartcity-smartmap-v2-cli/main/bin/xlsx2json.js -O
 mv xlsx2json.js bin/
