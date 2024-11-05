@@ -19,8 +19,12 @@ jobs:
 
       - name: Install Tippicanoe
         run: |
-          git clone https://github.com/felt/tippecanoe.git && \
-          cd tippecanoe && \
+          apt-get update && \
+          apt-get install gcc g++ make libsqlite3-dev zlib1g-dev tar && \
+          TIPPECANOE_VERSION=2.66.0 && \
+          curl -L https://github.com/felt/tippecanoe/archive/refs/tags/${TIPPECANOE_VERSION}.tar.gz -o tippecanoe.tar.gz && \
+          tar -xzvf tippecanoe.tar.gz && \
+          cd tippecanoe-${TIPPECANOE_VERSION} && \
           make -j && \
           make install
 
