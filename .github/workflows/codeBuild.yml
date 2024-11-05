@@ -16,11 +16,23 @@ jobs:
       id-token: write
 
     steps:  
-      - name: Install GDAL (for ogr2ogr)
+
+      - name: Install Tippicanoe
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gdal-bin
+          git clone https://github.com/felt/tippecanoe.git && \
+          cd tippecanoe && \
+          make -j && \
+          make install
 
       - run: |
-          gdalinfo --version
-          ogr2ogr --version
+          tippecanoe --version
+
+      # - name: Install GDAL (for ogr2ogr)
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y gdal-bin
+
+      # - run: |
+      #     gdalinfo --version
+      #     ogr2ogr --version
+  
