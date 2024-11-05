@@ -53,6 +53,6 @@ jobs:
         run: |
           cd ./bin
           bash ./download.sh
-          npm ci
+          npm install
           curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
           bash ./main.sh . config.xlsx
