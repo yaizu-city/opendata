@@ -33,7 +33,7 @@ jobs:
           libsqlite3-dev \
           zlib1g-dev \
           gdal-bin \
-          node \
+          nodejs \
           npm
 
       - name: Install Tippicanoe
