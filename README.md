@@ -27,7 +27,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 工業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialArea/data.geojson) | |
 | 工業専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialOnlyArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialOnlyArea/data.geojson) | |
 | 市街化区域界・市街化調整区域界 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/urbanControlArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/urbanControlArea/data.geojson) | |
-| 河川・海岸_監視カメラ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/riverCamera) | | [GeoJSON](https://yaizu-city.github.io/opendata/riverCamera/data.geojson) | |
+| 河川・海岸 監視カメラ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/riverCamera) | | [GeoJSON](https://yaizu-city.github.io/opendata/riverCamera/data.geojson) | |
 | 準住居地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/residentialAreaSub) | | [GeoJSON](https://yaizu-city.github.io/opendata/residentialAreaSub/data.geojson) | |
 | 準工業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialAreaSub) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialAreaSub/data.geojson) | |
 | 準防火地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/fireProtectionAreaSub) | | [GeoJSON](https://yaizu-city.github.io/opendata/fireProtectionAreaSub/data.geojson) | |
