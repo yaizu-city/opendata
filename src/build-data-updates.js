@@ -3,8 +3,6 @@ const standardDataCategories = require('./standard-data-categories.json');
 const pdfDataCategories = require('./pdf-data-categories.json');
 const categories = [...locationDataCategories, ...standardDataCategories, ...pdfDataCategories];
 
-console.log(JSON.stringify(categories, null, 2));
-
 const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
@@ -18,9 +16,6 @@ class BuildDataUpdates {
     let updates = result.split("\n").map(line => {
       if (line) {
         const category = path.basename(path.dirname(line.split(" ")[3]));
-        console.log(category);
-        const item = categories.find(c => c.category === category);
-        console.log({item});
         return {
           date: line.split(" ")[0],
           file: line.split(" ")[3],
