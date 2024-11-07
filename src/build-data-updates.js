@@ -3,6 +3,8 @@ const standardDataCategories = require('./standard-data-categories.json');
 const pdfDataCategories = require('./pdf-data-categories.json');
 const categories = [...locationDataCategories, ...standardDataCategories, ...pdfDataCategories];
 
+console.log(JSON.stringify(categories, null, 2));
+
 const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
