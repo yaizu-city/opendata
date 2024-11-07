@@ -56,4 +56,8 @@ jobs:
           npm install
           curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
           bash ./main.sh . config.xlsx
-          ls
+          
+      # - name: Upload Tile
+      #   run: |
+      #     aws s3 cp ./bin/output.mbtiles s3://yaizu-smartmap-config/output.mbtiles
+      #     aws s3 cp ./bin/app.yml s3://yaizu-smartmap-config/app.yml
