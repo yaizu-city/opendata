@@ -38,16 +38,23 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 工業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialArea/data.geojson) | |
 | 工業専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialOnlyArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialOnlyArea/data.geojson) | |
 | 市街化区域界・市街化調整区域界 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/urbanControlArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/urbanControlArea/data.geojson) | |
+| 標準宅地_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/standardResidentialLand_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/standardResidentialLand_ANN/data.geojson) | |
+| 標準宅地_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/standardResidentialLand_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/standardResidentialLand_SYM/data.geojson) | |
 | 河川・海岸 監視カメラ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/riverCamera) | | [GeoJSON](https://yaizu-city.github.io/opendata/riverCamera/data.geojson) | |
 | 準住居地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/residentialAreaSub) | | [GeoJSON](https://yaizu-city.github.io/opendata/residentialAreaSub/data.geojson) | |
 | 準工業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialAreaSub) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialAreaSub/data.geojson) | |
 | 準防火地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/fireProtectionAreaSub) | | [GeoJSON](https://yaizu-city.github.io/opendata/fireProtectionAreaSub/data.geojson) | |
+| 状況類似地区_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/similarArea_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/similarArea_ANN/data.geojson) | |
+| 状況類似地区_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/similarArea_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/similarArea_LIN/data.geojson) | |
 | 第一種中高層住居専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat1MediumHighResidentialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/cat1MediumHighResidentialArea/data.geojson) | |
 | 第一種低層住居専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat1LowResidentialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/cat1LowResidentialArea/data.geojson) | |
 | 第一種住居地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat1ResidentialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/cat1ResidentialArea/data.geojson) | |
 | 第二種中高層住居専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat2MediumHighResidentialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/cat2MediumHighResidentialArea/data.geojson) | |
 | 第二種住居地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat2ResidentialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/cat2ResidentialArea/data.geojson) | |
 | 行政区域界 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/adminBoundary) | | [GeoJSON](https://yaizu-city.github.io/opendata/adminBoundary/data.geojson) | |
+| 路線価格図_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_ANN/data.geojson) | |
+| 路線価格図_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_LIN/data.geojson) | |
+| 路線価格図_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_SYM/data.geojson) | |
 | 近隣商業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/commercialAreaNeighbor) | | [GeoJSON](https://yaizu-city.github.io/opendata/commercialAreaNeighbor/data.geojson) | |
 | 都市計画道路 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cityPlanLoad) | | [GeoJSON](https://yaizu-city.github.io/opendata/cityPlanLoad/data.geojson) | |
 | 駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/parking) | | [GeoJSON](https://yaizu-city.github.io/opendata/parking/data.geojson) | |
