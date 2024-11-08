@@ -16,10 +16,19 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
+| HYOJ_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/standardResidentialLand_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/standardResidentialLand_ANN/data.geojson) | |
+| HYOJ_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/standardResidentialLand_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/standardResidentialLand_SYM/data.geojson) | |
+| JYOU_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/similarArea_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/similarArea_ANN/data.geojson) | |
+| JYOU_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/similarArea_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/similarArea_LIN/data.geojson) | |
+| ROSN_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_ANN/data.geojson) | |
+| ROSN_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_LIN/data.geojson) | |
+| ROSN_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_SYM/data.geojson) | |
 | ごみ焼却場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/garbagePlant) | | [GeoJSON](https://yaizu-city.github.io/opendata/garbagePlant/data.geojson) | |
 | さくら並木管理調書 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cherryTreeManagement) | | [GeoJSON](https://yaizu-city.github.io/opendata/cherryTreeManagement/data.geojson) | |
 | し尿処理場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/sewageTreatmentPlant) | | [GeoJSON](https://yaizu-city.github.io/opendata/sewageTreatmentPlant/data.geojson) | |
-| 交通分析ダッシュボード | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/trafficAnalysisDashboard) | | [GeoJSON](https://yaizu-city.github.io/opendata/trafficAnalysisDashboard/data.geojson) | |
+| 交通分析ダッシュボード | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/trafficAnalysisDashboard) | [CSV](https://yaizu-city.github.io/opendata/trafficAnalysisDashboard/data.csv) |[GeoJSON](https://yaizu-city.github.io/opendata/trafficAnalysisDashboard/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-city.github.io/opendata/trafficAnalysisDashboard/data.csv) |
+| 住まいるエリア（居住誘導区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/smileArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/smileArea/data.geojson) | |
+| 住まいるシティ拠点エリア（都市機能誘導区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/smileCityHubArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/smileCityHubArea/data.geojson) | |
 | 公園・緑地 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/park) | | [GeoJSON](https://yaizu-city.github.io/opendata/park/data.geojson) | |
 | 商業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/commercialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/commercialArea/data.geojson) | |
 | 土地区画整理事業区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landProjectArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/landProjectArea/data.geojson) | |
