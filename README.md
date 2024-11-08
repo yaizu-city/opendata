@@ -23,6 +23,8 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 公園・緑地 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/park) | | [GeoJSON](https://yaizu-city.github.io/opendata/park/data.geojson) | |
 | 商業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/commercialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/commercialArea/data.geojson) | |
 | 土地区画整理事業区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landProjectArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/landProjectArea/data.geojson) | |
+| 土砂災害特別警戒区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landslideSpecialWarningArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/landslideSpecialWarningArea/data.geojson) | |
+| 土砂災害警戒区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landslideWarningArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/landslideWarningArea/data.geojson) | |
 | 地区計画区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/districtPlanArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/districtPlanArea/data.geojson) | |
 | 工業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialArea/data.geojson) | |
 | 工業専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/industrialOnlyArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/industrialOnlyArea/data.geojson) | |
