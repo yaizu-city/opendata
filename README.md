@@ -49,6 +49,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 路線価格図_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_LIN/data.geojson) | |
 | 路線価格図_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_SYM/data.geojson) | |
 | 近隣商業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/commercialAreaNeighbor) | | [GeoJSON](https://yaizu-city.github.io/opendata/commercialAreaNeighbor/data.geojson) | |
+| 道路台帳図 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/roadBaseMap) | | [GeoJSON](https://yaizu-city.github.io/opendata/roadBaseMap/data.geojson) | |
 | 都市計画道路 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cityPlanLoad) | | [GeoJSON](https://yaizu-city.github.io/opendata/cityPlanLoad/data.geojson) | |
 | 駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/parking) | | [GeoJSON](https://yaizu-city.github.io/opendata/parking/data.geojson) | |
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/highUseArea) | | [GeoJSON](https://yaizu-city.github.io/opendata/highUseArea/data.geojson) | |
