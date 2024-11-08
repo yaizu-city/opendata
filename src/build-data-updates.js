@@ -18,7 +18,6 @@ class BuildDataUpdates {
         const category = path.basename(path.dirname(line.split(" ")[3]));
         console.log(category);
         console.log(categories.find(c => c.category === category));
-        console.log(JSON.stringify(categories, null, 2));
         return {
           date: line.split(" ")[0],
           file: line.split(" ")[3],
