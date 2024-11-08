@@ -16,13 +16,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
-| HYOJ_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/standardResidentialLand_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/standardResidentialLand_ANN/data.geojson) | |
-| HYOJ_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/standardResidentialLand_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/standardResidentialLand_SYM/data.geojson) | |
-| JYOU_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/similarArea_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/similarArea_ANN/data.geojson) | |
-| JYOU_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/similarArea_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/similarArea_LIN/data.geojson) | |
-| ROSN_ANN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_ANN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_ANN/data.geojson) | |
-| ROSN_LIN | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_LIN) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_LIN/data.geojson) | |
-| ROSN_SYM | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landPrice_SYM) | | [GeoJSON](https://yaizu-city.github.io/opendata/landPrice_SYM/data.geojson) | |
 | ごみ焼却場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/garbagePlant) | | [GeoJSON](https://yaizu-city.github.io/opendata/garbagePlant/data.geojson) | |
 | さくら並木管理調書 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cherryTreeManagement) | | [GeoJSON](https://yaizu-city.github.io/opendata/cherryTreeManagement/data.geojson) | |
 | し尿処理場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/sewageTreatmentPlant) | | [GeoJSON](https://yaizu-city.github.io/opendata/sewageTreatmentPlant/data.geojson) | |
