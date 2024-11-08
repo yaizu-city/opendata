@@ -22,8 +22,13 @@ find . -name "*.shp" | while read -r shpfile; do
             nkf --overwrite -w "${base}.prj"
         fi
     fi
-    
-    # TODO cpg ファイルがあれば使うように修正
-    ogr2ogr -f GeoJSON -oo ENCODING=CP932 -t_srs crs:84 "$output_dir/data.geojson" "$shpfile"
-    echo "Convert Shape to  data.geojson"
+
+    # シェープファイルを一時ファイルに変換し、EPSG:4326に変換してUTF-8に設定
+    temp_file="${output_dir}/${base}_temp.shp"
+    ogr2ogr -f "ESRI Shapefile" -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+
+    # 一時ファイルからGeoJSONに変換
+    ogr2ogr -f GeoJSON -lco ENCODING=UTF-8 "$output_dir/data.geojson" "$temp_file"
+    rm -f "$temp_file" # 一時ファイルの削除
+    echo "Convert Shape to data.geojson"
 done
