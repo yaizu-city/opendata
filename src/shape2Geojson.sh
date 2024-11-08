@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -ex
 
-find . -name "*.shp" | while read -r shpfile; do
+find . -iname "*.shp" | while read -r shpfile; do
 
     echo "Convert Shape to GeoJSON: $shpfile"
 
@@ -15,20 +15,28 @@ find . -name "*.shp" | while read -r shpfile; do
         mkdir -p "$output_dir"
     fi
 
-    # .prj ファイルが Shift_JIS だと ogr2ogr でエラーが出るので UTF-8 に変換
-    if [ -f "${base}.prj" ]; then
-        encoding=$(nkf --guess "${base}.prj")
+    # .prj ファイルの存在確認と Shift_JIS から UTF-8 への変換
+    prj_file="${shpfile%.shp}.prj"
+    if [ -f "$prj_file" ]; then
+        encoding=$(nkf --guess "$prj_file")
         if [ "$encoding" = "Shift_JIS" ]; then
-            nkf --overwrite -w "${base}.prj"
+            nkf --overwrite -w "$prj_file"
         fi
     fi
 
-    # シェープファイルを一時ファイルに変換し、EPSG:4326に変換してUTF-8に設定
+    # シェープファイルを一時ファイルに変換し、EPSG:4326 に変換して UTF-8 に設定
     temp_file="${output_dir}/${base}_temp.shp"
-    ogr2ogr -f "ESRI Shapefile" -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+
+    # .prj ファイルがない場合、EPSG:6676 を使用して変換
+    if [ ! -f "$prj_file" ]; then
+        ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:6676 -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+    else
+        # .prj ファイルがある場合はそのまま変換
+        ogr2ogr -f "ESRI Shapefile" -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+    fi
 
     # 一時ファイルからGeoJSONに変換
-    ogr2ogr -f GeoJSON -lco ENCODING=UTF-8 "$output_dir/data.geojson" "$temp_file"
+    ogr2ogr -f GeoJSON "$output_dir/data.geojson" "$temp_file"
     rm -f "$temp_file" # 一時ファイルの削除
     echo "Convert Shape to data.geojson"
 done
