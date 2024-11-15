@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: 
-      - opened
-      - synchronize
-      - reopened
-    branches:
-      - "*"
+  # 一旦コメントアウト
+  # pull_request:
+  #   types: 
+  #     - opened
+  #     - synchronize
+  #     - reopened
+  #   branches:
+  #     - "*"
   workflow_dispatch:
 
 jobs:
@@ -72,8 +73,7 @@ jobs:
 
       - run: npm run build-standard-data
       - run: npm run build-api
-      # 一旦コメントアウト
-      # - run: npm run build-data-updates
+      - run: npm run build-data-updates
 
       - name: Update README
         if: github.event_name == 'pull_request'
