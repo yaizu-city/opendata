@@ -72,7 +72,8 @@ jobs:
 
       - run: npm run build-standard-data
       - run: npm run build-api
-      - run: npm run build-data-updates
+      # 一旦コメントアウト
+      # - run: npm run build-data-updates
 
       - name: Update README
         if: github.event_name == 'pull_request'
