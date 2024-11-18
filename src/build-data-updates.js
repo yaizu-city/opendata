@@ -16,6 +16,8 @@ class BuildDataUpdates {
     let updates = result.split("\n").map(line => {
       if (line) {
         const category = path.basename(path.dirname(line.split(" ")[3]));
+        // NOTE: デバッグ用に出力
+        console.log({category});
         return {
           date: line.split(" ")[0],
           file: line.split(" ")[3],
