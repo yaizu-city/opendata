@@ -14,6 +14,8 @@ class BuildDataUpdates {
     const cmd = "git ls-files data | xargs -n1 -I{} git log --reverse -1 --format='%cd {}' --date=iso-local {} | sort";
     const result = execSync(cmd).toString();
     let updates = result.split("\n").map(line => {
+      // NOTE: デバッグ用に出力
+      console.log({line});
       if (line) {
         const category = path.basename(path.dirname(line.split(" ")[3]));
         // NOTE: デバッグ用に出力
