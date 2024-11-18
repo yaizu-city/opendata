@@ -4,14 +4,13 @@ on:
   push:
     branches:
       - main
-  # 一旦コメントアウト
-  # pull_request:
-  #   types: 
-  #     - opened
-  #     - synchronize
-  #     - reopened
-  #   branches:
-  #     - "*"
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - "*"
   workflow_dispatch:
 
 jobs:
