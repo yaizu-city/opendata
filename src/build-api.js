@@ -12,8 +12,8 @@ class BuildApi {
     for (let i = 0; i < locationDataCategories.length; i++) {
       const category = locationDataCategories[i];
 
-      const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.csv`;
-      const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.geojson`;
+      const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.csv`;
+      const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
 
       data.push(
         {
@@ -37,14 +37,14 @@ class BuildApi {
       const jsons = []
       csvFiles.map(file => {
         const filename = path.basename(file, '.csv');
-        const jsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/${filename}.json`;
-        const csvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/${filename}.csv`;
+        const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/${filename}.json`;
+        const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/${filename}.csv`;
         csvs.push(csvFileUrl)
         jsons.push(jsonFileUrl);
       });
 
-      const defaultJsonFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.json`;
-      const defaultCsvFileUrl = `https://opendata.takamatsu-fact.com/${category.category}/data.csv`;
+      const defaultJsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.json`;
+      const defaultCsvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.csv`;
 
       data.push(
         {
