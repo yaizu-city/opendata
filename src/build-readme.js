@@ -20,6 +20,11 @@ class BuildReadme {
 
       const csvFile = glob.sync(`data/${category.category}/*.csv`)[0];
       const shapeFile = glob.sync(`data/${category.category}/*.shp`)[0];
+
+      // 翻訳データの場合は、CSV ファイルを除外
+      if (csvFile && path.basename(csvFile) === "attributes.csv") {
+        continue;
+      }
       
       const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
 
