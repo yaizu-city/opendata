@@ -12,6 +12,10 @@ on:
     branches:
       - "*"
   workflow_dispatch:
+  
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
 
@@ -73,7 +77,7 @@ jobs:
 
       - run: npm run build-standard-data
       - run: npm run build-api
-      # - run: npm run build-data-updates
+      - run: npm run build-data-updates
 
       - name: Update README
         if: github.event_name == 'pull_request'
