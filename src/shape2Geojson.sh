@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# # JSONファイルを読み込む
-# mapping_file="mapping.json"
-# if [ ! -f "$mapping_file" ]; then
-#     echo "Mapping file not found: $mapping_file"
-#     exit 1
-# fi
-
 # シェープファイル処理ループ
 find . -iname "*.shp" | while read -r shpfile; do
     echo "Processing $shpfile"
