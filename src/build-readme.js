@@ -20,11 +20,6 @@ class BuildReadme {
 
       const csvFile = glob.sync(`data/${category.category}/*.csv`)[0];
       const shapeFile = glob.sync(`data/${category.category}/*.shp`)[0];
-
-      // 翻訳データの場合は、CSV ファイルを除外
-      if (csvFile && path.basename(csvFile) === "attributes.csv") {
-        continue;
-      }
       
       const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
 
@@ -32,8 +27,8 @@ class BuildReadme {
       const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
       const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
 
-      if (!csvFile) {
-        // CSVがない場合は、フォルダと GeoJSON のみ表示
+      if (!csvFile || path.basename(csvFile) === "attributes.csv") {
+        // CSVがない場合、翻訳ファイルの場合は、フォルダと GeoJSON のみ表示
         readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | |\n`;
       } else {
         readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) |[GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
