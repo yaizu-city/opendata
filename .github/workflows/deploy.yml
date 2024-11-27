@@ -66,13 +66,14 @@ jobs:
           sudo apt-get install -y gdal-bin
 
       # shapeファイルを GeoJSON に変換
-      - run: bash ./src/shape2Geojson.sh
+      - run: |
+          ./src/shape2Geojson.sh
         # continue-on-error: true
         # id: shape2geojson-step
 
       - run: npm run build-standard-data
       - run: npm run build-api
-      - run: npm run build-data-updates
+      # - run: npm run build-data-updates
 
       - name: Update README
         if: github.event_name == 'pull_request'

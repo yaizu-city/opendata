@@ -27,8 +27,8 @@ class BuildReadme {
       const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
       const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
 
-      if (!csvFile) {
-        // CSVがない場合は、フォルダと GeoJSON のみ表示
+      if (!csvFile || path.basename(csvFile) === "attributes.csv") {
+        // CSVがない場合、翻訳ファイルの場合は、フォルダと GeoJSON のみ表示
         readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | |\n`;
       } else {
         readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) |[GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
