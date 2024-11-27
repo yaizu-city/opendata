@@ -67,7 +67,6 @@ jobs:
 
       # shapeファイルを GeoJSON に変換
       - run: |
-          node ./src/xlsx2json.js ./src/焼津スマートマップ属性翻訳元データ.xlsx
           ./src/shape2Geojson.sh
         # continue-on-error: true
         # id: shape2geojson-step

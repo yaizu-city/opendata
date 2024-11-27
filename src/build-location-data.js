@@ -28,6 +28,12 @@ for (let i = 0; i < categories.length; i++) {
   glob(csvFiles, async (err, files) => {
     for(let j = 0; j < files.length; j++) {
       const file = files[j];
+
+      // 属性翻訳ファイルの場合は geojson に変換しない
+      if (path.basename(file) === 'attributes.csv') {
+        continue;
+      }
+
       const category = path.basename(path.dirname(file));
       const categoryPath = `build/${category}`;
       if (!fs.existsSync(categoryPath)) {

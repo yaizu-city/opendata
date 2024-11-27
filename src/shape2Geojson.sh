@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-# JSONファイルを読み込む
-mapping_file="mapping.json"
-if [ ! -f "$mapping_file" ]; then
-    echo "Mapping file not found: $mapping_file"
-    exit 1
-fi
+# # JSONファイルを読み込む
+# mapping_file="mapping.json"
+# if [ ! -f "$mapping_file" ]; then
+#     echo "Mapping file not found: $mapping_file"
+#     exit 1
+# fi
 
 # シェープファイル処理ループ
 find . -iname "*.shp" | while read -r shpfile; do
@@ -23,6 +23,19 @@ find . -iname "*.shp" | while read -r shpfile; do
     # GeoJSONに変換
     geojson_file="$output_dir/${base}.geojson"
     ogr2ogr -f GeoJSON "$geojson_file" "$shpfile"
+
+    # ------------------------------
+    # 属性名変換
+    # ------------------------------
+    translate_file="data/$category/attributes.csv"
+    mapping_file="data/$category/attributes.json"
+
+    if [ ! -f "$translate_file" ]; then
+        echo "Attribute translate file not found: $translate_file"
+        continue
+    fi
+
+    node src/csv2json.js $translate_file
 
     # 属性名変換を一括で適用
     jq --slurpfile mapping "$mapping_file" '
