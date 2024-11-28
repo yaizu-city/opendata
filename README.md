@@ -17,7 +17,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
 | テスト小学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト小学校区_ステータスチェック追加) | | [GeoJSON](https://yaizu-city.github.io/opendata/テスト小学校区_ステータスチェック追加/data.geojson) | |
-| テスト投票区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト投票区) | | [GeoJSON](https://yaizu-city.github.io/opendata/テスト投票区/data.geojson) | |
+| テスト投票区2 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト投票区2) | | [GeoJSON](https://yaizu-city.github.io/opendata/テスト投票区2/data.geojson) | |
 
 以下のデータは位置情報を含まないデータです。
 
