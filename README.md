@@ -31,6 +31,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | ごみ焼却場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/garbagePlant) | | [GeoJSON](https://yaizu-city.github.io/opendata/garbagePlant/data.geojson) | |
 | さくら並木管理調書 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/さくら並木管理調書) | | [GeoJSON](https://yaizu-city.github.io/opendata/さくら並木管理調書/data.geojson) | |
 | し尿処理場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/sewageTreatmentPlant) | | [GeoJSON](https://yaizu-city.github.io/opendata/sewageTreatmentPlant/data.geojson) | |
+| テスト小学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト小学校区_ステータスチェック追加) | | [GeoJSON](https://yaizu-city.github.io/opendata/テスト小学校区_ステータスチェック追加/data.geojson) | |
 | ポスター掲示場所 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/選挙ポスター掲示場位置図) | | [GeoJSON](https://yaizu-city.github.io/opendata/選挙ポスター掲示場位置図/data.geojson) | |
 | ポンプ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ポンプ) | | [GeoJSON](https://yaizu-city.github.io/opendata/ポンプ/data.geojson) | |
 | 中学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/中学校区) | | [GeoJSON](https://yaizu-city.github.io/opendata/中学校区/data.geojson) | |
