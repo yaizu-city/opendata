@@ -86,8 +86,12 @@ jobs:
             exit 1
           fi
 
+          echo "Changed files:"
+          cat changed_files.txt
+
           # ディレクトリ名を抽出してユニークにする
           if [[ -s changed_files.txt ]]; then
+            echo "Changes detected."
             grep "^data/" changed_files.txt | xargs -n1 dirname | sort -u > changed_dirs.txt
             echo "Changed directories:"
             cat changed_dirs.txt
