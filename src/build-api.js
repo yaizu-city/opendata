@@ -56,6 +56,11 @@ class BuildApi {
       )
     }
 
+    // build ディレクトリがない場合は作成する
+    if (!fs.existsSync('build')) {
+      fs.mkdirSync('build', { recursive: true });
+    }
+
     const dest = fs.createWriteStream(`build/index.json`);
     dest.write(JSON.stringify(data));
   }
