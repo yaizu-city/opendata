@@ -17,6 +17,7 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
 | さくら並木管理調書 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/さくら並木管理調書) | | [GeoJSON](https://yaizu-city.github.io/opendata/さくら並木管理調書/data.geojson) | |
+| 中学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/中学校区) | | [GeoJSON](https://yaizu-city.github.io/opendata/中学校区/data.geojson) | |
 | 小学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/小学校区) | | [GeoJSON](https://yaizu-city.github.io/opendata/小学校区/data.geojson) | |
 
 以下のデータは位置情報を含まないデータです。
