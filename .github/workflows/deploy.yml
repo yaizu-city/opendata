@@ -70,15 +70,34 @@ jobs:
           sudo apt-get install -y gdal-bin
 
       # Shapeファイルを GeoJSON に変換（差分更新対応）
+      # Shapeファイルを GeoJSON に変換（差分更新対応）
       - name: 差分を取得
         id: changed-dirs
         run: |
-          # Gitで変更されたファイルのリストを取得
-          git diff --name-only origin/main > changed_files.txt
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "Processing pull request"
+            # Pull Requestの場合、origin/mainとの差分を取得
+            git diff --name-only origin/main > changed_files.txt
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Processing push to main"
+            # Pushの場合、現在のコミットと1つ前のコミットの差分を取得
+            PREVIOUS_COMMIT=$(git rev-parse HEAD^)
+            CURRENT_COMMIT=$(git rev-parse HEAD)
+            git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT > changed_files.txt
+          else
+            echo "Unknown event: ${{ github.event_name }}"
+            exit 1
+          fi
+
           # ディレクトリ名を抽出してユニークにする
-          cat changed_files.txt | grep "^data/" | xargs -n1 dirname | sort -u > changed_dirs.txt
-          echo "Changed directories:"
-          cat changed_dirs.txt
+          if [[ -s changed_files.txt ]]; then
+            cat changed_files.txt | grep "^data/" | xargs -n1 dirname | sort -u > changed_dirs.txt
+            echo "Changed directories:"
+            cat changed_dirs.txt
+          else
+            echo "No changes detected."
+            > changed_dirs.txt  # 空のファイルを作成
+          fi
         shell: bash
 
       - name: GeoJSON に変換
