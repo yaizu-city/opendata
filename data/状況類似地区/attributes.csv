@@ -1,0 +1,15 @@
+original_name,display_name
+EL,内部 ID
+XMAX,図面名
+YMAX,X 座標最大値
+XMIN,Y 座標最大値
+YMIN,X 座標最小値
+LTP,Y 座標最小値
+LAY,線種番号
+ANG,階層番号
+POINT,データ角度
+JKONO,状況類似地域番号
+YOUTO,用途地区分コード
+JITEN_K,時点修正期間コード
+JITEN_1,時点修正率 1
+GAIRO_N,主要な街路路線価番号
