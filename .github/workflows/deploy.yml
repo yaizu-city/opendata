@@ -98,8 +98,8 @@ jobs:
             cat deleted_dirs.txt
           else
             echo "No changes detected."
-            > changed_dirs.txt  # 空ファイルを作成
-            > deleted_dirs.txt  # 空ファイルを作成
+            echo "" > changed_dirs.txt  # 空ファイルを作成
+            echo "" > deleted_dirs.txt  # 空ファイルを作成
           fi
         shell: bash
 
