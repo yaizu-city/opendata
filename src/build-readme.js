@@ -23,8 +23,8 @@ class BuildReadme {
       
       const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
 
-      const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.csv`;
-      const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.geojson`;
+      const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
+      const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
       const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
 
       if (!csvFile || path.basename(csvFile) === "attributes.csv") {
@@ -43,8 +43,8 @@ class BuildReadme {
       const category = standardDataCategories[i];
       
       const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
-      const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.json`;
-      const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/data.csv`;
+      const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.json`;
+      const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
       
       if (category.category === "city_planning_basic_survey_information") {
 
@@ -57,8 +57,8 @@ class BuildReadme {
 
         allFileNames.map(filename => {
           
-          const jsonFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/${filename}.json`;
-          const csvFileUrl = `https://yaizu-city.github.io/opendata/${category.category}/${filename}.csv`;
+          const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.json`;
+          const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.csv`;
 
           const subCategory = filename.split('_')[1];
           if (filename === allFileNames[0]) {
