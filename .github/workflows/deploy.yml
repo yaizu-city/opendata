@@ -93,12 +93,16 @@ jobs:
           # ディレクトリ名を抽出してユニークにする
           if [[ -s changed_files.txt ]]; then
             echo "Changes detected."
-            grep "^data/" changed_files.txt | xargs -n1 dirname | sort -u > changed_dirs.txt
+
+            cat changed_files.txt
+            
+            # Changed directories
+            xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt
             echo "Changed directories:"
             cat changed_dirs.txt
 
-            # 削除されたディレクトリの検出
-            git diff --name-only --diff-filter=D $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" | xargs -n1 dirname | sort -u > deleted_dirs.txt
+            # Deleted directories
+            git diff --name-only --diff-filter=D $PREVIOUS_COMMIT $CURRENT_COMMIT | xargs -n1 dirname | sort -u > deleted_dirs.txt || true
             echo "Deleted directories:"
             cat deleted_dirs.txt
           else
