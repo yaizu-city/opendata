@@ -87,7 +87,8 @@ jobs:
               echo "No parent commit found. Skipping diff."
               echo "" > changed_files.txt  # 空ファイルを作成して後続処理をスキップ
             else
-            # Pull Request がマージされた場合は、マージコミットを取得
+              # Pull Request がマージされた場合は、マージコミットを取得
+              echo "Processing push event"
               CURRENT_COMMIT=$(git rev-parse HEAD)
               git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt
             fi
