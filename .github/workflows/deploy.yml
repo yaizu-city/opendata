@@ -75,12 +75,14 @@ jobs:
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             echo "Processing pull request"
-            git diff --name-only origin/main > changed_files.txt
+            # Pull requestの場合、変更されたファイルを取得し、data/以下のみにフィルタ
+            git diff --name-only origin/main | grep "^data/" > changed_files.txt
           elif [[ "${{ github.event_name }}" == "push" ]]; then
             echo "Processing push to main"
+            # Pushの場合、現在のコミットと1つ前のコミットの差分を取得し、data/以下のみにフィルタ
             PREVIOUS_COMMIT=$(git rev-parse HEAD^)
             CURRENT_COMMIT=$(git rev-parse HEAD)
-            git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT > changed_files.txt
+            git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt
           else
             echo "Unknown event: ${{ github.event_name }}"
             exit 1
