@@ -199,39 +199,39 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         
-  deploy-s3:
-    if: github.ref == 'refs/heads/main'
+  # deploy-s3:
+  #   if: github.ref == 'refs/heads/main'
 
-    needs:
-      - build
+  #   needs:
+  #     - build
 
-    runs-on: ubuntu-latest
-    # Allow write on id-token so we can use it to authenticate to AWS
-    permissions:
-      id-token: write
-      contents: read
+  #   runs-on: ubuntu-latest
+  #   # Allow write on id-token so we can use it to authenticate to AWS
+  #   permissions:
+  #     id-token: write
+  #     contents: read
 
-    steps:
-      - uses: actions/checkout@v3
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: build
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: build
+  #         path: build
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
-          aws-region: ap-northeast-1
+  #     - name: Configure AWS Credentials
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
+  #         aws-region: ap-northeast-1
 
-      - name: Deploy to S3
-        run: |
-          aws s3 sync ./build s3://yaizu-smartcity-jp-v1-frontend \
-            --delete \
-            --cache-control "public,max-age=60" \
+  #     - name: Deploy to S3
+  #       run: |
+  #         aws s3 sync ./build s3://yaizu-smartcity-jp-v1-frontend \
+  #           --delete \
+  #           --cache-control "public,max-age=60" \
 
-          aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
+  #         aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
 
   # backup:
   #   if: github.ref == 'refs/heads/main'
