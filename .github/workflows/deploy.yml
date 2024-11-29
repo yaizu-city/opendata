@@ -70,17 +70,14 @@ jobs:
           sudo apt-get install -y gdal-bin
 
       # Shapeファイルを GeoJSON に変換（差分更新対応）
-      # Shapeファイルを GeoJSON に変換（差分更新対応）
       - name: 差分を取得
         id: changed-dirs
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             echo "Processing pull request"
-            # Pull Requestの場合、origin/mainとの差分を取得
             git diff --name-only origin/main > changed_files.txt
           elif [[ "${{ github.event_name }}" == "push" ]]; then
             echo "Processing push to main"
-            # Pushの場合、現在のコミットと1つ前のコミットの差分を取得
             PREVIOUS_COMMIT=$(git rev-parse HEAD^)
             CURRENT_COMMIT=$(git rev-parse HEAD)
             git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT > changed_files.txt
@@ -91,12 +88,18 @@ jobs:
 
           # ディレクトリ名を抽出してユニークにする
           if [[ -s changed_files.txt ]]; then
-            cat changed_files.txt | grep "^data/" | xargs -n1 dirname | sort -u > changed_dirs.txt
+            grep "^data/" changed_files.txt | xargs -n1 dirname | sort -u > changed_dirs.txt
             echo "Changed directories:"
             cat changed_dirs.txt
+
+            # 削除されたディレクトリの検出
+            git diff --name-only --diff-filter=D $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" | xargs -n1 dirname | sort -u > deleted_dirs.txt
+            echo "Deleted directories:"
+            cat deleted_dirs.txt
           else
             echo "No changes detected."
-            > changed_dirs.txt  # 空のファイルを作成
+            > changed_dirs.txt  # 空ファイルを作成
+            > deleted_dirs.txt  # 空ファイルを作成
           fi
         shell: bash
 
@@ -137,7 +140,7 @@ jobs:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
           aws-region: ap-northeast-1
 
-      - name: Deploy to S3
+      - name: Deploy to S3（差分追加）
         if: github.ref == 'refs/heads/main'
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
@@ -145,90 +148,17 @@ jobs:
             --cache-control "public,max-age=60"
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
-  
 
-  comment-diff:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: read
-      issues: write
-      pull-requests: write
-
-    steps:
-    - name: Checkout main branch into main_branch_content directory
-      uses: actions/checkout@v2
-      with:
-        ref: main
-        path: main_branch_content/
-
-    - name: install nkf
-      run: |
-        sudo apt-get install -y nkf
-
-    - name: Build CSV for main branch
-      run: |
-        cd main_branch_content/
-        npm ci
-        npm run build-csv
-
-    - name: Checkout current branch into current_branch_content directory
-      uses: actions/checkout@v2
-      with:
-        path: current_branch_content/
-
-    - name: Build CSV for current branch
-      run: |
-        cd current_branch_content/
-        npm ci
-        npm run build-csv
-
-    - name: Add comment to show CSV diff
-      id: csv_diff_step
-      run: ./current_branch_content/src/csvdiff.sh
-      continue-on-error: true
-        
-    - uses: peter-evans/find-comment@v2
-      id: find-comment
-      if: steps.csv_diff_step.outcome == 'success'
-      with:
-        issue-number: ${{ github.event.pull_request.number }}
-        comment-author: 'github-actions[bot]'
-        body-includes: '今回更新されたデータの CSV 差分は以下の通りです'
-
-    - uses: peter-evans/create-or-update-comment@v3
-      if: steps.csv_diff_step.outcome == 'success'
-      with:
-        comment-id: ${{ steps.find-comment.outputs.comment-id }}
-        issue-number: ${{ github.event.pull_request.number }}
-        body-path: './comment.txt'
-        edit-mode: 'replace'
-
-  # backup:
-  #   if: github.ref == 'refs/heads/main'
-
-  #   runs-on: ubuntu-latest
-  #   # Allow write on id-token so we can use it to authenticate to AWS
-  #   permissions:
-  #     contents: read
-  #     id-token: write
-
-  #   steps:
-  #     - uses: actions/checkout@v3
-
-  #     - name: Set current datetime as env variable
-  #       env:
-  #         TZ: "Asia/Tokyo"
-  #       run: echo "CURRENT_DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-
-  #     - name: Configure AWS credentials
-  #       uses: aws-actions/configure-aws-credentials@v2
-  #       with:
-  #         role-to-assume: arn:aws:iam::584344484091:role/takamatsu_github_s3_backup
-  #         aws-region: ap-northeast-1
-
-  #     - name: Backup data folder to S3 bucket
-  #       run: |
-  #         aws s3 sync data s3://takamatsu-city-opendata-backup-ap-northeast-1/${{ env.CURRENT_DATETIME }}
+      - name: Deploy to S3（差分削除）
+        if: github.ref == 'refs/heads/main'
+        run: |
+          if [[ -s deleted_dirs.txt ]]; then
+            while read -r dir; do
+              echo "Removing directory: $dir"
+              # 必要に応じてS3バケットやビルド環境から削除
+              aws s3 rm "s3://yaizu-smartcity-jp-frontend-v1/$dir" --recursive
+            done < deleted_dirs.txt
+          else
+            echo "No deleted directories detected."
+          fi
+        shell: bash
