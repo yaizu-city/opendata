@@ -116,6 +116,8 @@ jobs:
         shell: bash
 
       - run: npm run build-standard-data
+      - run: ls
+      - run: ls build
       - run: npm run build-api
       - run: npm run build-data-updates
 
