@@ -74,31 +74,21 @@ jobs:
         id: changed-dirs
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            # プルリクエストの処理
             echo "Processing pull request"
+            
+            # Pull requestの場合、変更されたファイルを取得し、data/以下のみにフィルタ
             git diff --name-only origin/main | grep "^data/" > changed_files.txt
-
           elif [[ "${{ github.event_name }}" == "push" ]]; then
-            # main にプッシュの処理
-            PREVIOUS_COMMIT=$(git rev-parse HEAD^ 2>/dev/null || echo "NO_PARENT")
+            echo "Processing push to main"
 
-            # 直接 push したコミットの場合は差分を取得しない
-            if [[ "$PREVIOUS_COMMIT" == "NO_PARENT" ]]; then
-              echo "No parent commit found. Skipping diff."
-              echo "" > changed_files.txt  # 空ファイルを作成して後続処理をスキップ
-            else
-              # Pull Request がマージされた場合は、マージコミットを取得
-              echo "Processing push event"
-              CURRENT_COMMIT=$(git rev-parse HEAD)
-              git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt
-            fi
+            # Pushの場合、現在のコミットと1つ前のコミットの差分を取得し、data/以下のみにフィルタ
+            PREVIOUS_COMMIT=$(git rev-parse HEAD^)
+            CURRENT_COMMIT=$(git rev-parse HEAD)
+            git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
           else
             echo "Unknown event: ${{ github.event_name }}"
             exit 1
           fi
-
-          echo "Changed files:"
-          cat changed_files.txt
 
           # ディレクトリ名を抽出してユニークにする
           if [[ -s changed_files.txt ]]; then
