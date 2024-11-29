@@ -69,11 +69,29 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gdal-bin
 
-      # shapeファイルを GeoJSON に変換
-      - run: |
-          ./src/shape2Geojson.sh
-        # continue-on-error: true
-        # id: shape2geojson-step
+      # Shapeファイルを GeoJSON に変換（差分更新対応）
+      - name: 差分を取得
+        id: changed-dirs
+        run: |
+          # Gitで変更されたファイルのリストを取得
+          git diff --name-only origin/main > changed_files.txt
+          # ディレクトリ名を抽出してユニークにする
+          cat changed_files.txt | grep "^data/" | xargs -n1 dirname | sort -u > changed_dirs.txt
+          echo "Changed directories:"
+          cat changed_dirs.txt
+        shell: bash
+
+      - name: GeoJSON に変換
+        run: |
+          if [[ -s changed_dirs.txt ]]; then
+            while read -r dir; do
+              echo "Processing directory: $dir"
+              ./src/shape2Geojson.sh "$dir"
+            done < changed_dirs.txt
+          else
+            echo "No changes detected in data directories."
+          fi
+        shell: bash
 
       - run: npm run build-standard-data
       - run: npm run build-api
@@ -92,12 +110,6 @@ jobs:
             git push -f; \
           fi
 
-      # - uses: actions/upload-artifact@v3
-      #   if: github.ref == 'refs/heads/main'
-      #   with:
-      #     name: build
-      #     path: build
-
       # NOTE: GitHub の Quta に引っかかったため、デプロイ処理を移動
       - name: Configure AWS Credentials
         if : github.ref == 'refs/heads/main'
@@ -110,10 +122,11 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
-            --delete \
-            --cache-control "public,max-age=60" \
+            --exact-timestamps \
+            --cache-control "public,max-age=60"
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
+  
 
   comment-diff:
     if: github.event_name == 'pull_request'
@@ -173,82 +186,6 @@ jobs:
         issue-number: ${{ github.event.pull_request.number }}
         body-path: './comment.txt'
         edit-mode: 'replace'
-
-  # deploy:
-  #   if: github.ref == 'refs/heads/main'
-
-  #   # Allow one concurrent deployment
-  #   concurrency:
-  #     group: "pages"
-  #     cancel-in-progress: true
-
-  #   needs:
-  #     - build
-
-  #   # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-  #   permissions:
-  #     contents: read
-  #     pages: write
-  #     id-token: write
-
-  #   # environment is not compatible with AWS credentials
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: build
-  #         path: build
-
-  #     - name: Setup Pages
-  #       uses: actions/configure-pages@v3
-
-  #     - name: Upload artifact
-  #       uses: actions/upload-pages-artifact@v1
-  #       with:
-  #         path: "build"
-
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v1
-        
-  # deploy-s3:
-  #   if: github.ref == 'refs/heads/main'
-
-  #   needs:
-  #     - build
-
-  #   runs-on: ubuntu-latest
-  #   # Allow write on id-token so we can use it to authenticate to AWS
-  #   permissions:
-  #     id-token: write
-  #     contents: read
-
-  #   steps:
-  #     - uses: actions/checkout@v3
-
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: build
-  #         path: build
-
-  #     - name: Configure AWS Credentials
-  #       uses: aws-actions/configure-aws-credentials@v4
-  #       with:
-  #         role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
-  #         aws-region: ap-northeast-1
-
-  #     - name: Deploy to S3
-  #       run: |
-  #         aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
-  #           --delete \
-  #           --cache-control "public,max-age=60" \
-
-  #         aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
 
   # backup:
   #   if: github.ref == 'refs/heads/main'

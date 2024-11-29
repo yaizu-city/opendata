@@ -1,80 +1,91 @@
 #!/usr/bin/env bash
 set -e
 
-# シェープファイル処理ループ
-find . -iname "*.shp" | while read -r shpfile; do
+# 引数が指定されていない場合はエラーを出力
+if [ "$#" -eq 0 ]; then
+    echo "Usage: $0 <directory1> [directory2 ...]"
+    exit 1
+fi
 
-    echo "Convert Shape to GeoJSON: $shpfile"
+# 指定されたディレクトリをループ
+for dir in "$@"; do
+    echo "Processing directory: $dir"
 
-    # ベースファイル名とカテゴリディレクトリを生成
-    base=$(basename "$shpfile" .shp)
-    category=$(dirname "$shpfile" | xargs basename)
-    output_dir="build/$category"
+    # 指定ディレクトリ内の.shpファイルを処理
+    find "$dir" -iname "*.shp" | while read -r shpfile; do
 
-    # 出力ディレクトリが存在しない場合は作成
-    if [ ! -d "$output_dir" ]; then
-        mkdir -p "$output_dir"
-    fi
+        echo "Convert Shape to GeoJSON: $shpfile"
 
-    # .prj ファイルの存在確認と Shift_JIS から UTF-8 への変換
-    prj_file="${shpfile%.shp}.prj"
-    if [ -f "$prj_file" ]; then
-        encoding=$(nkf --guess "$prj_file")
-        if [ "$encoding" = "Shift_JIS" ]; then
-            nkf --overwrite -w "$prj_file"
+        # ベースファイル名とカテゴリディレクトリを生成
+        base=$(basename "$shpfile" .shp)
+        category=$(dirname "$shpfile" | xargs basename)
+        output_dir="build/$category"
+
+        # 出力ディレクトリが存在しない場合は作成
+        if [ ! -d "$output_dir" ]; then
+            mkdir -p "$output_dir"
         fi
-    fi
 
-    # シェープファイルを一時ファイルに変換し、EPSG:4326 に変換して UTF-8 に設定
-    temp_file="${output_dir}/${base}_temp.shp"
-    geojson_file="${output_dir}/data.geojson"
+        # .prj ファイルの存在確認と Shift_JIS から UTF-8 への変換
+        prj_file="${shpfile%.shp}.prj"
+        if [ -f "$prj_file" ]; then
+            encoding=$(nkf --guess "$prj_file")
+            if [ "$encoding" = "Shift_JIS" ]; then
+                nkf --overwrite -w "$prj_file"
+            fi
+        fi
 
-    if [ ! -f "$prj_file" ]; then
-        # .prj ファイルがない場合、EPSG:6676 を使用して変換
-        ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:6676 -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
-    else
-        # .prj ファイルがある場合はそのまま変換
-        ogr2ogr -f "ESRI Shapefile" -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
-    fi
+        # シェープファイルを一時ファイルに変換し、EPSG:4326 に変換して UTF-8 に設定
+        temp_file="${output_dir}/${base}_temp.shp"
+        geojson_file="${output_dir}/data.geojson"
 
-    # 一時ファイルからGeoJSONに変換
-    ogr2ogr -f GeoJSON "$geojson_file" "$temp_file"
-    rm -f "${temp_file}"* # 関連する一時ファイルの削除
-    echo "Converted Shape to GeoJSON: $geojson_file"
+        if [ ! -f "$prj_file" ]; then
+            # .prj ファイルがない場合、EPSG:6676 を使用して変換
+            ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:6676 -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+        else
+            # .prj ファイルがある場合はそのまま変換
+            ogr2ogr -f "ESRI Shapefile" -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+        fi
 
-    # ------------------------------
-    # 属性名変換
-    # ------------------------------
-    translate_file="data/$category/attributes.csv"
-    mapping_file="data/$category/attributes.json"
+        # 一時ファイルからGeoJSONに変換
+        ogr2ogr -f GeoJSON "$geojson_file" "$temp_file"
+        rm -f "${temp_file}"* # 関連する一時ファイルの削除
+        echo "Converted Shape to GeoJSON: $geojson_file"
 
-    if [ ! -f "$translate_file" ]; then
-        echo "Attribute translate file not found: $translate_file"
-        continue
-    fi
+        # ------------------------------
+        # 属性名変換
+        # ------------------------------
+        translate_file="data/$category/attributes.csv"
+        mapping_file="data/$category/attributes.json"
 
-    # CSV から JSON マッピングファイルを生成
-    node src/csv2json.js "$translate_file"
+        if [ ! -f "$translate_file" ];then
+            echo "Attribute translate file not found: $translate_file"
+            continue
+        fi
 
-    if [ ! -f "$mapping_file" ]; then
-        echo "Mapping file not generated: $mapping_file"
-        continue
-    fi
+        # CSV から JSON マッピングファイルを生成
+        node src/csv2json.js "$translate_file"
 
-    # GeoJSON 属性名変換
-    jq --slurpfile mapping "$mapping_file" '
-        .features |= map(
-            .properties |= with_entries(
-                .key as $key |
-                if ($mapping[0][] | select(.original_name == $key)) then
-                    .key = ($mapping[0][] | select(.original_name == $key) | .display_name)
-                else
-                    .
-                end
+        if [ ! -f "$mapping_file" ]; then
+            echo "Mapping file not generated: $mapping_file"
+            continue
+        fi
+
+        # GeoJSON 属性名変換
+        jq --slurpfile mapping "$mapping_file" '
+            .features |= map(
+                .properties |= with_entries(
+                    .key as $key |
+                    if ($mapping[0][] | select(.original_name == $key)) then
+                        .key = ($mapping[0][] | select(.original_name == $key) | .display_name)
+                    else
+                        .
+                    end
+                )
             )
-        )
-    ' "$geojson_file" > "${geojson_file}.tmp"
+        ' "$geojson_file" > "${geojson_file}.tmp"
 
-    mv "${geojson_file}.tmp" "$geojson_file"
-    echo "Saved converted GeoJSON to $geojson_file"
+        mv "${geojson_file}.tmp" "$geojson_file"
+        echo "Saved converted GeoJSON to $geojson_file"
+    done
 done
