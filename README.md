@@ -16,7 +16,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
-| 建物位置 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/建物位置) | | [GeoJSON](https://yaizu-smartcity.jp/建物位置/data.geojson) | |
 | 看板設置箇所 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/看板設置箇所) | | [GeoJSON](https://yaizu-smartcity.jp/看板設置箇所/data.geojson) | |
 
 以下のデータは位置情報を含まないデータです。
