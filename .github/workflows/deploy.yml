@@ -124,6 +124,18 @@ jobs:
           fi
         shell: bash
 
+      - name: GeoJSONの属性を変換
+        run: |
+          if [[ -s changed_dirs.txt ]]; then
+            while read -r dir; do
+              echo "Processing directory: $dir"
+              ./src/convertAttributes.sh "$dir"
+            done < changed_dirs.txt
+          else
+            echo "No changes detected in data directories."
+          fi
+        shell: bash
+
       - run: npm run build-standard-data
       - run: npm run build-api
       - run: npm run build-data-updates

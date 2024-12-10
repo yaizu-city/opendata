@@ -2,3 +2,5 @@ mapping.json
 node_modules
 build
 */attributes.json
+*/**/attributes.json
+src/*-categories.json
