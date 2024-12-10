@@ -71,9 +71,10 @@ for dir in "$@"; do
             continue
         fi
 
-        # GeoJSON 属性名変換
+        # GeoJSON 属性名変換と_titleキー追加
         jq --slurpfile mapping "$mapping_file" '
             .features |= map(
+                # 1回目のループ: キー名の変換
                 .properties |= with_entries(
                     .key as $key |
                     if ($mapping[0][] | select(.original_name == $key)) then
@@ -82,6 +83,15 @@ for dir in "$@"; do
                         .
                     end
                 )
+            ) |
+            .features |= map(
+                # 2回目のループ: label_flagが1の時に_titleキーを追加
+                ($mapping[0][] | select(.label_flag == "1")) as $entry |
+                if (.properties[$entry.display_name] != null) then
+                    .properties["_title"] = .properties[$entry.display_name]
+                else
+                    .
+                end
             )
         ' "$geojson_file" > "${geojson_file}.tmp"
 
