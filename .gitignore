@@ -1,6 +1,8 @@
 mapping.json
 node_modules
-build
+build/**/*.geojson
+build/**/*.json
+build/**/*.csv
 */attributes.json
 */**/attributes.json
 src/*-categories.json
