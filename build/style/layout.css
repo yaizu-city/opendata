@@ -1,0 +1,1037 @@
+/*----------------
+--リセット
+------------------*/
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body{
+	font-size:112.5%;
+	font-family: "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+/*----------------
+--グローバルナビ開閉用
+------------------*/
+#wrapper{
+	min-width:1240px;
+	position:relative;
+}
+.content1-1{
+
+
+}
+.gaibu_link{
+	color:#FFFFFF;
+	background:url(../images/gaibu_site.png) no-repeat;
+	padding-left:40px;
+	font-size: 133.34%;
+	text-decoration: none;
+	background-position: left center;
+}
+#tmp_hnavi_rmenu{
+	display: block;
+	text-align: right;
+	background: #044684;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.global_menu_box{
+	position: relative;
+    right: 0;
+    top: 0;
+    z-index: 500;
+}
+.global_menu_box div.ttl{
+	list-style:none;
+	display:flex;
+	background: #044684;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	justify-content: space-between;
+	padding-left: 50px;
+	align-items:center;
+	position:relative;
+	min-height: 86px;
+}
+.global_menu_box div.ttl:after{
+	background: url(../images/arrow_sita.png) no-repeat;
+	content: "";
+	width: 51px;
+	height: 40px;
+	display: inline-block;
+	margin: 0 auto;
+	position: absolute;
+	bottom: -33px;
+	z-index: 50;
+	left: calc(50% - 25px);
+}
+#tmp_means_secondary ul li {
+  position:absolute;
+  
+}
+.global_menu_box .cnt{
+	padding:35px;
+	padding-top: 30px;
+}
+.global_menu_box .cnt .glist1 a{
+	background: transparent url(../images/icon1_01.png) no-repeat;
+	background-position: 10px center;
+}
+.global_menu_box .cnt .glist2 a{
+	background: transparent url(../images/icon2_01.png) no-repeat;
+	background-position: 10px center;
+}
+.global_menu_box .cnt .glist3 a{
+	background: transparent url(../images/icon3_01.png) no-repeat;
+	background-position: 10px center;
+}
+
+#tmp_hnavi_rmenu a::before {
+  position: absolute;
+  left: 23px;
+  top: 16px;
+  content: '';
+  width: 48px;
+  height: 30px;
+  color: inherit;
+}
+#tmp_hnavi_rmenu a {
+  position: relative;
+  padding: 52px 5px 7px;
+  min-width: 90px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  font-size: 114.3%;
+	color: #FFF;
+  text-decoration: none;
+}
+
+
+.global_menu_box {
+	min-width: 525px;
+	min-height: 578px;
+}
+.global_menu_box .cnt{
+	background: #FFFFFF;
+	border: 3px solid #044684;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius:5px;
+}
+#tmp_sma_menu {
+
+    position: relative;
+    top: -1px;
+}
+.global_menu_box .cnt ul li{
+	list-style:none;
+	border-bottom: 2px solid #dcdcdc;
+}
+.global_menu_box .cnt ul li a{
+	background-color: #FFFFFF;
+	display: block;
+	margin:0;
+	padding: 26px 10px 26px 72px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #222222;
+	font-size: 133.34%;
+}
+.global_menu_box .cnt ul li a:hover,
+.global_menu_box .cnt ul li a:focus{
+	background-color:#cde9f7;
+}
+.global_menu_box .cnt ul.ul2 li a{
+	background: transparent url(../images/blue_arrow01.png) no-repeat;
+	background-position: 20px center;
+}
+.global_menu_box .cnt ul.ul2 li a{
+	background-color: #F5F5F5;
+	font-size: 111.12%;
+	padding: 13px 10px 15px 72px;
+}
+.global_menu_box .cnt ul.ul2 li a:hover,
+.global_menu_box .cnt ul.ul2 li a:focus{
+	background-color:#cde9f7;
+}
+.other_info{
+  color: #044684;
+  font-size:177.78%;
+  font-weight:bold;
+}
+.ul1{
+	margin-bottom: 35px;
+}
+
+.global_menu_box .cnt ul.ul2 li {
+  list-style: none;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+
+
+#menu{
+	background: #044684 url(../images/close_btn.png) no-repeat;
+	background-position: center 20px !important;
+	display: block;
+	color: #FFF;
+	font-weight: normal;
+	text-decoration: none;
+	z-index: 9999;
+	position: relative;
+	font-size: 111.12%;
+	padding:0;
+	padding-top: 50px;
+	border-radius: 8px;
+	min-width: 84px;
+	text-align: center;
+	position: absolute;
+    right: 0;
+}
+
+
+
+
+.ac_close{
+	background: #044684 url(../images/hamburger_menu.png) no-repeat !important;
+	background-position: center 20px !important;
+	display: block;
+	color: #FFF;
+	font-weight:normal;
+	text-decoration: none;
+	z-index: 9999;
+	position: relative;
+	font-size: 111.12%;
+	padding: 5px;
+	padding-top: 50px;
+	border-radius: 8px;
+	min-width: 84px;
+	text-align: center;
+}
+.global_menu_box .cnt a.active::before {
+	
+	left: 33%;
+    top: 17px;
+    width: 28px;
+    height: 28px;
+    background-size: auto;
+    background-size: auto;
+    background-size: 100% auto;
+}
+.global_menu_box .cnt a.hi_active::before {
+    left: 33%;
+    top: 17px;
+    width: 28px;
+    height: 28px;
+    background: transparent url(../images/close.png) no-repeat;
+    background-size: auto;
+    background-size: auto;
+    background-size: 100% auto;
+
+}
+
+.accordion1{
+	position: absolute;
+	z-index: 999;
+	top: 77px;
+	right: 26px;
+}
+
+.ac2{
+	display:block;
+}
+
+.ac3,
+.ac4{
+
+}
+
+
+
+
+
+.ac5{
+display:block;
+}
+
+
+
+
+/*----------------
+--ヘッダ
+------------------*/
+.header01{
+	width: 1120px;
+	margin:0 auto;
+	padding: 4px 0;
+}
+.header01 p{
+	color:#0f3d6f;
+	font-weight:bold;
+	font-size: 111.2%;
+}
+
+#tmp_wrapper{
+	background:url(../images/bg1_hiru.jpg) no-repeat;
+	background-size:cover;
+	background-position: center bottom;
+	z-index: inherit;
+	position: relative;
+	padding-bottom: 30px;
+	margin-bottom: 90px;
+}
+#tmp_wrapper.morning{
+	background-image:url(../images/bg1.jpg);
+}
+#tmp_wrapper.noon{
+	background-image:url(../images/bg1_hiru.jpg);
+}
+#tmp_wrapper.evening{
+	background-image:url(../images/bg1_yuugata.jpg);
+}
+#tmp_wrapper.evening2{
+	background-image:url(../images/bg1_yuugata2.jpg);
+}
+#tmp_wrapper.night{
+	background-image:url(../images/bg1_yoru.jpg);
+}
+#tmp_wrapper .container{
+	width:858px;
+	margin:0 auto;
+	max-height: 132px;
+	margin-top: -21px;
+	margin-left: 0;
+	margin-right: 0;
+}
+#tmp_wrapper .global_navi {
+	display: block;
+	width: 100%;
+	position: absolute;
+}
+#tmp_wrapper .global_navi:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+#tmp_wrapper .global_navi .gnavi_icon{
+	margin: 20px 20px 0 0;
+	float:right;
+	z-index: 30;
+	position: relative;
+}
+
+#tmp_wrapper .wrapper:before{
+	background: url(../images/line_left.png) no-repeat;
+	content: "";
+	width:516px;
+	height:284px;
+	display: inline-block;
+	background-size: cover;
+	background-position: right center;
+}
+#tmp_wrapper .wrapper:after{
+	background: url(../images/line_right.png) no-repeat;
+	content: "";
+	width: 532px;
+	height: 271px;
+	display: inline-block;
+	background-size: cover;
+	background-position: 8px bottom;
+}
+#tmp_wrapper .wrapper{
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	min-height: 288px;
+	padding-bottom: 255px;
+	padding-top: 49px;
+}
+#tmp_wrapper .container h1{
+	background: url(../images/smart_city_yaizu.png) no-repeat;
+	background-size: auto;
+	width: 823px;
+	height: 92px;
+	margin: 0 auto;
+	background-size: 100%;
+	z-index: 5;
+	position: relative;
+	margin-bottom: 15px;
+}
+#tmp_wrapper .container h1 span{
+	display:none;
+	z-index: -5;
+	position: relative;
+	width: 150px;
+	height: 50px;
+	overflow: hidden;
+}
+#tmp_wrapper .container h2{
+	background: url(../images/smart_city_yaizu_sub_title.png) no-repeat;
+	background-size: auto;
+	width:858px;
+	height:44px;
+	background-size: 100%;
+	font-size: 136%;
+	display: block;
+	z-index: 5;
+	position: relative;
+}
+#tmp_wrapper .container h2 span{
+	display:none;
+	z-index:-1;
+	position: relative;
+	font-size:50%;
+}
+#tmp_wrapper .container2{
+	
+}
+#tmp_wrapper .gmenu{
+	width:1089px;
+	margin:0 auto;
+}
+#tmp_wrapper .gmenu ul{
+	display:flex;
+	flex-wrap:nowrap;
+}
+#tmp_wrapper .gmenu ul li.list1 p .list_waku{
+	background:url(../images/icon1.png) no-repeat;
+	background-position:left top;
+	display:block;
+	padding-left: 85px;
+	font-weight:bold;
+	text-decoration:none;
+	width: 58%;
+	margin:0 auto;
+}
+#tmp_wrapper .gmenu ul li.list1 p a{
+	color:#0a4883;
+}
+
+#tmp_wrapper .gmenu ul li p a:after{
+	background: url(../images/arrow1.png) no-repeat;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 10px;
+	margin-top: 24px;
+	background-position: center top;
+}
+#tmp_wrapper .gmenu ul li.list2 p .list_waku{
+	background:url(../images/icon2.png) no-repeat;
+	background-position:left top;
+	display:block;
+	padding-left: 85px;
+		font-weight:bold;
+	text-decoration:none;
+	width: 71%;
+	margin:0 auto;
+	color: #044684;
+}
+#tmp_wrapper .gmenu ul li.list2 p a:hover .list_waku{
+	color: #FFFFFF;
+}
+#tmp_wrapper .gmenu ul li.list3 p .list_waku{
+	background:url(../images/icon3.png) no-repeat;
+	background-position:left top;
+	display:block;
+	padding-left: 85px;
+	font-weight:bold;
+	text-decoration:none;
+	width: 73%;
+	margin:0 auto;
+	color: #044684;
+}
+#tmp_wrapper .gmenu ul li.list3 p a:hover .list_waku{
+	color: #FFFFFF;
+}
+#tmp_wrapper .gmenu ul li p a{
+	display:block;
+	height:100%;
+	width:100%;
+	padding-top: 26px;
+	padding-bottom: 0;
+	text-decoration:none;
+	min-height: 144px;
+}
+
+#tmp_wrapper .gmenu ul li.list1 p a:hover .list_waku{
+	background-image:url(../images/icon1_white.png);
+}
+#tmp_wrapper .gmenu ul li.list2 p a:hover .list_waku{
+	background-image:url(../images/icon2_white.png);
+}
+#tmp_wrapper .gmenu ul li.list3 p a:hover .list_waku{
+	background-image:url(../images/icon3_white.png);
+}
+#tmp_wrapper .gmenu ul li p a:hover{
+	color:#FFFFFF;
+	background-color: #044684;
+	background-repeat:no-repeat;
+	background-position:left top;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#tmp_wrapper .gmenu ul li{
+	width:340px;
+	list-style:none;
+	background: #FFFFFF;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-right: 34px;
+	line-height: 1.1;
+	font-size: 133.4%;
+}
+#tmp_wrapper .gmenu ul li:last-child{
+	margin-right:0;
+}
+
+.big_txt{
+	font-size: 183.3%;
+}
+/*----------------
+--お知らせ
+------------------*/
+.container3{
+  width: 979px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom:100px;
+}
+.container3:after{
+	content: "";
+	width: 979px;
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	position: relative;
+	height: 8px;
+	margin-bottom: 100px;
+	background: url(../images/hr.gif) repeat-x;
+	background-position: center top;
+	display: block;
+	margin-top: 90px;
+}
+.container3 .container3_ttl h2:after{
+	border-bottom: 5px solid #17c5e4;
+	width: 75px;
+	content: "";
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0px;
+	margin-bottom: 30px;
+}
+.container3 .container3_ttl{
+  min-width: 75px;
+  margin: 0 auto;
+  text-align: center;
+}
+.container3 .container3_ttl h2{
+	font-size:244.5%;
+}
+.container3 .container3_cnt ul li{
+	background:url(../images/circle.png) no-repeat;
+	background-position: left 0.5em;
+	list-style:none;
+	padding-left: 20px;
+}
+.container3 .container3_cnt{
+  width: 80%;
+  margin: 0 auto;
+}
+.container3 ul li p{
+	font-size:100%;
+}
+.red_txt{
+	color:#FF0000;
+	font-weight:bold;
+}
+/*----------------
+--地域課題の解決や新たな価値・サービスの創出に向けて
+------------------*/
+.container4{
+	width: 980px;
+	margin:0 auto;
+	position:relative;
+	padding-top: 72px;
+	padding-bottom:72px;
+	margin-bottom: 5.6em;
+}
+.container4:before{
+	content:"";
+	width:50px;
+	height:50px;
+	display:inline-block;
+	background:url(../images/kado.png) no-repeat;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.container4:after{
+	content: "";
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	background: url(../images/kado3.png) no-repeat;
+	position:absolute;
+	left: 0;
+	bottom: 0;
+}
+.container4 .container4_sub_box:before{
+	content:"";
+	width:50px;
+	height:50px;
+	display:inline-block;
+	background:url(../images/kado2.png) no-repeat;
+	position:absolute;
+	right:0;
+	top:0;
+}
+.container4 .container4_sub_box:after{
+	content:"";
+	width:50px;
+	height:50px;
+	display:inline-block;
+	background:url(../images/kado4.png) no-repeat;
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+.container4 .container4_ttl{
+	margin-bottom:1em;
+}
+h2{
+	font-size:244.5%;
+	font-weight:bold;
+}
+.container4 .container4_cnt{
+	width:663px;
+	margin:0 auto;
+	margin-bottom: 23px;
+}
+.container4 .container4_cnt p{
+	font-weight:bold;
+}
+.container4 h2{
+	text-align:center;
+}
+/*----------------
+--地図で見る焼津
+------------------*/
+.container5{
+	width:100%;
+	position:relative;
+	padding-top: 86px;
+	padding-bottom: 40px;
+	margin-bottom: 95px;
+	background:url(../images/blue_square.jpg) no-repeat;
+	background-size:cover;
+	box-shadow: inset 0 0 8px #cccccc;
+}
+
+.container5 .container5_sub_box{
+	width: 1154px;
+	margin:0 auto;
+	background:url(../images/yaizu_map_illust_icon.png) no-repeat;
+	background-position: right bottom;
+	min-height: 470px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.container5 .container5_cnt{
+	width:100%;
+}
+.container5 .container5_cnt2{
+	max-width: 490px;
+}
+.container5 .container5_cnt2 p{
+	padding-left: 22px;
+}
+.container5 .container5_sub_box .container5_ttl{
+	padding-left: 120px;
+	background-position: left top;
+	background: url(../images/icon1_2.png) no-repeat;
+	margin-bottom: 30px;
+	min-height: 95px;
+	background-position: 16px center;
+}
+.container5_ttl{
+	color:#222222;
+	width:100%;
+}
+.container5_ttl p{
+  font-size: 112.5%;
+}
+.container5 h2,
+.container6 h2,
+.container7 h2{
+	line-height:1;
+	margin-bottom: 0.2em;
+}
+.container5 .container5_ttl p,
+.container6 .container6_ttl p,
+.container7 .container7_ttl p{
+	font-weight:bold;
+}
+.data_map p a{
+	display: inline-block;
+	border-radius: 40px;
+	border: 2px solid #0390d9;
+	background: #FFFFFF;
+	color: #222;
+	text-decoration: none;
+	padding: 22px 52px;
+	font-weight: bold;
+	min-width: 415px;
+}
+
+.data_map p a:hover{
+	display: inline-block;
+	border-radius: 40px;
+	border: 2px solid #044684;
+	background: #044684;
+	color: #FFF;
+	text-decoration: none;
+	padding: 22px 52px;
+	font-weight: bold;
+}
+.data_map p a:hover span{
+	background:url(../images/white_arrow_main.png) no-repeat;
+	background-position: right center;
+}
+.data_map p a span{
+	display: block;
+	background:url(../images/arrow2.jpg) no-repeat;
+	background-position:right center;
+}
+.data_map{
+	padding: 10px 10px 10px 0;
+	margin-top: 50px;
+	min-width:416px;
+}
+.container5 .container5_cnt2 .data_map p{
+	padding-left:17px;
+}
+/*----------------
+--データで見る焼津
+------------------*/
+.container6{
+	width: 1190px;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 63px;
+	margin: 0 auto;
+}
+.container6 .container6_cnt{
+	width:100%;
+}
+.container6 .container6_cnt p{
+  padding-left:22px;
+}
+.container6 .container6_ttl{
+	padding-left: 120px;
+	background-position: left top;
+	background: url(../images/icon2_2.png) no-repeat;
+	margin-bottom: 30px;
+	min-height: 95px;
+	background-position: 16px center;
+}
+.container6_ttl{
+	color:#222222;
+	width:100%;
+}
+.container6_ttl p{
+  font-size: 112.5%;
+}
+.container6 .data_map {
+	position:absolute;
+	top: -29px;
+	right: 0;
+}
+.container6_sub_box{
+  margin-bottom: 25px;
+}
+.tableauPlaceholder{
+	margin-bottom:63px;
+}
+/*----------------
+--データで活用する焼津
+------------------*/
+.container7{
+	width:100%;
+	position:relative;
+	padding-top: 30px;
+	padding-bottom: 69px;
+	background:url(../images/blue_square2.jpg) no-repeat;
+	background-size:cover;
+	box-shadow: inset 0 0 8px #cccccc;
+}
+.container7 .container7_sub_box{
+	width: 1154px;
+	margin:0 auto;
+	background:url(../images/yaizu_api_illust_icon.png) no-repeat;
+	background-position: right 88px;
+	min-height: 650px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.container7 .container7_sub_box .container7_sub2_box{
+	margin-top: -75px;
+}
+.container7 .container7_cnt{
+	width:100%;
+}
+.container7 .container7_cnt2{
+	max-width:450px;
+}
+.container7 .container7_sub_box .container7_ttl{
+	padding-left: 120px;
+	background-position: left top;
+	background: url(../images/icon3_2.png) no-repeat;
+	margin-bottom: 30px;
+	background-position: 16px center;
+	padding-top: 5px;
+	min-height: 95px;
+}
+.container7_ttl{
+	color:#222222;
+	width:100%;
+}
+.container7_ttl p{
+  font-size: 112.5%;
+}
+.container7_cnt p{
+	padding-left:22px;
+}
+.container7 .container7_cnt2 .data_map p {
+  padding-left: 17px;
+}
+/*----------------
+--other information
+------------------*/
+.other{
+	background:#f5f5f5;
+	padding-top: 95px;
+}
+.other_info_left_ttl{
+	padding-left:0;
+	margin-bottom: 22px;
+	min-height: auto;
+}
+.other_infomation_box .other_infomation_ttl h4{
+	color:#044684;
+	font-size:311.2%;
+	font-weight:bold;
+	text-align:center;
+	margin-bottom: 37px;
+}
+.other_infomation_box{
+	width: 1056px;
+	margin: 0 auto;
+	padding-bottom: 130px;
+}
+.other_infomation_cnt{
+  display: flex;
+}
+.other_info_left_ttl h5{
+    color: #222222;
+    font-size: 188.9%;
+    padding-left: 88px;
+    background: url(../images/line.png) no-repeat;
+    padding-bottom: 0.7em;
+}
+
+.other_info_right_ttl h5{
+    color: #222222;
+    font-size: 188.9%;
+    padding-left: 88px;
+    background: url(../images/jigyousya.png) no-repeat;
+    padding-bottom: 0.7em;
+}
+.other_info_left_box{
+    border-right: 1px solid #dcdcdc;
+    padding-right: 60px;
+    width: 50%;
+}
+.other_info_right_box{
+	padding-left: 60px;
+	width: 50%;
+}
+.other_info_right_ttl{
+	margin-bottom:22px;
+}
+.yaizu_line p a{
+	background: url(../images/yaizu_line.png) no-repeat;
+	width:472px;
+	height:135px;
+	display:block;
+	
+}
+.yaizu_line p a span{
+	z-index:-1;
+	position:relative;
+	display:none;
+}
+.yaizu_bousai_mail a{
+	padding-left:35px;
+	background: url(../images/arrow_blue.png) no-repeat;
+	background-position:left center;
+	color:#222222;
+	text-decoration:none;
+	  font-weight:bold;
+  margin-left:10px;
+	
+}
+.yaizu_bousai_mail a:hover{
+	text-decoration:underline;
+}
+.map_txt{
+  margin-bottom: 36px;
+}
+.furusato_nouzei_txt{
+	margin-bottom: 60px;
+}
+.yaizu_line{
+  margin-bottom: 15px;
+
+}
+
+/*----------------
+--フッター
+------------------*/
+.list01 p a{
+	font-size:90%;
+}
+.footer_wrapper{
+	background:#044684;
+	padding-top:40px;
+	padding-bottom:40px;
+	padding-left:20px;
+	padding-right:20px;
+	color: #FFFFFF;
+	position:relative;
+}
+.footer{
+	width:1200px;
+	margin:0 auto;
+	display: flex;
+	position: relative;
+}
+.footer .footer_box{
+	
+}
+.footer .footer_left_ttl p{
+	font-size: 133.34%;
+	font-weight: bold;
+}
+.footer .footer_left_cnt address p{
+	font-style: normal;
+	line-height: 1.7;
+}
+.footer .footer_right_box{
+	width: 30%;
+}
+.footer .footer_right_box ul {
+	list-style:none;
+}
+
+.footer .footer_right_box ul li a{
+	padding: 20px 10px 20px 40px;
+	display: block;
+	background: url(../images/white_arrow.png) no-repeat;
+	text-decoration: none;
+	color: #FFF;
+	background-position:10px center;
+}
+.footer .footer_right_box ul li a:hover{
+	background-color:#cde9f7;
+	background-position:10px center;
+	background-image:url(../images/arrow_blue3.png);
+	background-repeat:no-repeat;
+	color:#044684;
+}
+.footer .footer_left_box{
+	width: 70%;
+	background: url(../images/yaizu_city_mark.png) no-repeat;
+	padding-left: 184px;
+	min-height: 150px;
+}
+.sub_txt{
+	margin-bottom: 0.7em;
+}
+.footer_right_cnt .yaizu_city a{
+	background: #FFF;
+	display: block;
+	border-radius: 40px;
+	padding: 15px 25px 15px 52px;
+	position: relative;
+	text-decoration: none;
+	color: #222;
+}
+.footer_right_cnt .yaizu_city a:hover {
+  background-color: #cde9f7;
+}
+.footer_right_cnt .yaizu_city a:before{
+	content: "";
+	width: 27px;
+	height: 27px;
+	background: url(../images/yaizu_city.png) no-repeat;
+	background-position: left center;
+	display: inline-block;
+	position: absolute;
+	left: 15px;
+	top: 26%;
+}
+.footer_right_cnt .yaizu_city a:after{
+	content: "";
+	width: 16px;
+	height: 16px;
+	background: url(../images/gaibu.png) no-repeat;
+	background-position:right center;
+	display: inline-block;
+	position: absolute;
+	right: 19px;
+	top: 37%;
+}
+.footer_right_ttl{
+	margin-bottom: 25px;
+}
+.footer_right_ttl ul{
+	border-top:1px solid #FFFFFF;
+}
+.footer_right_ttl ul li{
+	border-bottom: 1px solid #FFFFFF;
+}
+.footer_right_ttl ul li p{
+	
+}
+.footer_address{
+	text-align:center;
+	color:#044684;
+	font-size:88.89%;
+}
+.page_top a{
+	background: url(../images/arrow_top.png) no-repeat;
+	width:74px;
+	height:68px;
+	display:block;
+	background-position:center;
+	position:absolute;
+	right:0;
+	top: -107px;
+}
+.page_top a:hover{
+	background: url(../images/arrow_top2.png) no-repeat;
+	background-position:center;
+	position:absolute;
+	right:0;
+	top: -107px;
+}
+.page_top a span{
+	display:none;
+}
+
