@@ -20,6 +20,9 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | ごみ焼却場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/garbagePlant) | | [GeoJSON](https://yaizu-smartcity.jp/garbagePlant/data.geojson) | |
 | さくら並木管理調書 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/さくら並木管理調書) | | [GeoJSON](https://yaizu-smartcity.jp/さくら並木管理調書/data.geojson) | |
 | し尿処理場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/sewageTreatmentPlant) | | [GeoJSON](https://yaizu-smartcity.jp/sewageTreatmentPlant/data.geojson) | |
+| ハイキングコース | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ハイキングコース) | | [GeoJSON](https://yaizu-smartcity.jp/ハイキングコース/data.geojson) | |
+| ハイキングコース（地点） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ハイキングコース_地点) | | [GeoJSON](https://yaizu-smartcity.jp/ハイキングコース_地点/data.geojson) | |
+| ハイキングコース（破線） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ハイキングコース_破線) | | [GeoJSON](https://yaizu-smartcity.jp/ハイキングコース_破線/data.geojson) | |
 | ポスター掲示場所 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/選挙ポスター掲示場位置図) | | [GeoJSON](https://yaizu-smartcity.jp/選挙ポスター掲示場位置図/data.geojson) | |
 | ポンプ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ポンプ) | | [GeoJSON](https://yaizu-smartcity.jp/ポンプ/data.geojson) | |
 | 中学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/中学校区) | | [GeoJSON](https://yaizu-smartcity.jp/中学校区/data.geojson) | |
