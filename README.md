@@ -16,19 +16,15 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
-| グリーンベルト | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/グリーンベルト) | | [GeoJSON](https://yaizu-smartcity.jp/グリーンベルト/data.geojson) | |
+| あんしん歩行エリア整備台帳（整備区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あんしん歩行エリア整備台帳) | | [GeoJSON](https://yaizu-smartcity.jp/あんしん歩行エリア整備台帳/data.geojson) | |
 | ごみ焼却場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/garbagePlant) | | [GeoJSON](https://yaizu-smartcity.jp/garbagePlant/data.geojson) | |
 | さくら並木管理調書 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/さくら並木管理調書) | | [GeoJSON](https://yaizu-smartcity.jp/さくら並木管理調書/data.geojson) | |
 | し尿処理場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/sewageTreatmentPlant) | | [GeoJSON](https://yaizu-smartcity.jp/sewageTreatmentPlant/data.geojson) | |
 | ハイキングコース | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ハイキングコース) | | [GeoJSON](https://yaizu-smartcity.jp/ハイキングコース/data.geojson) | |
 | ハイキングコース（地点） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ハイキングコース_地点) | | [GeoJSON](https://yaizu-smartcity.jp/ハイキングコース_地点/data.geojson) | |
 | ハイキングコース（破線） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ハイキングコース_破線) | | [GeoJSON](https://yaizu-smartcity.jp/ハイキングコース_破線/data.geojson) | |
-| ポスター掲示場所 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/選挙ポスター掲示場位置図) | | [GeoJSON](https://yaizu-smartcity.jp/選挙ポスター掲示場位置図/data.geojson) | |
-| ポンプ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ポンプ) | | [GeoJSON](https://yaizu-smartcity.jp/ポンプ/data.geojson) | |
 | 中学校区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/中学校区) | | [GeoJSON](https://yaizu-smartcity.jp/中学校区/data.geojson) | |
-| 交差点 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/交差点) | | [GeoJSON](https://yaizu-smartcity.jp/交差点/data.geojson) | |
 | 交通分析ダッシュボード | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/交通分析ダッシュボード) | | [GeoJSON](https://yaizu-smartcity.jp/交通分析ダッシュボード/data.geojson) | |
-| 付属設備 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/付属設備) | | [GeoJSON](https://yaizu-smartcity.jp/付属設備/data.geojson) | |
 | 住まいるエリア（居住誘導区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/smileArea) | | [GeoJSON](https://yaizu-smartcity.jp/smileArea/data.geojson) | |
 | 住まいるシティ拠点エリア（都市機能誘導区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/smileCityHubArea) | | [GeoJSON](https://yaizu-smartcity.jp/smileCityHubArea/data.geojson) | |
 | 公園・緑地 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/park) | | [GeoJSON](https://yaizu-smartcity.jp/park/data.geojson) | |
@@ -36,7 +32,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 内瀬戸谷川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/内瀬戸谷川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/内瀬戸谷川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 副管 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/副管) | | [GeoJSON](https://yaizu-smartcity.jp/副管/data.geojson) | |
 | 区画整理地図 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/区画整理地図) | | [GeoJSON](https://yaizu-smartcity.jp/区画整理地図/data.geojson) | |
-| 区画線 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/区画線) | | [GeoJSON](https://yaizu-smartcity.jp/区画線/data.geojson) | |
 | 取付管 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/取付管) | | [GeoJSON](https://yaizu-smartcity.jp/取付管/data.geojson) | |
 | 商業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/commercialArea) | | [GeoJSON](https://yaizu-smartcity.jp/commercialArea/data.geojson) | |
 | 土地区画整理事業区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/landProjectArea) | | [GeoJSON](https://yaizu-smartcity.jp/landProjectArea/data.geojson) | |
@@ -71,7 +66,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 志太田中川_洪水浸水想定区域（浸水継続時間） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/志太田中川_洪水浸水想定区域（浸水継続時間）) | | [GeoJSON](https://yaizu-smartcity.jp/志太田中川_洪水浸水想定区域（浸水継続時間）/data.geojson) | |
 | 成案寺川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/成案寺川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/成案寺川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 指定区域(砂防三法)マップ-砂防三法_地すべり防止区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/指定区域(砂防三法)マップ-砂防三法_地すべり防止区域) | | [GeoJSON](https://yaizu-smartcity.jp/指定区域(砂防三法)マップ-砂防三法_地すべり防止区域/data.geojson) | |
-| 整備区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/整備区域) | | [GeoJSON](https://yaizu-smartcity.jp/整備区域/data.geojson) | |
 | 文化財マップ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/文化財マップ) | | [GeoJSON](https://yaizu-smartcity.jp/文化財マップ/data.geojson) | |
 | 昔の焼津と比べてみよう | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/昔の焼津と比べてみよう) | | [GeoJSON](https://yaizu-smartcity.jp/昔の焼津と比べてみよう/data.geojson) | |
 | 朝比奈川_家屋倒壊等氾濫想定（河岸侵食） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/朝比奈川_家屋倒壊等氾濫想定（河岸侵食）) | | [GeoJSON](https://yaizu-smartcity.jp/朝比奈川_家屋倒壊等氾濫想定（河岸侵食）/data.geojson) | |
@@ -81,7 +75,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 木屋川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/木屋川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/木屋川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 木屋川_洪水浸水想定区域（浸水継続時間） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/木屋川_洪水浸水想定区域（浸水継続時間）) | | [GeoJSON](https://yaizu-smartcity.jp/木屋川_洪水浸水想定区域（浸水継続時間）/data.geojson) | |
 | 木屋川_洪水浸水想定区域（計画規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/木屋川_洪水浸水想定区域（計画規模）) | | [GeoJSON](https://yaizu-smartcity.jp/木屋川_洪水浸水想定区域（計画規模）/data.geojson) | |
-| 林道 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/林道) | | [GeoJSON](https://yaizu-smartcity.jp/林道/data.geojson) | |
 | 栃山川_家屋倒壊等氾濫想定（河岸侵食） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/栃山川_家屋倒壊等氾濫想定（河岸侵食）) | | [GeoJSON](https://yaizu-smartcity.jp/栃山川_家屋倒壊等氾濫想定（河岸侵食）/data.geojson) | |
 | 栃山川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/栃山川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/栃山川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 栃山川_洪水浸水想定区域（浸水継続時間） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/栃山川_洪水浸水想定区域（浸水継続時間）) | | [GeoJSON](https://yaizu-smartcity.jp/栃山川_洪水浸水想定区域（浸水継続時間）/data.geojson) | |
@@ -141,7 +134,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 状況類似地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/状況類似地区) | | [GeoJSON](https://yaizu-smartcity.jp/状況類似地区/data.geojson) | |
 | 用水受益区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/用水受益区域) | | [GeoJSON](https://yaizu-smartcity.jp/用水受益区域/data.geojson) | |
 | 用水受益区域（用水線） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/用水受益区域_用水線) | | [GeoJSON](https://yaizu-smartcity.jp/用水受益区域_用水線/data.geojson) | |
-| 看板設置箇所 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/看板設置箇所) | | [GeoJSON](https://yaizu-smartcity.jp/看板設置箇所/data.geojson) | |
 | 石脇川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/石脇川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/石脇川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 第一種中高層住居専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat1MediumHighResidentialArea) | | [GeoJSON](https://yaizu-smartcity.jp/cat1MediumHighResidentialArea/data.geojson) | |
 | 第一種低層住居専用地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cat1LowResidentialArea) | | [GeoJSON](https://yaizu-smartcity.jp/cat1LowResidentialArea/data.geojson) | |
@@ -163,16 +155,15 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 路線網図 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/roadDetailMap) | | [GeoJSON](https://yaizu-smartcity.jp/roadDetailMap/data.geojson) | |
 | 農業地域振興計画 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農業地域振興計画) | | [GeoJSON](https://yaizu-smartcity.jp/農業地域振興計画/data.geojson) | |
 | 農業用施設図 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農業用施設図) | | [GeoJSON](https://yaizu-smartcity.jp/農業用施設図/data.geojson) | |
-| 農道 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農道) | | [GeoJSON](https://yaizu-smartcity.jp/農道/data.geojson) | |
+| 農道一般平面図（林道） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農道一般平面図_林道) | | [GeoJSON](https://yaizu-smartcity.jp/農道一般平面図_林道/data.geojson) | |
+| 農道一般平面図（農道） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農道一般平面図_農道) | | [GeoJSON](https://yaizu-smartcity.jp/農道一般平面図_農道/data.geojson) | |
 | 近隣商業地域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/commercialAreaNeighbor) | | [GeoJSON](https://yaizu-smartcity.jp/commercialAreaNeighbor/data.geojson) | |
 | 道路台帳図 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/roadBaseMap) | | [GeoJSON](https://yaizu-smartcity.jp/roadBaseMap/data.geojson) | |
 | 都市計画道路 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/cityPlanLoad) | | [GeoJSON](https://yaizu-smartcity.jp/cityPlanLoad/data.geojson) | |
-| 配水池 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/配水池) | | [GeoJSON](https://yaizu-smartcity.jp/配水池/data.geojson) | |
 | 配水管 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/配水管) | | [GeoJSON](https://yaizu-smartcity.jp/配水管/data.geojson) | |
 | 雨水函渠形状_3 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/雨水函渠形状_3) | | [GeoJSON](https://yaizu-smartcity.jp/雨水函渠形状_3/data.geojson) | |
 | 雨水函渠形状_5 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/雨水函渠形状_5) | | [GeoJSON](https://yaizu-smartcity.jp/雨水函渠形状_5/data.geojson) | |
 | 雨水分流管渠マンホール_3 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/雨水分流管渠マンホール_3) | | [GeoJSON](https://yaizu-smartcity.jp/雨水分流管渠マンホール_3/data.geojson) | |
-| 鞘管 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/鞘管) | | [GeoJSON](https://yaizu-smartcity.jp/鞘管/data.geojson) | |
 | 駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/parking) | | [GeoJSON](https://yaizu-smartcity.jp/parking/data.geojson) | |
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/highUseArea) | | [GeoJSON](https://yaizu-smartcity.jp/highUseArea/data.geojson) | |
 | 高草川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高草川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/高草川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
