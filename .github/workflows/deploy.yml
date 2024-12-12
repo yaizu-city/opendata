@@ -136,6 +136,8 @@ jobs:
           fi
         shell: bash
 
+      # デフォルトの GeoJSON をコピー
+      - run: node ./src/copy-geojson.js
       - run: npm run build-standard-data
       - run: npm run build-api
       - run: npm run build-data-updates
@@ -170,16 +172,16 @@ jobs:
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
 
-      - name: Deploy to S3（差分削除）
-        if: github.ref == 'refs/heads/main'
-        run: |
-          if [[ -s deleted_dirs.txt ]]; then
-            while read -r dir; do
-              echo "Removing directory: $dir"
-              # 必要に応じてS3バケットやビルド環境から削除
-              aws s3 rm "s3://yaizu-smartcity-jp-frontend-v1/$dir" --recursive
-            done < deleted_dirs.txt
-          else
-            echo "No deleted directories detected."
-          fi
-        shell: bash
+      # - name: Deploy to S3（差分削除）
+      #   if: github.ref == 'refs/heads/main'
+      #   run: |
+      #     if [[ -s deleted_dirs.txt ]]; then
+      #       while read -r dir; do
+      #         echo "Removing directory: $dir"
+      #         # 必要に応じてS3バケットやビルド環境から削除
+      #         aws s3 rm "s3://yaizu-smartcity-jp-frontend-v1/$dir" --recursive
+      #       done < deleted_dirs.txt
+      #     else
+      #       echo "No deleted directories detected."
+      #     fi
+      #   shell: bash
