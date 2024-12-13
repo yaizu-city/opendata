@@ -19,12 +19,10 @@ for dir in "$@"; do
         # ベースファイル名とカテゴリディレクトリを生成
         base=$(basename "$shpfile" .shp)
         category=$(dirname "$shpfile" | xargs basename)
-        output_dir="build/$category"
 
-        # 出力ディレクトリが存在しない場合は作成
-        if [ ! -d "$output_dir" ]; then
-            mkdir -p "$output_dir"
-        fi
+        # $dir が / で終わっている場合は削除
+        output_dir="${dir%/}"
+        echo "Output directory: $output_dir"
 
         # .prj ファイルの存在確認と Shift_JIS から UTF-8 への変換
         prj_file="${shpfile%.shp}.prj"
@@ -51,53 +49,5 @@ for dir in "$@"; do
         ogr2ogr -f GeoJSON "$geojson_file" "$temp_file"
         rm -f "${temp_file}"* # 関連する一時ファイルの削除
         echo "Converted Shape to GeoJSON: $geojson_file"
-
-        # ------------------------------
-        # 属性名変換
-        # ------------------------------
-        translate_file="data/$category/attributes.csv"
-        mapping_file="data/$category/attributes.json"
-
-        if [ ! -f "$translate_file" ];then
-            echo "Attribute translate file not found: $translate_file"
-            continue
-        fi
-
-        # CSV から JSON マッピングファイルを生成
-        node src/csv2json.js "$translate_file"
-
-        if [ ! -f "$mapping_file" ]; then
-            echo "Mapping file not generated: $mapping_file"
-            continue
-        fi
-
-        # GeoJSON 属性名変換と_titleキー追加
-        jq --slurpfile mapping "$mapping_file" '
-        $mapping[0] as $m |
-        # 1回目のループ: キー名変換
-        .features |= map(
-            .properties |= with_entries(
-            .key as $key |
-            if ($m[]? | select(.original_name == $key)) then
-                .key = ($m[] | select(.original_name == $key) | .display_name)
-            else
-                .
-            end
-            )
-        ) |
-        # 2回目のループ: label_flag == "1" のとき_titleキーを追加
-        .features |= map(
-            reduce ($m[] | select(.label_flag == "1")) as $entry (.;
-            if .properties[$entry.display_name] != null then
-                .properties["_title"] = .properties[$entry.display_name]
-            else
-                .
-            end
-            )
-        )
-        ' "$geojson_file" > "${geojson_file}.tmp"
-
-        mv "${geojson_file}.tmp" "$geojson_file"
-        echo "Saved converted GeoJSON to $geojson_file"
     done
 done
