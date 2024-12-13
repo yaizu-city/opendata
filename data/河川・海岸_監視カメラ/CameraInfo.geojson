@@ -15,7 +15,8 @@
         "type": "CameraInformation",
         "Name": "田尻北（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=101"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=101",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -32,7 +33,8 @@
         "type": "CameraInformation",
         "Name": "田尻（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=102"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=102",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -49,7 +51,8 @@
         "type": "CameraInformation",
         "Name": "ディスカバリーパーク屋上（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=103"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=103",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -66,7 +69,8 @@
         "type": "CameraInformation",
         "Name": "栃山川河口右岸（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=104"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=104",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -83,7 +87,8 @@
         "type": "CameraInformation",
         "Name": "藤守川河口右岸（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=105"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=105",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -100,7 +105,8 @@
         "type": "CameraInformation",
         "Name": "高新田（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=106"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=106",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -117,7 +123,8 @@
         "type": "CameraInformation",
         "Name": "吉永（駿河海岸）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=107"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=107",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -134,7 +141,8 @@
         "type": "CameraInformation",
         "Name": "大井川左岸河口（大井川）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=108"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=108",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -151,7 +159,8 @@
         "type": "CameraInformation",
         "Name": "飯淵（大井川）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=109"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=109",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -168,7 +177,8 @@
         "type": "CameraInformation",
         "Name": "太平橋（大井川）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=110"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=110",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -185,7 +195,8 @@
         "type": "CameraInformation",
         "Name": "中島（大井川）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=111"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=111",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -202,7 +213,8 @@
         "type": "CameraInformation",
         "Name": "富士見橋（大井川）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=112"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=112",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -219,7 +231,8 @@
         "type": "CameraInformation",
         "Name": "東名大井川橋（大井川）",
         "Installer": "国設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=113"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=113",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -236,7 +249,8 @@
         "type": "CameraInformation",
         "Name": "石脇川河川監視カメラ（石脇川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=201"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=201",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -253,7 +267,8 @@
         "type": "CameraInformation",
         "Name": "入江橋（瀬戸川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=202"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=202",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -270,7 +285,8 @@
         "type": "CameraInformation",
         "Name": "黒石川河川監視カメラ（黒石川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=203"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=203",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -287,7 +303,8 @@
         "type": "CameraInformation",
         "Name": "木屋川河川監視カメラ（木屋川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=204"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=204",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -304,7 +321,8 @@
         "type": "CameraInformation",
         "Name": "新道橋河川監視カメラ（栃山川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=205"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=205",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -321,7 +339,8 @@
         "type": "CameraInformation",
         "Name": "葉梨川合流（葉梨川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=206"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=206",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     },
     {
@@ -338,7 +357,8 @@
         "type": "CameraInformation",
         "Name": "横内橋（朝比奈川）",
         "Installer": "県設置カメラ",
-        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=207"
+        "URL": "https://suibo.city.yaizu.lg.jp/api/camera.php?num=207",
+        "引用元": "国設置カメラ：国土交通省中部地方整備局静岡河川事務所ホームページ、静岡県カメラ：静岡県土木防災情報SIPOS-RADAR"
       }
     }
   ]
