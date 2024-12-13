@@ -136,8 +136,6 @@ jobs:
           fi
         shell: bash
 
-      # デフォルトの GeoJSON をコピー
-      - run: node ./src/copy-geojson.js
       - run: npm run build-standard-data
       - run: npm run build-api
       - run: npm run build-data-updates
