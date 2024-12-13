@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
 # 引数が指定されていない場合はエラーを出力
 if [ "$#" -eq 0 ]; then
@@ -12,14 +12,23 @@ for dir in "$@"; do
     echo "Processing directory: $dir"
 
     # 指定ディレクトリ内の.geojsonファイルを処理
-    find "$dir" -iname "*.geojson" | while read -r geojsonfile; do
-
-        echo "Convert Shape to GeoJSON: $geojsonfile"
+    find "$dir" -iname "*.geojson" | while read -r input_geojsonfile; do
+        echo "Convert Shape to GeoJSON: $input_geojsonfile"
 
         # カテゴリディレクトリを生成
-        category=$(dirname "$geojsonfile" | xargs basename)
+        category=$(dirname "$input_geojsonfile" | xargs basename)
         output_dir="build/$category"
-        geojson_file="${output_dir}/data.geojson"
+        mkdir -p "$output_dir"
+        output_geojson_file="${output_dir}/data.geojson"
+
+        if [ ! -f "$input_geojsonfile" ]; then
+            echo "Input file not found: $input_geojsonfile"
+            exit 1
+        fi
+
+        if [ ! -f "$output_geojson_file" ]; then
+            touch "$output_geojson_file"
+        fi
 
         # ------------------------------
         # 属性名変換
@@ -27,7 +36,7 @@ for dir in "$@"; do
         translate_file="data/$category/attributes.csv"
         mapping_file="data/$category/attributes.json"
 
-        if [ ! -f "$translate_file" ];then
+        if [ ! -f "$translate_file" ]; then
             echo "Attribute translate file not found: $translate_file"
             continue
         fi
@@ -40,31 +49,33 @@ for dir in "$@"; do
             continue
         fi
 
-        # GeoJSON 属性名変換と_titleキー追加
+        # jqで属性名変換と_titleキー追加
         jq --slurpfile mapping "$mapping_file" '
-            .features |= map(
-                # 1回目のループ: キー名の変換
-                .properties |= with_entries(
-                    .key as $key |
-                    if ($mapping[0][] | select(.original_name == $key)) then
-                        .key = ($mapping[0][] | select(.original_name == $key) | .display_name)
-                    else
-                        .
-                    end
-                )
-            ) |
-            .features |= map(
-                # 2回目のループ: label_flagが1の時に_titleキーを追加
-                ($mapping[0][] | select(.label_flag == "1")) as $entry |
-                if (.properties[$entry.display_name] != null) then
-                    .properties["_title"] = .properties[$entry.display_name]
-                else
-                    .
-                end
+        $mapping[0] as $m |
+        # 1回目のループ: キー名変換
+        .features |= map(
+            .properties |= with_entries(
+            .key as $key |
+            if ($m[]? | select(.original_name == $key)) then
+                .key = ($m[] | select(.original_name == $key) | .display_name)
+            else
+                .
+            end
             )
-        ' "$geojson_file" > "${geojson_file}.tmp"
+        ) |
+        # 2回目のループ: label_flag == "1" のとき_titleキーを追加
+        .features |= map(
+            reduce ($m[] | select(.label_flag == "1")) as $entry (.;
+            if .properties[$entry.display_name] != null then
+                .properties["_title"] = .properties[$entry.display_name]
+            else
+                .
+            end
+            )
+        )
+        ' "$input_geojsonfile" > "${output_geojson_file}.tmp"
 
-        mv "${geojson_file}.tmp" "$geojson_file"
-        echo "Saved converted GeoJSON to $geojson_file"
+        mv "${output_geojson_file}.tmp" "$output_geojson_file"
+        echo "Saved converted GeoJSON to $output_geojson_file"
     done
 done
