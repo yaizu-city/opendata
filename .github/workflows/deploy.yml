@@ -46,7 +46,7 @@ jobs:
       - run: npm run build-config-json
       - run: npm run test
 
-      # Excel を CSV に変換
+      # Excel を CSV に変換（TODO: 差分更新に変更）
       - run: npm run build-csv
         continue-on-error: true
         id: build-step
@@ -60,9 +60,6 @@ jobs:
           OWNER: "${{ github.repository_owner }}"
           REPO: "${{ github.event.repository.name }}"
           BRANCH: "${{ github.event.pull_request.head.ref }}"
-
-      # CSV を GeoJSON に変換
-      - run: npm run build-location-data
 
       - name: Install GDAL (for ogr2ogr)
         run: |
@@ -117,7 +114,13 @@ jobs:
           if [[ -s changed_dirs.txt ]]; then
             while read -r dir; do
               echo "Processing directory: $dir"
+
+              # CSV を GeoJSON に変換
+              node ./src/build-location-data.js "$dir"
+
+              # Shapeファイルを GeoJSON に変換
               ./src/shape2Geojson.sh "$dir"
+
             done < changed_dirs.txt
           else
             echo "No changes detected in data directories."

@@ -1,6 +1,6 @@
 const { writeFile, mkdir, copyFile } = require('fs/promises');
 const klaw = require('klaw');
-const { basename, dirname, join } = require('path');
+const { basename, join } = require('path');
 const XLSX = require('xlsx');
 
 const excel2csv = async (excelPath) => {
