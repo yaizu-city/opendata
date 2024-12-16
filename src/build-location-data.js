@@ -35,7 +35,7 @@ for (let i = 0; i < categories.length; i++) {
       }
 
       const category = path.basename(path.dirname(file));
-      const categoryPath = `build/${category}`;
+      const categoryPath = `data/${category}`;
       if (!fs.existsSync(categoryPath)) {
         fs.mkdirSync(categoryPath, { recursive: true });
       }
