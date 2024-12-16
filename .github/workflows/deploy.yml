@@ -46,7 +46,7 @@ jobs:
       - run: npm run build-config-json
       - run: npm run test
 
-      # Excel を CSV に変換
+      # Excel を CSV に変換（TODO: 差分更新に変更）
       - run: npm run build-csv
         continue-on-error: true
         id: build-step
