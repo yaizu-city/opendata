@@ -61,9 +61,6 @@ jobs:
           REPO: "${{ github.event.repository.name }}"
           BRANCH: "${{ github.event.pull_request.head.ref }}"
 
-      # CSV を GeoJSON に変換
-      - run: npm run build-location-data
-
       - name: Install GDAL (for ogr2ogr)
         run: |
           sudo apt-get update
@@ -117,7 +114,13 @@ jobs:
           if [[ -s changed_dirs.txt ]]; then
             while read -r dir; do
               echo "Processing directory: $dir"
+
+              # CSV を GeoJSON に変換
+              node ./src/build-location-data.js "$dir"
+
+              # Shapeファイルを GeoJSON に変換
               ./src/shape2Geojson.sh "$dir"
+
             done < changed_dirs.txt
           else
             echo "No changes detected in data directories."
