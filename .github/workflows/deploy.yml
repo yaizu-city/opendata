@@ -111,6 +111,7 @@ jobs:
 
       - name: GeoJSON に変換
         run: |
+          cat changed_dirs.txt
           if [[ -s changed_dirs.txt ]]; then
             while read -r dir; do
               echo "Processing directory: $dir"
