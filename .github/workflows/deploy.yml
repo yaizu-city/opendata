@@ -111,9 +111,11 @@ jobs:
 
       - name: GeoJSON に変換
         run: |
-          cat changed_dirs.txt
           if [[ -s changed_dirs.txt ]]; then
             while read -r dir; do
+              # 空行をスキップ
+              [[ -z "$dir" ]] && continue
+              
               echo "Processing directory: $dir"
 
               # CSV を GeoJSON に変換
@@ -132,6 +134,9 @@ jobs:
         run: |
           if [[ -s changed_dirs.txt ]]; then
             while read -r dir; do
+              # 空行をスキップ
+              [[ -z "$dir" ]] && continue
+              
               echo "Processing directory: $dir"
               ./src/convertAttributes.sh "$dir"
             done < changed_dirs.txt
