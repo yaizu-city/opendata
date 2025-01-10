@@ -2,6 +2,11 @@
 --リセット
 ------------------*/
 
+/* 色を 変数で定義 #cde9f7 */
+:root {
+	--secondary-color: #cde9f7;
+}
+
 *{
 	margin:0;
 	padding:0;
@@ -686,6 +691,7 @@ h2{
 	padding: 22px 52px;
 	font-weight: bold;
 	min-width: 415px;
+	margin: 5px 0;
 }
 
 .data_map p a:hover{
@@ -706,6 +712,7 @@ h2{
 	display: block;
 	background:url(../images/arrow2.jpg) no-repeat;
 	background-position:right center;
+	padding-right: 30px;
 }
 .data_map{
 	padding: 10px 10px 10px 0;
@@ -1033,5 +1040,20 @@ h2{
 }
 .page_top a span{
 	display:none;
+}
+
+
+/*----------------
+* Geolonia で追記分
+*------------------*/
+
+.text-link {
+	text-decoration: none;
+}
+.text-link.white {
+	color: #ffffff;
+}
+.text-link:hover {
+	color: var(--secondary-color);
 }
 
