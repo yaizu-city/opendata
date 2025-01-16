@@ -63,15 +63,20 @@ for dir in "$@"; do
             end
             )
         ) |
-        # 2回目のループ: label_flag == "1" のとき_titleキーを追加
+        # 2回目のループ: label_flag == "1" のときtitleキーを追加
         .features |= map(
             reduce ($m[] | select(.label_flag == "1")) as $entry (.;
             if .properties[$entry.display_name] != null then
-                .properties["_title"] = .properties[$entry.display_name]
+                .properties["title"] = .properties[$entry.display_name]
             else
                 .
             end
             )
+        ) |
+        # 3回目のループ: CSVの属性順に並び替える
+        .features |= map(
+            .properties as $original |
+            .properties = reduce ($m[]|select(.display_name?)) as $field ({}; .[$field.display_name] = $original[$field.display_name])
         )
         ' "$input_geojsonfile" > "${output_geojson_file}.tmp"
 
