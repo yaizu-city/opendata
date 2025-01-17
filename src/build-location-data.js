@@ -13,26 +13,6 @@ if (!targetDir) {
 
 console.log(`Processing directory: ${targetDir}`);
 
-// geojson がアップロードされている場合は build ディレクトリにコピーする
-const geojsonFiles = `${targetDir}/*.geojson`;
-glob(geojsonFiles, async (err, files) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-
-  for (let j = 0; j < files.length; j++) {
-    const file = files[j];
-    const category = path.basename(path.dirname(file));
-    const categoryPath = `build/${category}`;
-    if (!fs.existsSync(categoryPath)) {
-      fs.mkdirSync(categoryPath, { recursive: true });
-    }
-
-    fs.copyFileSync(file, `${categoryPath}/data.geojson`);
-  }
-});
-
 // csv を geojson に変換して build ディレクトリに保存する
 const csvFiles = `${targetDir}/*.csv`;
 glob(csvFiles, async (err, files) => {
@@ -49,13 +29,11 @@ glob(csvFiles, async (err, files) => {
       continue;
     }
 
-    const category = path.basename(path.dirname(file));
-    const categoryPath = `build/${category}`;
-    if (!fs.existsSync(categoryPath)) {
-      fs.mkdirSync(categoryPath, { recursive: true });
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
     }
 
-    const dest = fs.createWriteStream(`${categoryPath}/data.geojson`);
+    const dest = fs.createWriteStream(`${targetDir}/data.geojson`);
     const csvString = fs.readFileSync(file, 'utf8');
 
     try {
@@ -64,10 +42,6 @@ glob(csvFiles, async (err, files) => {
     } catch (err) {
       console.error(err);
       throw err;
-    }
-
-    if (files.length === 1) {
-      fs.copyFileSync(file, `${categoryPath}/data.csv`);
     }
   }
 });
