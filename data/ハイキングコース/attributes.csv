@@ -79,3 +79,6 @@ item77,区間_M_上り
 item78,区間_M_上り_所要時間
 item79,区間_M_下り
 item80,区間_M_下り_所要時間
+stroke,stroke
+stroke-width,stroke-width
+stroke-opacity,stroke-opacity
