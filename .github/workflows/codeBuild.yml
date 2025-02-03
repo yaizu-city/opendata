@@ -24,19 +24,24 @@ jobs:
         run: |
           apt-get update && \
           apt-get install -y \
-          curl \
-          jq \
-          tar \
-          gcc \
-          g++ \
-          make \
-          libsqlite3-dev \
-          zlib1g-dev \
-          gdal-bin \
-          nodejs \
-          npm \
-          nkf \
-          unzip
+            curl \
+            jq \
+            tar \
+            gcc \
+            g++ \
+            make \
+            libsqlite3-dev \
+            zlib1g-dev \
+            gdal-bin \
+            nodejs \
+            npm \
+            nkf \
+            unzip
+
+      - name: Install Golang
+        run: |
+          apt-get update && \
+          apt-get install -y golang-go
 
       - name: Install Tippicanoe
         run: |
@@ -51,21 +56,40 @@ jobs:
           tippecanoe --version
           ogr2ogr --version
 
-    # https://geolonia.github.io/smartcity-smartmap-v2-cli/repository.zip　から cli のコードを取得して unzip する
       - name: Download CLI
         run: |
           curl -L -O https://geolonia.github.io/smartcity-smartmap-v2-cli/repository.zip
-          unzip repository.zip -d ./bin
+          unzip repository.zip -d ./smartcity-smartmap-v2-cli
+          cd && npm install
+
+      - name: Download Excel
+        run: |
+          bash ./bin/download-xlsx.sh
+          mv ./output.xlsx ./smartcity-smartmap-v2-cli
 
       - name: Build Tile
         run: |
-          cd ./bin
-          bash ./download.sh
-          npm install
-          curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
-          bash ./main.sh . config.xlsx
-          
-      # - name: Upload Tile
-      #   run: |
-      #     aws s3 cp ./bin/output.mbtiles s3://yaizu-smartmap-config/output.mbtiles
-      #     aws s3 cp ./bin/app.yml s3://yaizu-smartmap-config/app.yml
+          cd smartcity-smartmap-v2-cli
+          bash ./main.sh . ./output.xlsx EPSG:6676
+
+      - name: Install go-pmtiles
+        run: |
+          # 最新版の go-pmtiles をインストール
+          go install github.com/protomaps/go-pmtiles/cmd/pmtiles@latest
+          # GOPATH/bin を PATH に追加
+          export PATH=$PATH:$(go env GOPATH)/bin
+          # インストール確認（ヘルプを表示）
+          pmtiles --help
+
+      - name: Install geolonia-admin
+        run: |
+          npm install -g ./bin/geolonia-geolonia-admin-1.0.1.tgz
+
+      - name: Upload Tile
+        run: |
+          cd smartcity-smartmap-v2-cli
+          # 最後のIDを変数に保存して、ログにも出力
+          export TILE_ID=$(pmtiles deploy ./output.mbtiles dev "yaizu-smartmap-$(date -u '+%Y%m%d-%H%M%S')-$(uuidgen | tr '[:upper:]' '[:lower:]')" | tail -n 1)
+          geolonia-admin pmtiles deploy ./output.mbtiles dev $TILE_ID
+          echo "以下のURLにタイルをデプロイしました"
+          echo "https://tileserver-dev.geolonia.com/$TILE_ID/tiles.json?key=YOUR-API-KEY"

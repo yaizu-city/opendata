@@ -22,7 +22,7 @@ else
     exit 1
 fi
 
-./main.sh . "${OUTPUT_FILE}" EPSG:6676
+# ./main.sh . "${OUTPUT_FILE}" EPSG:6676
 
 # node ./bin/xlsx2json.js "${OUTPUT_FILE}"
 # node bin/configToMenuYAML.js data.json app.yml
