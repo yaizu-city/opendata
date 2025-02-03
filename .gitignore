@@ -7,4 +7,4 @@ build/**/*.csv
 */**/attributes.json
 src/*-categories.json
 repository.zip
-smartcity-smartmap-v2-cli
+smartcity-smartmap-v2-cli/
