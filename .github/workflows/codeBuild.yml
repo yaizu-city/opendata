@@ -20,44 +20,52 @@ jobs:
         with:
           fetch-depth: 0
 
-#       - name: Install packages + GDAL
-#         run: |
-#           apt-get update && \
-#           apt-get install -y \
-#           curl \
-#           jq \
-#           tar \
-#           gcc \
-#           g++ \
-#           make \
-#           libsqlite3-dev \
-#           zlib1g-dev \
-#           gdal-bin \
-#           nodejs \
-#           npm
+      - name: Install packages + GDAL
+        run: |
+          apt-get update && \
+          apt-get install -y \
+          curl \
+          jq \
+          tar \
+          gcc \
+          g++ \
+          make \
+          libsqlite3-dev \
+          zlib1g-dev \
+          gdal-bin \
+          nodejs \
+          npm \
+          nkf \
+          unzip
 
-#       - name: Install Tippicanoe
-#         run: |
-#           TIPPECANOE_VERSION=2.66.0 && \
-#           curl -L https://github.com/felt/tippecanoe/archive/refs/tags/${TIPPECANOE_VERSION}.tar.gz -o tippecanoe.tar.gz && \
-#           tar -xzvf tippecanoe.tar.gz && \
-#           cd tippecanoe-${TIPPECANOE_VERSION} && \
-#           make -j && \
-#           make install
+      - name: Install Tippicanoe
+        run: |
+          TIPPECANOE_VERSION=2.66.0 && \
+          curl -L https://github.com/felt/tippecanoe/archive/refs/tags/${TIPPECANOE_VERSION}.tar.gz -o tippecanoe.tar.gz && \
+          tar -xzvf tippecanoe.tar.gz && \
+          cd tippecanoe-${TIPPECANOE_VERSION} && \
+          make -j && \
+          make install
 
-#       - run: |
-#           tippecanoe --version
-#           ogr2ogr --version
+      - run: |
+          tippecanoe --version
+          ogr2ogr --version
 
-#       - name: Build Tile
-#         run: |
-#           cd ./bin
-#           bash ./download.sh
-#           npm install
-#           curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
-#           bash ./main.sh . config.xlsx
+    # https://geolonia.github.io/smartcity-smartmap-v2-cli/repository.zip　から cli のコードを取得して unzip する
+      - name: Download CLI
+        run: |
+          curl -L -O https://geolonia.github.io/smartcity-smartmap-v2-cli/repository.zip
+          unzip repository.zip -d ./bin
+
+      - name: Build Tile
+        run: |
+          cd ./bin
+          bash ./download.sh
+          npm install
+          curl -L -O https://github.com/yaizu-city/app/raw/refs/heads/main/config.xlsx
+          bash ./main.sh . config.xlsx
           
-#       # - name: Upload Tile
-#       #   run: |
-#       #     aws s3 cp ./bin/output.mbtiles s3://yaizu-smartmap-config/output.mbtiles
-#       #     aws s3 cp ./bin/app.yml s3://yaizu-smartmap-config/app.yml
+      # - name: Upload Tile
+      #   run: |
+      #     aws s3 cp ./bin/output.mbtiles s3://yaizu-smartmap-config/output.mbtiles
+      #     aws s3 cp ./bin/app.yml s3://yaizu-smartmap-config/app.yml
