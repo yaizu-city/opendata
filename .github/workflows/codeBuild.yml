@@ -56,7 +56,8 @@ jobs:
         run: |
           curl -L -O https://geolonia.github.io/smartcity-smartmap-v2-cli/repository.zip
           unzip repository.zip -d ./smartcity-smartmap-v2-cli
-          cd && npm install
+          cd ./smartcity-smartmap-v2-cli
+          npm install
 
       - name: Download Excel
         run: |
