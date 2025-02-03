@@ -36,12 +36,8 @@ jobs:
             nodejs \
             npm \
             nkf \
-            unzip
-
-      - name: Install Golang
-        run: |
-          apt-get update && \
-          apt-get install -y golang-go
+            unzip \
+            golang-go
 
       - name: Install Tippicanoe
         run: |
@@ -84,6 +80,11 @@ jobs:
       - name: Install geolonia-admin
         run: |
           npm install -g ./bin/geolonia-geolonia-admin-1.0.1.tgz
+
+      # タイルをアップロードするためのAWSの認証情報を設定
+      - name: Assume Upper Account Role
+        id: assume-role
+        run: bash bin/assume-role.sh
 
       - name: Upload Tile
         run: |
