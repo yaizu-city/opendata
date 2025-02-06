@@ -76,7 +76,8 @@ for dir in "$@"; do
         # 3回目のループ: CSVの属性順に並び替える
         .features |= map(
             .properties as $original |
-            .properties = reduce ($m[]|select(.display_name?)) as $field ({}; .[$field.display_name] = $original[$field.display_name])
+            .properties = (reduce ($m[]|select(.display_name?)) as $field ({}; .[$field.display_name] = $original[$field.display_name])
+                        + {"title": $original.title})
         )
         ' "$input_geojsonfile" > "${output_geojson_file}.tmp"
 
