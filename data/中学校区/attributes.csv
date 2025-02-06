@@ -1,2 +1,6 @@
 original_name,display_name,label_flag
-item2,学校名
+item2,学校名,
+item3,注記,
+item4,問合先,
+item5,電話番号,
+
