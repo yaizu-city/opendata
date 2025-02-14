@@ -1,11 +1,5 @@
 original_name,display_name,label_flag
-SAUID,,
-SAUPDATE,,
-SAANGLE,,
-SASIZE,,
-SASYMBOLNO,,
 SAFIELD000,ID,
-SAFIELD001,種別,
 SAFIELD002,名称,
 SAFIELD003,方面,
 SAFIELD004,予約締め切り時間_3便,
