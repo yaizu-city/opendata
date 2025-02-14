@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "hiking_parking",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 43, "地点名称": "花沢の里臨時駐車場" }, "geometry": { "type": "Point", "coordinates": [ 138.329624907235058, 34.901326365460946 ] } },
+{ "type": "Feature", "properties": { "ID": 44, "地点名称": "花沢の里観光駐車場" }, "geometry": { "type": "Point", "coordinates": [ 138.332708100783634, 34.899848855781705 ] } },
+{ "type": "Feature", "properties": { "ID": 16, "地点名称": "三輪神社入口バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.29952583354688, 34.898244701503266 ] } },
+{ "type": "Feature", "properties": { "ID": 22, "地点名称": "小坂公民館前バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.345931076559253, 34.921751659922954 ] } },
+{ "type": "Feature", "properties": { "ID": 25, "地点名称": "日本坂PAバス停" }, "geometry": { "type": "Point", "coordinates": [ 138.321870438290716, 34.889538241011778 ] } },
+{ "type": "Feature", "properties": { "ID": 31, "地点名称": "林叟院入口バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.311443276468339, 34.892293392092327 ] } },
+{ "type": "Feature", "properties": { "ID": 20, "地点名称": "坂本バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.310120510235635, 34.890610265297916 ] } },
+{ "type": "Feature", "properties": { "ID": 49, "地点名称": "関方バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.302906111827696, 34.894219617192221 ] } },
+{ "type": "Feature", "properties": { "ID": 53, "地点名称": "高草山石脇入口バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.322198950059629, 34.891394309574096 ] } },
+{ "type": "Feature", "properties": { "ID": 51, "地点名称": "駐車場" }, "geometry": { "type": "Point", "coordinates": [ 138.315174178470329, 34.893751995833824 ] } },
+{ "type": "Feature", "properties": { "ID": 15, "地点名称": "三輪バス停" }, "geometry": { "type": "Point", "coordinates": [ 138.296577485703182, 34.901505122529862 ] } }
+]
+}

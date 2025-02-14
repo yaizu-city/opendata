@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>29942</LayerNo>
+    <Primitive>100</Primitive>
+    <AttributeTable>Atr_29942_0_2_20250210101501</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAANGLE">
+        <ColID />
+      </Field>
+      <Field id="SASIZE">
+        <ColID />
+      </Field>
+      <Field id="SASYMBOLNO">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>item1</ColID>
+        <DataType>L</DataType>
+        <Title>ID</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>item0</ColID>
+        <DataType>L</DataType>
+        <Title>種別</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>item2</ColID>
+        <DataType>S</DataType>
+        <Title>名称</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD003">
+        <ColID>item8</ColID>
+        <DataType>S</DataType>
+        <Title>方面</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD004">
+        <ColID>item9</ColID>
+        <DataType>S</DataType>
+        <Title>予約締め切り時間_3便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD005">
+        <ColID>item10</ColID>
+        <DataType>S</DataType>
+        <Title>予約締め切り時間_4便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD006">
+        <ColID>item11</ColID>
+        <DataType>S</DataType>
+        <Title>3便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD007">
+        <ColID>item12</ColID>
+        <DataType>S</DataType>
+        <Title>4便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD008">
+        <ColID>ITEM0001</ColID>
+        <DataType>S</DataType>
+        <Title>運行会社</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD009">
+        <ColID>ITEM0002</ColID>
+        <DataType>S</DataType>
+        <Title>電話番号（予約）</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD010">
+        <ColID>ITEM0003</ColID>
+        <DataType>S</DataType>
+        <Title>そのほか</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
