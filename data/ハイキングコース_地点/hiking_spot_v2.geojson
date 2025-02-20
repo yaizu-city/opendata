@@ -18,5 +18,5 @@
 { "type": "Feature", "properties": { "地点名称": "高草山大権現" }, "geometry": { "type": "Point", "coordinates": [ 138.319213, 34.905291 ] } },
 { "type": "Feature", "properties": { "地点名称": "高草山" }, "geometry": { "type": "Point", "coordinates": [ 138.3169496, 34.9054686 ] } },
 { "type": "Feature", "properties": { "地点名称": "満観峰" }, "geometry": { "type": "Point", "coordinates": [ 138.3261501, 34.922732 ] } },
-{ "type": "Feature", "properties": { "地点名称": "花沢山" }, "geometry": { "type": "Point", "coordinates": [ 138.3422816, 34.9078146 ] } },
+{ "type": "Feature", "properties": { "地点名称": "花沢山" }, "geometry": { "type": "Point", "coordinates": [ 138.3422816, 34.9078146 ] } }
 ]}
