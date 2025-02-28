@@ -49,28 +49,28 @@ for dir in "$@"; do
             continue
         fi
 
-        # jqで属性名変換と_titleキー追加
+        # jqで属性名変換と_titleキー追加、さらに _id を追加
         jq --slurpfile mapping "$mapping_file" '
         $mapping[0] as $m |
         # 1回目のループ: キー名変換
         .features |= map(
             .properties |= with_entries(
-            .key as $key |
-            if ($m[]? | select(.original_name == $key)) then
-                .key = ($m[] | select(.original_name == $key) | .display_name)
-            else
-                .
-            end
+                .key as $key |
+                if ($m[]? | select(.original_name == $key)) then
+                    .key = ($m[] | select(.original_name == $key) | .display_name)
+                else
+                    .
+                end
             )
         ) |
-        # 2回目のループ: label_flag == "1" のときtitleキーを追加
+        # 2回目のループ: label_flag == "1" のとき title キーを追加
         .features |= map(
             reduce ($m[] | select(.label_flag == "1")) as $entry (.;
-            if .properties[$entry.display_name] != null then
-                .properties["title"] = .properties[$entry.display_name]
-            else
-                .
-            end
+                if .properties[$entry.display_name] != null then
+                    .properties["title"] = .properties[$entry.display_name]
+                else
+                    .
+                end
             )
         ) |
         # 3回目のループ: CSVの属性順に並び替える
@@ -78,7 +78,9 @@ for dir in "$@"; do
             .properties as $original |
             .properties = (reduce ($m[]|select(.display_name?)) as $field ({}; .[$field.display_name] = $original[$field.display_name])
                         + {"title": $original.title})
-        )
+        ) |
+        # 4回目のループ: 各 feature にユニークな _id を追加
+        .features |= (to_entries | map(.value + { _id: (.key | tostring) }))
         ' "$input_geojsonfile" > "${output_geojson_file}.tmp"
 
         mv "${output_geojson_file}.tmp" "$output_geojson_file"
