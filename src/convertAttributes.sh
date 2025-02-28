@@ -49,7 +49,7 @@ for dir in "$@"; do
             continue
         fi
 
-        # jqで属性名変換と_titleキー追加、さらに _id を追加
+        # jqで属性名変換と title キー追加、さらに properties 内にユニークな _id を追加
         jq --slurpfile mapping "$mapping_file" '
         $mapping[0] as $m |
         # 1回目のループ: キー名変換
@@ -79,8 +79,8 @@ for dir in "$@"; do
             .properties = (reduce ($m[]|select(.display_name?)) as $field ({}; .[$field.display_name] = $original[$field.display_name])
                         + {"title": $original.title})
         ) |
-        # 4回目のループ: 各 feature にユニークな _id を追加
-        .features |= (to_entries | map(.value + { _id: (.key | tostring) }))
+        # 4回目のループ: 各 feature の properties 内にユニークな _id を追加
+        .features |= (to_entries | map(.value | (.properties += { _id: (.key | tostring) })))
         ' "$input_geojsonfile" > "${output_geojson_file}.tmp"
 
         mv "${output_geojson_file}.tmp" "$output_geojson_file"
