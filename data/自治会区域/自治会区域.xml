@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>29075</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable>Atr_29075_50_208_20250226133355</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>item2</ColID>
+        <DataType>S</DataType>
+        <Title>自治会名</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
