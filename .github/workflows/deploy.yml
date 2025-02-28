@@ -12,7 +12,7 @@ on:
     branches:
       - "*"
   workflow_dispatch:
-
+  
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -46,7 +46,7 @@ jobs:
       - run: npm run build-config-json
       - run: npm run test
 
-      # Excel を CSV に変換（全データ更新）
+      # Excel を CSV に変換（TODO: 差分更新に変更）
       - run: npm run build-csv
         continue-on-error: true
         id: build-step
@@ -66,16 +66,47 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gdal-bin
 
-      # 全データ更新のため、data ディレクトリ内の全サブディレクトリを取得
-      - name: 全データの取得
-        id: all-dirs
+      # Shapeファイルを GeoJSON に変換（差分更新対応）
+      - name: 差分を取得
+        id: changed-dirs
         run: |
-          echo "全データ更新のため、data ディレクトリ内の全てのサブディレクトリを取得します"
-          find data -mindepth 1 -maxdepth 1 -type d | sort > changed_dirs.txt
-          echo "対象ディレクトリ一覧:"
-          cat changed_dirs.txt
-          # 削除対象のディレクトリ用に空ファイルを作成
-          echo "" > deleted_dirs.txt
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "Processing pull request"
+            
+            # Pull requestの場合、変更されたファイルを取得し、data/以下のみにフィルタ
+            git diff --name-only origin/main | grep "^data/" > changed_files.txt || true
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "Processing push to main"
+
+            # Pushの場合、現在のコミットと1つ前のコミットの差分を取得し、data/以下のみにフィルタ
+            PREVIOUS_COMMIT=$(git rev-parse HEAD^)
+            CURRENT_COMMIT=$(git rev-parse HEAD)
+            git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
+          else
+            echo "Unknown event: ${{ github.event_name }}"
+            exit 1
+          fi
+
+          # ディレクトリ名を抽出してユニークにする
+          if [[ -s changed_files.txt ]]; then
+            echo "Changes detected."
+
+            cat changed_files.txt
+            
+            # Changed directories
+            xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt
+            echo "Changed directories:"
+            cat changed_dirs.txt
+
+            # Deleted directories
+            git diff --name-only --diff-filter=D $PREVIOUS_COMMIT $CURRENT_COMMIT | xargs -n1 dirname | sort -u > deleted_dirs.txt || true
+            echo "Deleted directories:"
+            cat deleted_dirs.txt
+          else
+            echo "No changes detected."
+            echo "" > changed_dirs.txt  # 空ファイルを作成
+            echo "" > deleted_dirs.txt  # 空ファイルを作成
+          fi
         shell: bash
 
       - name: GeoJSON に変換
@@ -86,16 +117,16 @@ jobs:
               [[ -z "$dir" ]] && continue
               
               echo "Processing directory: $dir"
-  
+
               # CSV を GeoJSON に変換
               node ./src/build-location-data.js "$dir"
-  
+
               # Shapeファイルを GeoJSON に変換
               ./src/shape2Geojson.sh "$dir"
-  
+
             done < changed_dirs.txt
           else
-            echo "data ディレクトリ内に対象のディレクトリが見つかりませんでした。"
+            echo "No changes detected in data directories."
           fi
         shell: bash
 
@@ -110,7 +141,7 @@ jobs:
               ./src/convertAttributes.sh "$dir"
             done < changed_dirs.txt
           else
-            echo "data ディレクトリ内に対象のディレクトリが見つかりませんでした。"
+            echo "No changes detected in data directories."
           fi
         shell: bash
 
@@ -133,13 +164,13 @@ jobs:
 
       # NOTE: GitHub の Quta に引っかかったため、デプロイ処理を移動
       - name: Configure AWS Credentials
-        if: github.ref == 'refs/heads/main'
+        if : github.ref == 'refs/heads/main'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
           aws-region: ap-northeast-1
 
-      - name: Deploy to S3（全データ更新）
+      - name: Deploy to S3（差分追加）
         if: github.ref == 'refs/heads/main'
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
@@ -148,7 +179,6 @@ jobs:
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
 
-      # ※ 差分削除の処理は不要なためコメントアウトしています
       # - name: Deploy to S3（差分削除）
       #   if: github.ref == 'refs/heads/main'
       #   run: |
@@ -159,6 +189,6 @@ jobs:
       #         aws s3 rm "s3://yaizu-smartcity-jp-frontend-v1/$dir" --recursive
       #       done < deleted_dirs.txt
       #     else
-      #       echo "削除対象のディレクトリはありません。"
+      #       echo "No deleted directories detected."
       #     fi
       #   shell: bash
