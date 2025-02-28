@@ -1,23 +1,9 @@
 #!/bin/bash
 
-# JSONファイルのパス
-json_file="src/dataDirMapping.json"
-
 # 移動元ディレクトリ
 source_dir="output"
 # 移動先のベースディレクトリ
 target_base_dir="data"
-
-# JSONファイルを読み込んでキーと値を連想配列に保存
-declare -A mapping
-if [ -f "$json_file" ]; then
-    while IFS="=" read -r key value; do
-        mapping["$key"]="$value"
-    done < <(jq -r 'to_entries | .[] | "\(.key)=\(.value)"' "$json_file")
-else
-    echo "Mapping JSON file not found: $json_file"
-    exit 1
-fi
 
 # output内のすべてのattributes.csvを探索
 find "$source_dir" -type f -name "attributes.csv" | while read -r file; do
