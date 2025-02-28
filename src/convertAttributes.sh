@@ -80,7 +80,12 @@ for dir in "$@"; do
                         + {"title": $original.title})
         ) |
         # 4回目のループ: 各 feature の properties 内にユニークな _id を追加
-        .features |= (to_entries | map(.value | (.properties += { _id: (.key | tostring) })))
+        .features |= (
+            [ range(0; length) as $i 
+              | .[$i] 
+              | (.properties += { _id: ($i | tostring) }) 
+            ]
+        )
         ' "$input_geojsonfile" > "${output_geojson_file}.tmp"
 
         mv "${output_geojson_file}.tmp" "$output_geojson_file"
