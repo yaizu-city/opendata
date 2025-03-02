@@ -1,6 +1,8 @@
 # 焼津市オープンデータ
 
-[サイト(https://github.com/yaizu-city)について（利用規約）](https://github.com/yaizu-city)
+データの利用に関しては、以下の利用規約に準拠します。利用規約を確認の上、ご活用ください。  
+
+[ふじのくにオープンデータカタログ利用規約](https://opendata.pref.shizuoka.jp/privacy.html)
 
 焼津市では、以下のデータをオープンデータとして提供しています。
 
