@@ -232,16 +232,5 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 高草川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高草川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/高草川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 黒石川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/黒石川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/黒石川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 
-以下のデータは位置情報を含まないデータです。
-
-| データ名 | フォルダ | CSV | JSON |
-| --- | --- | --- | --- |
-| テスト標準 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/test_standard) | [CSV](https://yaizu-smartcity.jp/test_standard/data.csv) | [JSON](https://yaizu-smartcity.jp/test_standard/data.json) |
-
-
-| データ名 | PDF |
-| --- | --- |
-| 市民満足度アンケート結果 | [PDF](https://github.com/yaizu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |
-## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
