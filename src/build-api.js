@@ -10,7 +10,7 @@ class BuildApi {
     const data = [];
 
     if (fs.existsSync(locationDataCategoriesPath)) {
-      const locationDataCategories = JSON.parse(fs.readFileSync(locationDataCategories));
+      const locationDataCategories = JSON.parse(fs.readFileSync(locationDataCategoriesPath));
 
       for (let i = 0; i < locationDataCategories.length; i++) {
         const category = locationDataCategories[i];
@@ -30,7 +30,7 @@ class BuildApi {
     }
 
     if (fs.existsSync(standardDataCategoriesPath)) {
-      const standardDataCategories = JSON.parse(fs.readFileSync(standardDataCategories));
+      const standardDataCategories = JSON.parse(fs.readFileSync(standardDataCategoriesPath));
 
       for (let i = 0; i < standardDataCategories.length; i++) {
         const category = standardDataCategories[i];
