@@ -9,8 +9,8 @@ class BuildReadme {
   run() {
     const opendataViewerUrl = "https://geolonia.github.io/opendata-editor/";
 
-    let readme = "# 焼津市オープンデータ\n\n";
-    readme += "[サイト(https://github.com/yaizu-city)について（利用規約）](https://github.com/yaizu-city)\n\n"
+    let readme = "# 焼津オープンデータカタログ\n\n";
+    readme += "[焼津オープンデータカタログについて（利用規約）]())\n\n"
     readme += "焼津市では、以下のデータをオープンデータとして提供しています。\n\n表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。\n\n「フォルダ」には、xlsxファイルが格納されています。\n\nCSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\nデータが誤っている、追加したい、等のご提案には、編集済みのデータをプルリクエストとして送ってください。焼津市役所で確認の上、取り込みさせていただきます。詳しくは [焼津市オープンデータへの貢献方法](CONTRIBUTING.md) を参照してください。\n\n";
     readme += "| データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |\n";
     readme += "| --- | --- | --- | --- | --- |\n";
@@ -73,10 +73,6 @@ class BuildReadme {
         readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [JSON](${jsonFileUrl}) |\n`;  
       }
     }
-
-    readme += "\n\n| データ名 | PDF |\n";
-    readme += "| --- | --- |\n";
-    readme += "| 市民満足度アンケート結果 | [PDF](https://github.com/yaizu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |\n";
 
     readme += "## 備考\n";
     readme += "- Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。\n"
