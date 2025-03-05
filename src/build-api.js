@@ -1,9 +1,9 @@
-const locationDataCategories = path.resolve(__dirname, 'location-data-categories.json');
-const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
-
 const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
+
+const locationDataCategories = path.resolve(__dirname, 'location-data-categories.json');
+const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
 
 class BuildApi {
   run() {
