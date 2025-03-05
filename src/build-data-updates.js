@@ -1,13 +1,18 @@
-const locationDataCategories = require('./location-data-categories.json');
-const standardDataCategories = require('./standard-data-categories.json');
-const pdfDataCategories = require('./pdf-data-categories.json');
-const categories = [...locationDataCategories, ...standardDataCategories, ...pdfDataCategories];
-
 const fs = require('fs');
-const glob = require('glob');
 const path = require('path');
-
 const execSync = require('child_process').execSync;
+
+const locationDataCategories = fs.existsSync('./location-data-categories.json')
+  ? require('./location-data-categories.json')
+  : [];
+const standardDataCategories = fs.existsSync('./standard-data-categories.json')
+  ? require('./standard-data-categories.json')
+  : [];
+const pdfDataCategories = fs.existsSync('./pdf-data-categories.json')
+  ? require('./pdf-data-categories.json')
+  : [];
+
+const categories = [...locationDataCategories, ...standardDataCategories, ...pdfDataCategories];
 
 class BuildDataUpdates {
   run() {
@@ -17,14 +22,19 @@ class BuildDataUpdates {
       // NOTE: デバッグ用に出力
       console.log({line});
       if (line) {
-        const category = path.basename(path.dirname(line.split(" ")[3]));
+        const parts = line.split(" ");
+        if (parts.length < 4) return;
+        const category = path.basename(path.dirname(parts[3]));
         // NOTE: デバッグ用に出力
         console.log({category});
+        const found = categories.find(c => c.category === category);
+        // JSON ファイルが存在していなかった場合はスキップ
+        if (!found) return;
         return {
-          date: line.split(" ")[0],
-          file: line.split(" ")[3],
+          date: parts[0],
+          file: parts[3],
           category: category,
-          category_name: categories.find(c => c.category === category).name
+          category_name: found.name
         }
       }
     });
