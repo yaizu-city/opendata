@@ -16,7 +16,9 @@ class BuildReadme {
 
     if (fs.existsSync(locationDataCategoriesPath)) {
 
-      const locationDataCategories = JSON.parse(locationDataCategoriesPath);
+      const locationDataCategoriesRaw = fs.readFileSync(locationDataCategoriesPath);
+      const locationDataCategories = JSON.parse(locationDataCategoriesRaw);
+
       // locationDataCategories が存在する場合のみ処理
       if (locationDataCategories.length > 0) {
         for (let i = 0; i < locationDataCategories.length; i++) {
@@ -42,7 +44,8 @@ class BuildReadme {
 
     if (fs.existsSync(standardDataCategoriesPath)) {
 
-      const standardDataCategories = JSON.parse(standardDataCategoriesPath);
+      const standardDataCategoriesRaw = fs.readFileSync(standardDataCategoriesPath);
+      const standardDataCategories = JSON.parse(standardDataCategoriesRaw);
 
       // standardDataCategories が存在する場合のみ処理
       if (standardDataCategories.length > 0) {
