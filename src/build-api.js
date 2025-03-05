@@ -1,5 +1,5 @@
-const locationDataCategories = require('./location-data-categories.json');
-const standardDataCategories = require('./standard-data-categories.json');
+const locationDataCategories = path.resolve(__dirname, 'location-data-categories.json');
+const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
 
 const fs = require('fs');
 const glob = require('glob');
@@ -8,52 +8,60 @@ const path = require('path');
 class BuildApi {
   run() {
     const data = [];
-    
-    for (let i = 0; i < locationDataCategories.length; i++) {
-      const category = locationDataCategories[i];
 
-      const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
-      const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
+    if (fs.existsSync(locationDataCategories)) {
+      locationDataCategories = JSON.parse(fs.readFileSync(locationDataCategories));
 
-      data.push(
-        {
-          "name": category.name,
-          "csv": csvFileUrl,
-          "json": jsonFileUrl,
-          "location": true
-        }
-      );
+      for (let i = 0; i < locationDataCategories.length; i++) {
+        const category = locationDataCategories[i];
+
+        const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
+        const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
+
+        data.push(
+          {
+            "name": category.name,
+            "csv": csvFileUrl,
+            "json": jsonFileUrl,
+            "location": true
+          }
+        );
+      }
     }
 
-    for (let i = 0; i < standardDataCategories.length; i++) {
-      const category = standardDataCategories[i];
+    if (fs.existsSync(standardDataCategoriesPath)) {
+      standardDataCategories = JSON.parse(fs.readFileSync(standardDataCategories));
 
-      const csvFilesPattern = `data/${category.category}/*.csv`;
+      for (let i = 0; i < standardDataCategories.length; i++) {
+        const category = standardDataCategories[i];
 
-      // 最新順にソート
-      const csvFiles = glob.sync(csvFilesPattern).reverse();
+        const csvFilesPattern = `data/${category.category}/*.csv`;
 
-      const csvs = []
-      const jsons = []
-      csvFiles.map(file => {
-        const filename = path.basename(file, '.csv');
-        const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.json`;
-        const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.csv`;
-        csvs.push(csvFileUrl)
-        jsons.push(jsonFileUrl);
-      });
+        // 最新順にソート
+        const csvFiles = glob.sync(csvFilesPattern).reverse();
 
-      const defaultJsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.json`;
-      const defaultCsvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
+        const csvs = []
+        const jsons = []
+        csvFiles.map(file => {
+          const filename = path.basename(file, '.csv');
+          const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.json`;
+          const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.csv`;
+          csvs.push(csvFileUrl)
+          jsons.push(jsonFileUrl);
+        });
 
-      data.push(
-        {
-          "name": category.name,
-          "csv": csvs.length > 1 ? [defaultCsvFileUrl].concat(csvs) : defaultCsvFileUrl,
-          "json": jsons.length > 1 ? [defaultJsonFileUrl].concat(jsons) : defaultJsonFileUrl,
-          "location": false
-        }
-      )
+        const defaultJsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.json`;
+        const defaultCsvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
+
+        data.push(
+          {
+            "name": category.name,
+            "csv": csvs.length > 1 ? [defaultCsvFileUrl].concat(csvs) : defaultCsvFileUrl,
+            "json": jsons.length > 1 ? [defaultJsonFileUrl].concat(jsons) : defaultJsonFileUrl,
+            "location": false
+          }
+        )
+      }
     }
 
     // build ディレクトリがない場合は作成する
