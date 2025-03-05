@@ -1,12 +1,10 @@
-# 焼津オープンデータカタログ
+# 焼津市オープンデータ
 
-データの利用に関しては、以下の利用規約に準拠します。利用規約を確認の上、ご活用ください。  
-
-[焼津オープンデータカタログ]()
+[サイト(https://github.com/yaizu-city)について（利用規約）](https://github.com/yaizu-city)
 
 焼津市では、以下のデータをオープンデータとして提供しています。
 
-表内の **「CSV」** や **「GeoJSON」**、 **「JSON」** をクリックすると、最新の該当データが得られます。
+表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。
 
 「フォルダ」には、xlsxファイルが格納されています。
 
@@ -232,5 +230,16 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 高草川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高草川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/高草川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 黒石川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/黒石川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/黒石川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 
+以下のデータは位置情報を含まないデータです。
+
+| データ名 | フォルダ | CSV | JSON |
+| --- | --- | --- | --- |
+| テスト標準 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/test_standard) | [CSV](https://yaizu-smartcity.jp/test_standard/data.csv) | [JSON](https://yaizu-smartcity.jp/test_standard/data.json) |
+
+
+| データ名 | PDF |
+| --- | --- |
+| 市民満足度アンケート結果 | [PDF](https://github.com/yaizu-city/opendata/tree/main/data/citizen_satisfaction_questionnaire_result) |
+## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
