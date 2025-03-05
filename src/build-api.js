@@ -2,15 +2,15 @@ const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
 
-const locationDataCategories = path.resolve(__dirname, 'location-data-categories.json');
+const locationDataCategoriesPath = path.resolve(__dirname, 'location-data-categories.json');
 const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
 
 class BuildApi {
   run() {
     const data = [];
 
-    if (fs.existsSync(locationDataCategories)) {
-      locationDataCategories = JSON.parse(fs.readFileSync(locationDataCategories));
+    if (fs.existsSync(locationDataCategoriesPath)) {
+      const locationDataCategories = JSON.parse(fs.readFileSync(locationDataCategories));
 
       for (let i = 0; i < locationDataCategories.length; i++) {
         const category = locationDataCategories[i];
@@ -30,7 +30,7 @@ class BuildApi {
     }
 
     if (fs.existsSync(standardDataCategoriesPath)) {
-      standardDataCategories = JSON.parse(fs.readFileSync(standardDataCategories));
+      const standardDataCategories = JSON.parse(fs.readFileSync(standardDataCategories));
 
       for (let i = 0; i < standardDataCategories.length; i++) {
         const category = standardDataCategories[i];
