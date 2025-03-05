@@ -28,10 +28,10 @@ const main = async () => {
     const outputDir = join(__dirname, `../build/${category}`);
     /** outputDir が存在しない場合は作成 **/
     await mkdir(outputDir, { recursive: true });
+    const csvPath = join(outputDir, `data.csv`);
 
     if (file.path.endsWith(".xlsx")) {
       const excelPath = file.path;
-      const csvPath = join(outputDir, `${basename(excelPath, '.xlsx')}.csv`);
 
       promises.push((async () => {
         try {
@@ -50,7 +50,6 @@ const main = async () => {
       })());
     /** 翻訳ファイルはコピーしない */
     } else if (file.path.endsWith(".csv") && !file.path.includes("attributes.csv")) {
-      const csvPath = join(outputDir, basename(file.path));
       promises.push((async () => {
         await copyFile(file.path, csvPath);
       })());
