@@ -229,7 +229,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区/data.geojson) | |
 | 高草川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高草川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/高草川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 黒石川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/黒石川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/黒石川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
-
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
