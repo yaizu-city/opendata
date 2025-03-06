@@ -1,7 +1,5 @@
 # 焼津オープンデータカタログ
 
-[焼津オープンデータカタログについて（利用規約）]()
-
 焼津市では、以下のデータをオープンデータとして提供しています。
 
 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。
@@ -229,6 +227,12 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区/data.geojson) | |
 | 高草川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高草川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/高草川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 黒石川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/黒石川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/黒石川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
+
+## ライセンス
+本データは、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。
+
+このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。
+
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
