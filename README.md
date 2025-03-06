@@ -2,9 +2,6 @@
 
 焼津市では、以下のデータをオープンデータとして提供しています。
 
-本データは、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。  
-このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。
-
 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。
 
 「フォルダ」には、xlsxファイルが格納されています。
@@ -13,7 +10,9 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 
 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。
 
-データが誤っている、追加したい、等のご提案には、編集済みのデータをプルリクエストとして送ってください。焼津市役所で確認の上、取り込みさせていただきます。詳しくは [焼津市オープンデータへの貢献方法](CONTRIBUTING.md) を参照してください。
+本データは、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。
+
+このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
@@ -217,8 +216,6 @@ CSVファイルダウンロード時、文字化けする場合は、xlsxファ�
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区/data.geojson) | |
 | 高草川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高草川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/高草川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
 | 黒石川_洪水浸水想定区域（想定最大規模） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/黒石川_洪水浸水想定区域（想定最大規模）) | | [GeoJSON](https://yaizu-smartcity.jp/黒石川_洪水浸水想定区域（想定最大規模）/data.geojson) | |
-
-
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
