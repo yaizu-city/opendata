@@ -84,7 +84,7 @@ class BuildReadme {
 
     readme += "\n## ライセンス\n";
     readme += "本データは、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。\n\n";
-    readme += "このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。（社内で要確認）\n\n"
+    readme += "このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。\n\n"
 
     readme += "## 備考\n";
     readme += "- Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。\n";
