@@ -9,7 +9,9 @@ class BuildReadme {
   run() {
     const opendataViewerUrl = "https://geolonia.github.io/opendata-editor/";
     let readme = "# 焼津オープンデータカタログ\n\n";
-    readme += "焼津市では、以下のデータをオープンデータとして提供しています。\n\n表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。\n\n「フォルダ」には、xlsxファイルが格納されています。\n\nCSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\nデータが誤っている、追加したい、等のご提案には、編集済みのデータをプルリクエストとして送ってください。焼津市役所で確認の上、取り込みさせていただきます。詳しくは [焼津市オープンデータへの貢献方法](CONTRIBUTING.md) を参照してください。\n\n";
+    readme += "焼津市では、以下のデータをオープンデータとして提供しています。\n\n表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。\n\n「フォルダ」には、xlsxファイルが格納されています。\n\nCSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\n";
+    readme += "本データは、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。\n\n";
+    readme += "このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。\n\n"
 
     if (fs.existsSync(locationDataCategoriesPath)) {
 
@@ -81,10 +83,6 @@ class BuildReadme {
         }
       }
     }
-
-    readme += "\n## ライセンス\n";
-    readme += "本データは、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。\n\n";
-    readme += "このリポジトリに含まれるソースコードは、上記のライセンスの適用外です。\n\n"
 
     readme += "## 備考\n";
     readme += "- Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。\n";
