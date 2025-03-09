@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>11191</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable>Atr11191</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>item1</ColID>
+        <DataType>L</DataType>
+        <Title>ID</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>item2</ColID>
+        <DataType>S</DataType>
+        <Title>学校名</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>item3</ColID>
+        <DataType>S</DataType>
+        <Title>注記</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD003">
+        <ColID>item4</ColID>
+        <DataType>S</DataType>
+        <Title>問合先</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD004">
+        <ColID>item5</ColID>
+        <DataType>S</DataType>
+        <Title>電話番号</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
