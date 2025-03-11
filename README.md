@@ -106,6 +106,7 @@
 | 救護病院一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/救護病院一覧) | [CSV](https://yaizu-smartcity.jp/救護病院一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/救護病院一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/救護病院一覧/data.csv) |
 | 文化会館・資料館 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/文化会館・資料館) | [CSV](https://yaizu-smartcity.jp/文化会館・資料館/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/文化会館・資料館/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/文化会館・資料館/data.csv) |
 | 文化財マップ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/文化財マップ) | | [GeoJSON](https://yaizu-smartcity.jp/文化財マップ/data.geojson) | |
+| 施設情報（安心） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/施設情報（安心）) | | [GeoJSON](https://yaizu-smartcity.jp/施設情報（安心）/data.geojson) | |
 | 日帰り温泉・足湯 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/日帰り温泉・足湯) | [CSV](https://yaizu-smartcity.jp/日帰り温泉・足湯/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/日帰り温泉・足湯/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/日帰り温泉・足湯/data.csv) |
 | 昔の焼津と比べてみよう | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/昔の焼津と比べてみよう) | | [GeoJSON](https://yaizu-smartcity.jp/昔の焼津と比べてみよう/data.geojson) | |
 | 朝比奈川_家屋倒壊等氾濫想定（河岸侵食） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/朝比奈川_家屋倒壊等氾濫想定（河岸侵食）) | | [GeoJSON](https://yaizu-smartcity.jp/朝比奈川_家屋倒壊等氾濫想定（河岸侵食）/data.geojson) | |
