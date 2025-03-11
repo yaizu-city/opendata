@@ -12,7 +12,8 @@ const buildConfigJSON = async (filePaths, targetPath) => {
 
   for (const file of filePaths) {
     const fileContent = fs.readFileSync(file, 'utf-8');
-    const parsedYaml = yaml.load(fileContent);
+    // NOTE: 20250312_6 のようなアンダースコアが含まれる数値が 202503126 に変換されるのを防ぐため、yaml.FAILSAFE_SCHEMA を指定
+    const parsedYaml = yaml.load(fileContent, { schema: yaml.FAILSAFE_SCHEMA });
 
     switch (parsedYaml.dataType) {
       case 'location':
