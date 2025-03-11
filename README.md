@@ -21,6 +21,9 @@
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
 | AED（テスト） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED_TEST) | | [GeoJSON](https://yaizu-smartcity.jp/AED_TEST/data.geojson) | |
+| AED（テスト1） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/202503121) | | [GeoJSON](https://yaizu-smartcity.jp/202503121/data.geojson) | |
+| AED（テスト1） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/202503121) | | [GeoJSON](https://yaizu-smartcity.jp/202503121/data.geojson) | |
+| AED（テスト1） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/202503121) | | [GeoJSON](https://yaizu-smartcity.jp/202503121/data.geojson) | |
 | AED設置箇所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED設置箇所一覧) | [CSV](https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/AED設置箇所一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) |
 | あかちゃんえき一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あかちゃんえき一覧) | [CSV](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) |
 | あんしん歩行エリア整備台帳（整備区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あんしん歩行エリア整備台帳) | | [GeoJSON](https://yaizu-smartcity.jp/あんしん歩行エリア整備台帳/data.geojson) | |
@@ -107,7 +110,6 @@
 | 救護病院一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/救護病院一覧) | [CSV](https://yaizu-smartcity.jp/救護病院一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/救護病院一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/救護病院一覧/data.csv) |
 | 文化会館・資料館 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/文化会館・資料館) | [CSV](https://yaizu-smartcity.jp/文化会館・資料館/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/文化会館・資料館/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/文化会館・資料館/data.csv) |
 | 文化財マップ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/文化財マップ) | | [GeoJSON](https://yaizu-smartcity.jp/文化財マップ/data.geojson) | |
-| 施設情報（安心） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/施設情報（安心）) | | [GeoJSON](https://yaizu-smartcity.jp/施設情報（安心）/data.geojson) | |
 | 施設情報（安心） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/施設情報（安心）) | | [GeoJSON](https://yaizu-smartcity.jp/施設情報（安心）/data.geojson) | |
 | 日帰り温泉・足湯 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/日帰り温泉・足湯) | [CSV](https://yaizu-smartcity.jp/日帰り温泉・足湯/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/日帰り温泉・足湯/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/日帰り温泉・足湯/data.csv) |
 | 昔の焼津と比べてみよう | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/昔の焼津と比べてみよう) | | [GeoJSON](https://yaizu-smartcity.jp/昔の焼津と比べてみよう/data.geojson) | |
