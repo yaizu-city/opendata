@@ -1,5 +1,5 @@
 original_name,display_name,label_flag
-HYOTK_N,標準宅地番号,
-HYOTA_K,価格,
-JITEN_1,時点修正率 1,
-HYOTA_K_J1,時点修正率1反映標準宅地価格,
+SAFIELD002,標準宅地番号,
+SAFIELD000,価格,
+SAFIELD003,時点修正率 1,
+SAFIELD001,時点修正率1反映標準宅地価格,
