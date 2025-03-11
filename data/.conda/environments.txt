@@ -1,0 +1,1 @@
+C:\Users\baba\AppData\Local\Programs\ArcGIS\Pro\bin\Python\envs\arcgispro-py3
