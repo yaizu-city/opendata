@@ -1,0 +1,3623 @@
+{
+  "type": "FeatureCollection",
+  "name": "文化財マップ",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "焼津市花沢",
+        "item5": "高草山",
+        "item6": "国選定",
+        "item7": "伝統的建造物群保存地区",
+        "item8": "ミカンで栄えた山村集落。日本坂越えの旧街道沿いに、江戸時代以来の家並みと石垣が連続する。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/1-1焼津市花沢.jpg",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/1-2焼津市花沢.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.330104722221989,
+          34.904991388888902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "法華寺",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "天台宗、本尊は千手観世音菩薩。奈良時代の創建と伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/2法華寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.33123861111099,
+          34.9085752777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "木造聖観音立像",
+        "item5": "高草山",
+        "item6": "県指定",
+        "item7": "彫刻",
+        "item8": "寄木造り、藤原期の地方作の像。奥院の東照寺(焼失)の本尊と伝わる。像高169.2?。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/2-a木像聖観音立像.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.33123861111099,
+          34.9085752777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "仁王門",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "元禄16年(1703)建立、木造入母屋造りの八脚門。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/2-b仁王門.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.33123861111099,
+          34.9085752777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "道標・石仏群",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "法華寺の入口には、石仏群や日本坂峠経由で府中(静岡市)への道を示す江戸時代建立の道しるべがある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/2-c-1法華寺の道標.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.33123861111099,
+          34.9085752777778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大崩海岸",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "名勝地",
+        "item8": "急崖をなし古来より交通の難所、景勝地として知られる。この海岸や高草山に見られる玄武岩質の枕状溶岩は約2千万年前の火山活動でできたもので、地質学的に著名。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/3大崩海岸.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.338786388888991,
+          34.887481388888901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "道了権現",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "海岸沿いに走る山稜の細い尾根は、アップダウンを繰り返し花沢山に至るが、その途中の標高230ｍの山頂にある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/4道了権現.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.342412222222009,
+          34.89784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大日堂",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "旧街道の切り通しの山側にあり、石造の大日如来が3体祀られている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/5-1大日堂(当目).JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/5-2大日堂横切通し.JPG",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.342028611111004,
+          34.896626111111097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "道標",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "旧街道沿いに建てられた江戸時代の道しるべ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/6大崩の道標.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.34189,
+          34.895469444444402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "道標",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "旧街道沿いに建てられた江戸時代の道しるべ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/7大崩の道標.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3421875,
+          34.895230555555599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "鳴沢不動尊",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "彫刻",
+        "item8": "左鎌を奉納すると諸願が叶うとされる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/8鳴沢不動尊.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.325276666667008,
+          34.896532222222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "常楽寺",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は薬師如来。もとは木喰上人作の薬師如来坐像があったが、火災のため焼失した。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/9常楽寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322445555555987,
+          34.8944525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "風口坂の道標",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "江戸時代の道しるべ、大崩と日本坂の分岐点の一つ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/10風口坂の道標.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324638055555994,
+          34.893246111111097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "勢岩寺",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は不動明王。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/11勢岩寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322718333333,
+          34.8909925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "弘法大師像",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "彫刻",
+        "item8": "寛政12年(1800)7月作、像高約17?の県内最小の木喰仏。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/11-a勢岩寺の弘法大師像.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322718333333,
+          34.8909925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "機織地蔵",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "願懸け、安産の地蔵。円珍(智証大師)に由来。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/11-b機織地蔵.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322718333333,
+          34.8909925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "宝積寺",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "臨済宗、本尊は聖観世音菩薩。寺伝によれば、元小浜にあったが波浪のため損壊し、石脇の地に再建したという。東名高速道路建設に伴い現在地へ移転。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/12宝積寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324202222221999,
+          34.890531944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "地蔵菩薩像",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "彫刻",
+        "item8": "木喰仏。寛政12年(1800) 8月作、像高77?。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/12-a宝積寺地蔵菩薩像.png",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324202222221999,
+          34.890531944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "西国三十三ケ所観世音菩薩",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "享和元年(1801)近郷より寄進された三十三観音の石仏群。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/12-b西国三十三ヶ所観世音菩薩石仏.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324202222221999,
+          34.890531944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "浅間神社",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "神社",
+        "item8": "延徳3年(1491)、遠州原川村から原川氏によって勧進された。祭神は木花咲耶姫命、品陀和気命、天照皇大御神。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/13浅間神社.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322960833333013,
+          34.889798333333303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "旗掛石・鞍掛石",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "浅間神社門前の巨石で、徳川家康の旗や鞍を置いたと伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/14旗掛石.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.322555555555994,
+          34.8894488888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大日堂",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "石脇城本丸跡に建つ。堂内には、木喰仏が祀られていた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/15大日堂.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324328055556009,
+          34.888588888888897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "吉祥天像",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "彫刻",
+        "item8": "木喰仏。寛政12年(1800)7月作、像高94?。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/15-1大日堂の吉祥天像.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324328055556009,
+          34.888588888888897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "不動明王像",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "彫刻",
+        "item8": "木喰仏。寛政12年(1800)7月作、像高94?。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/15-2大日堂の不動明王像.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324328055556009,
+          34.888588888888897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "林叟院",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は如意輪観世音菩薩。寺伝によれば、文明3年(1471)、小川の海岸近くに建立されたが、ある僧の天変地異の予言に従い、現在地へ移転したという。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/16林叟院.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.316938888889013,
+          34.894802777777798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "経蔵",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "明和8年(1771)建立、瓦葺、方形造り平屋建て。内部正面奥に仏壇、中央に輪蔵がある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/16-a-1林叟院の経蔵.jpg",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/16-a-2経蔵内部の輪蔵.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.316938888889013,
+          34.894802777777798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "鐘楼",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "入母屋造り瓦葺、二重繁垂木、袴腰張。天保15年(1844)建立。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/16-b鐘楼.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.316938888889013,
+          34.894802777777798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "宝篋印塔",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "建立年代は不明だが、江戸時代の寺絵図に記載されている。高さ約2.6ｍ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/16-c林叟院の宝篋印塔.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.316938888889013,
+          34.894802777777798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "長谷川正宣夫妻墓碑",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "法永長者といわれた長谷川正宣と妻の墓碑。江戸時代に子孫により建立。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/16-d長谷川正宣夫妻の墓碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.316938888889013,
+          34.894802777777798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "山の神祭",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "無形民俗",
+        "item8": "関方地区で毎年2月8日におこなわれる。山の神を田に迎え豊年万作を祈る神事と考えられている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/17山の神祭り1.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.303060555555987,
+          34.894164444444399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "猪之谷神社",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "神社",
+        "item8": "祭神は後醍醐天皇。興国5年(1344)創建と伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/18猪之谷神社.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.30361138888901,
+          34.895308055555603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "六鈴鏡",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "直径13.8?、欠損の少ない鈴鏡として珍しい。境内の奥屋敷古墳より出土。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/18-a六鈴鏡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.30361138888901,
+          34.895308055555603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "ナギノキ",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "天然記念物",
+        "item8": "マキ科の常緑高木で、もとは亜熱帯性植物。葉脈が平行であることから「せんまいさばき」ともいう。根回り2.6ｍ、樹高16ｍ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/18-b猪之谷神社のナギノキ.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.30361138888901,
+          34.895308055555603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "若宮八幡宮",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "神社",
+        "item8": "寛永6年(1629)、この地で生誕したと伝わる井伊直孝により再建。再建時の棟札が現存する。祭神は品陀和気命。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/19若宮八幡宮.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/19-1若宮八幡宮.JPG",
+        "item13": "https://yaizu-smartcity.jp/images/opendata/19-2若宮八幡宮.JPG",
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.311465,
+          34.882786944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "棟札",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "書跡",
+        "item8": "筆者は寛永の三筆として知られる松花堂昭乗。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/19-a若宮八幡宮の棟札.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.311465,
+          34.882786944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "石橋",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "鳥居前のアーチ型の石橋。江戸時代建造。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/19-b若宮八幡宮の石橋.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.311465,
+          34.882786944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "井伊文子歌碑",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "若宮八幡宮建立350年記念に井伊家39代当主の夫人文子氏が詠んだ祖先を偲ぶ歌碑。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/19-c井伊文子歌碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.311465,
+          34.882786944444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "井伊直孝産湯の井",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "天正18年(1590)、井伊直孝誕生の折に産湯を汲んだ井戸と伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/20井伊直孝産湯の井.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.313700833333002,
+          34.882093888888903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "香集寺",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は虚空蔵菩薩。元は真言宗で、当目山の山頂にある。弘仁6年(815)の創建とされ、日本三大虚空蔵(伊勢朝熊、京都嵐山)の一つ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/21香集寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.337305,
+          34.882143888888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "石燈籠",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "寛永2年(1625)建立の市内で最古の石燈籠。高さ約1.9ｍ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/21-a香集寺の石燈籠.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.337305,
+          34.882143888888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "絵馬",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "絵画",
+        "item8": "寛永7年(1667)に田中城主の弟、西尾主水忠知が奉納したもので、市内最古の絵馬。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/21-b香集寺の絵馬.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.337305,
+          34.882143888888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "丁石",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "壱町目から六町目まで、香集寺に登る参道脇にたつ。",
+        "item11": null,
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.337305,
+          34.882143888888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "船舶無線電信発祥地記念塔",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "明治36年(1903)に帝国海軍が実験用に無線電信試験所を設置したことを顕彰する記念碑が山頂にある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/21-d船舶無線電信発祥記念塔.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.337305,
+          34.882143888888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "弘徳院",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は薬師如来。明治10年(1877)に野秋から現在地に移転。香集寺本尊の虚空蔵菩薩像は当寺に移され、毎年2月13日、23日にはだるま市で賑わう。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/22弘徳院.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/22-1送りダルマの様子.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335551666666987,
+          34.880765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "絵馬",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "絵画",
+        "item8": "元文2年(1737)に第16代田中城主本多正珍が奉納した絵馬。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/22-a弘徳院の絵馬.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335551666666987,
+          34.880765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "久保山愛吉氏墓碑",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "第五福竜丸乗組員、久保山愛吉さんは、昭和29年(1954)3月1日、ビキニ環礁でのアメリカ合衆国の核爆発実験で被爆し、同年9月30日に亡くなった。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/22-b久保山愛吉さんのお墓.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335551666666987,
+          34.880765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "那閉神社",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "神社",
+        "item8": "式内社。元々は当目山そのものが神の依代としての御神座。祭神は八重事代主命、大国主命。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/23那閉神社.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335971388888993,
+          34.880580277777803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "常夜燈",
+        "item5": "高草山",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "文政5年(1822)建立、高さ約3.5ｍ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/23-a那閉神社の常夜燈.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335971388888993,
+          34.880580277777803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "カンノ岩",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "浜辺から消波ブロック越しに見える岩で、もとは鳥居がたてられ信仰されていた。",
+        "item11": null,
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335971388888993,
+          34.880580277777803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "御座穴",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "武田氏との合戦の折、徳川家康が隠れたと伝わる海食洞。海食により、現在近づけない。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/23-c御座穴.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.335971388888993,
+          34.880580277777803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "浜当目海岸付近石碑群",
+        "item5": "高草山",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "海亀の供養墓2基、海難の碑であるマリアナ観音などが建立されている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/24-1マリアナ観音.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/24-2カメの墓.JPG",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.334216944443995,
+          34.8785975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "海の顕彰碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "高さ6.4ｍのブロンズ像。水産都市焼津の発展を願って昭和58年(1983)に建立。中港公園内。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/25海の顕彰碑.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.328530833332991,
+          34.870778333333298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "浦神社",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "神社",
+        "item8": "通称船玉神社(船玉さん)。海上安全大漁満足の神として漁業者の信仰が厚い。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/26浦神社(船玉).jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.32501138888901,
+          34.867365833333302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "西宮神社",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "神社",
+        "item8": "通称新屋恵比寿、毎年11月20日の例祭は「おいべっさん」として親しまれ賑わう。",
+        "item11": null,
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.320168333332987,
+          34.869161388888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "小泉八雲記念碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "八雲の作品『焼津にて』を刻んだレリーフ像付き記念碑。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/28小泉八雲記念碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3182175,
+          34.871660277777799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "用心院",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は聖観世音菩薩。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/29用心院.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.309197777777996,
+          34.871328055555601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "全珠院",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "像高4.2ｍの日本一大きな千手観音菩薩がある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/30全殊院.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.297310277777996,
+          34.878128611111102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "旭伝院",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は延命地蔵菩薩。山門は田中城の不浄門を移築したと伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/31旭伝院.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282393055556014,
+          34.869343888888899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "旭伝院のマツ",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "天然記念物",
+        "item8": "樹齢約600年のクロマツ、根回り5.5ｍ、樹高25ｍの大樹。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/31-a旭伝院のマツ.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282393055556014,
+          34.869343888888899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大井神社",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "神社",
+        "item8": "祭神は事代主命、少彦名命。田中城主本多家の崇敬が厚く、本多家の立葵紋を社紋とする。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/32大井神社(保福島).JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282533055556002,
+          34.8653163888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "本殿",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "柿葺、流造り。用材は欅で、意匠、彫刻が多彩。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/32a大井神社本殿.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282533055556002,
+          34.8653163888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "小泉八雲記念碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "八雲を偲んだ石碑。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/33小泉八雲諷詠之碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324832500000014,
+          34.866183888888898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "小泉八雲滞在の家跡",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "八雲が来焼の時滞在した山口乙吉旧宅跡。愛知県明治村へ移築。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/34小泉八雲滞在の家跡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324041111111001,
+          34.8631525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "北御旅所",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "焼津神社大祭の渡御場所。日本武尊が上陸したとされる場所。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/35北御旅所.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324721944444008,
+          34.863475277777802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "旧エンカ屋敷跡",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "代々城之腰の名主を勤め大船元でもあった松村家跡で、石碑が立つ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/36-1旧エンカ屋敷跡の碑.jpg",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/36-2旧エンカ屋敷跡.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.323273333332992,
+          34.863028055555603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "波除地蔵",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "浜通りに数体あるうちの一つ。光心寺に移された本来の地蔵の代わりに安置された。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/37波除地蔵(浜通り）.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324578611111008,
+          34.862500277777798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "常照寺魚藍観音",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "彫刻",
+        "item8": "浄土宗、本尊は阿弥陀如来。観音は漁師の網にかかったものを寄進したと伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/38常照寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.323714722222007,
+          34.862184166666701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "感恩の碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "石積み防潮堤の築造を主導した山口平右エ門と、海岸保全に尽力した高見三郎元衆議院議員の業績を讃えた石碑。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/39感恩の碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324691944443998,
+          34.861789444444398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "札の辻",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "江戸時代、高札が掲示された場所。猿田彦(庚申さん)の像や波きり地蔵などがある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/40札の辻・庚申塚.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.32387083333299,
+          34.860513611111102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "日本武尊御沓脱之旧跡",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "日本武尊が東征の途中、沓を脱いで休息したと伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/41日本武尊御沓脱之旧跡.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.31817,
+          34.866221666666704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "普門寺",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "時宗、本尊は阿弥陀如来。昔は七堂伽藍の壮大な寺院であったという。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/42普門寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317918333333012,
+          34.866649722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "半鐘",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "貞享2年(1685)鋳造、高さ60?。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/42-a普門寺の半鐘.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317918333333012,
+          34.866649722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "源義経ゆかりの庭園",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "義経が平泉へ向う途中、病気療養のため投宿し、治癒の謝礼として庭園を築いたという。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/42-b源義経ゆかりの庭園.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317918333333012,
+          34.866649722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "村松文三墓碑・記念碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "村松文三は幕末維新の際、討幕派の志士として活躍した。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/42-c-1村松文三墓碑.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/42-c-2村松文三記念碑.JPG",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317918333333012,
+          34.866649722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "村松春水墓碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "文三の子で唐人お吉の研究家。",
+        "item11": null,
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317918333333012,
+          34.866649722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "貞善院の鰐口",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "貞享3年(1686)鋳造、径20?。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/43貞善院の鰐口.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317362222221988,
+          34.865148888888903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "焼津神社",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "神社",
+        "item8": "式内社、祭神は日本武尊。別名、入江大明神とも呼ばれた。毎年8月13日に通称「荒祭り」の名で知られる例大祭がおこなわれる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/44-1焼津神社.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/44-2焼津神社本殿.JPG",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.313620277778,
+          34.8650758333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "獅子木遣り",
+        "item5": "焼津１",
+        "item6": "県指定　国選択",
+        "item7": "民俗文化財",
+        "item8": "焼津神社大祭の神輿渡御行列で雌雄一対の獅子頭を先頭に、手古舞姿の少女達が木遣り歌を唄いながら先導する。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/44-a-1獅子木遣り.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/44-a-2獅子木遣り.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.313620277778,
+          34.8650758333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "神ころがし",
+        "item5": "焼津１",
+        "item6": "国選択",
+        "item7": "民俗文化財",
+        "item8": "大祭前日に行われる。生後3歳までの子どもが受ける儀式。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/44-b神ころがし.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.313620277778,
+          34.8650758333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "水産翁の碑",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "焼津の水産業に功績を残した村松翁、服部翁、片山翁、山口翁の記念碑。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/44-c水産翁の碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.313620277778,
+          34.8650758333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "今川氏真朱印状",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "古文書",
+        "item8": "焼津神社の社殿の修理費負担について神主と神田百姓との間で紛争が起きた際、今川氏真が神主が百姓から修理費を徴収することを認めたもの。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/44-d今川氏親朱印状.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.313620277778,
+          34.8650758333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "須賀神社",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "神社",
+        "item8": "本来は小高く七ツ森の一つといわれ、古墳だった可能性がある",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/45須賀神社.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.31893777777799,
+          34.862073055555598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "光心寺",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "浄土宗。本尊は阿弥陀如来。昭和10年(1935)、北浜通から現在地に移転。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/46光心寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.314515277778014,
+          34.860929444444402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "麒麟の笙",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "文永4年(1268)の銘があり、作者は笙造りの名人、頼尊と伝わる。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/46-a光心寺の麒麟の笙.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.314515277778014,
+          34.860929444444402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "波除地蔵(八雲地蔵)",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "八雲が修繕をしようとした波除地蔵。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/46-b波除地蔵(八雲地蔵).JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.314515277778014,
+          34.860929444444402
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "教念寺",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "浄土宗。八雲が散歩の途中訪れた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/47教念寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.312203888889002,
+          34.857221944444397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "熊野神社",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "神社",
+        "item8": "長谷川氏が大永6年(1526)熊野三社を勧進したと伝わる。八雲が散歩の途中によく訪れた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/48熊野神社.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.310533333333012,
+          34.8565975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大身槍 銘「長吉作」",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "室町時代(15世紀末ごろ)京都に住した名工・平安城長吉作の大身槍である。大身槍とは一般的に二尺より長いものをいう。歴史民俗資料館保管。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/48-a熊野神社の大身槍.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.310533333333012,
+          34.8565975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "永豊寺の山門",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "切妻造り茅葺、総欅造りの薬医門。明和6年(1769)建立。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/49永豊寺の山門.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.30926555555601,
+          34.8561525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "海蔵寺",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "寺院",
+        "item8": "時宗、元は天台宗。紀州徳川家などの帰依が厚かった。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50海蔵寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "本堂",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "唐破風向拝付入母屋造、桟瓦葺。桟唐戸には葵紋を刻む。現本堂は安政の地震直後の万延元年(1860)9月18日に上棟されたと伝わる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-a海蔵寺本堂.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "本尊厨子",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "入母屋造り、軒唐破風付、柿葺。安永9年(1780)紀州徳川家より寄進と伝わる。総高4.38m。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-b海蔵寺本尊厨子.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "厨子",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "朱塗金蒔絵、金箔押しで飾られた荘厳な厨子で葵紋が付されている。元和5年(1619)奉納、高さ　67.5cm。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-c厨子.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "内厨子",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "外面金梨地、扉上部金蒔絵葵紋、飾金具付観音開き、内面金箔押しに麻の葉模様切金押し、高蒔絵葵紋が付されている。高さ18.0?、間口9.0?。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-d内厨子.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "守り本尊",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "紀州徳川家初代徳川頼宜の守り本尊の地蔵菩薩像。内厨子内連弁上の硝子容器に納められ安置されている。像高3.9?。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-e守り本尊.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "御戸帳",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "歴史資料",
+        "item8": "絹織物で、安永4年(1775)に本多正供が寄進した。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-f御戸帳（表）.jpg",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/50-f御戸帳（裏）.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "甚助の板子",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "書跡",
+        "item8": "八雲の『漂流』の主人公・天野甚助が奉納。小泉八雲記念館にて展示中。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-g甚助の板子.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "絵馬",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "絵画",
+        "item8": "寛文7年(1667)西尾主水忠知が奉納、絵師は狩野元俊。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-h海蔵寺の絵馬.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "一遍上人縁起絵」断簡",
+        "item5": "焼津１",
+        "item6": "市指定",
+        "item7": "絵画",
+        "item8": "時宗の祖、一遍上人の縁起絵巻の断簡。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/50-i「一遍上人縁起絵断簡」.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3120825,
+          34.852927777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "波除堤防モニュメント",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "明治30年代から築造された石積堤防の一部を模造したもの。上部に昭和天皇天覧記念碑が移築されている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/51波除堤防モニュメント.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.324255,
+          34.855541944444397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "南御旅所",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "焼津神社大祭の渡御場所。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/52南御旅所.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.323958888888995,
+          34.855546111111103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "青峰山勝景院",
+        "item5": "焼津１",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "真言宗、本尊は十一面観世音菩薩。漁業者の信仰が厚い。三重県青峯山正福寺から明治40年(1907)分霊され開基。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/53青峯山教会.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.323228055556001,
+          34.855612222222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "信香院",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は十一面観世音菩薩。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/54信香院.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.323339166667012,
+          34.849154722222202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "長谷川正長墓碑",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "法永長者(正宣)の孫で田中城主。三方ヶ原において戦死。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/54-a長谷川正長墓碑.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.323339166667012,
+          34.849154722222202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "袖浦",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "名勝地",
+        "item8": "この一帯の海岸はかつては風光明媚な景勝地として名所だった。特に、日の出、月の出(満月)は今でも絶景である。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/55袖浦.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.330616388889013,
+          34.848269166666697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "水天宮",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "神社",
+        "item8": "祭神は言仁命(安徳天皇)、万延元年(1860)江戸の水天宮より勧請。水難と安産の信仰が厚いが、特に漁業者の信仰が厚い。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/56水天宮.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3304325,
+          34.842701666666699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "不岩院",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "境内の六角堂は、「六角さん」と呼ばれ親しく信仰されている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/57-1不岩院.jpg",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/57-2不岩院の六角堂.jpg",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.320134166667003,
+          34.844736944444399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "鳴子のマツ",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "天然記念物",
+        "item8": "元禄12年(1699)夏の大波で、村人がこのマツにつかまって助かったとの伝承がある。現在のマツは三代目。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/58鳴子のマツ.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.315393611111006,
+          34.8440875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "地蔵堂の地蔵尊",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "彫刻",
+        "item8": "石造の延命地蔵菩薩立像。像高88.5?。金箔、彩色が残る。台座には享保7年(1722)の銘がある。",
+        "item11": null,
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.295351666666988,
+          34.847199444444399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "光西寺",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、寛永7年(1630)創建。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/60光西寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317309722222006,
+          34.8383725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "古谷道生墓碑",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "古谷道生は幕末から明治にかけて活躍した算学者。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/60-a古谷道生墓碑.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317309722222006,
+          34.8383725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "古谷数学道場跡",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "算学者・古谷道生の道場跡の記念碑がある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/61古谷数学道場跡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.3248375,
+          34.838056666666702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "成道寺",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は釈迦牟尼仏。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/62成道寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317070833332991,
+          34.824541111111103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "絹本墨画淡彩芦葉達磨図",
+        "item5": "焼津２",
+        "item6": "国重文",
+        "item7": "絵画",
+        "item8": "絹本水墨画、13世紀前半、中国で描かれたと考えられ、上部に一山一寧の讃がある。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/62-a 絹本墨画淡彩芦葉達磨図.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317070833332991,
+          34.824541111111103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "百萬塔",
+        "item5": "焼津２",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "中に陀羅尼経を納める。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/62-b成道寺の百萬塔.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317070833332991,
+          34.824541111111103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "宝篋印塔",
+        "item5": "焼津２",
+        "item6": "市指定",
+        "item7": "建造物",
+        "item8": "天明7年(1787)建立、高さ約4ｍ。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/62-c宝筐印塔.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.317070833332991,
+          34.824541111111103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "和田の学校地蔵",
+        "item5": "焼津２",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "大正時代に掘り出された石造仏。その経緯は昔話に語られることが多い。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/63和田の学校地蔵.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.320106666666987,
+          34.821823055555598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "輪中跡",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "大井川の氾濫から集落と耕地を大規模に守るために築かれた囲い土手。現在は下小杉付近に一部が残る。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/64-1輪中跡.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.312288888888986,
+          34.816217777777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "輪中跡",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "大井川の氾濫から集落と耕地を大規模に守るために築かれた囲い土手。現在は下小杉付近に一部が残る。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/64-2輪中跡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.314809166667004,
+          34.815045277777799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "則心寺",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は聖観世音菩薩。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/65則心寺.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.312010833333005,
+          34.811928611111099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "扁額「静富山」",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "書跡",
+        "item8": "書家池谷雲谷が、山号「静富山」の扁額を大書し寄進した。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/65-a則心寺の扁額.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.312010833333005,
+          34.811928611111099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "日本全勝千万年之図",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "絵画",
+        "item8": "池谷雲谷の子、池谷松石作。絹布に「鶴と亀と松」を描いた彩色画。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/65-b日本全勝千万年之図.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.312010833333005,
+          34.811928611111099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大井八幡宮(藤守)",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "神社",
+        "item8": "平安時代に川除けの神として大井宮を創祀したのがはじまりとされる。祭神は品陀和気命。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/66大井八幡宮(藤守).jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.29929,
+          34.810953333333302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "藤守の田遊び",
+        "item5": "大井川",
+        "item6": "国指定",
+        "item7": "民俗文化財",
+        "item8": "大井川の治水を祈願した農民が奉納したといわれるお祭り。毎年3月17日に開墾から稲刈りまでの25演目と番外の舞が奉納される。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/66-a藤守の田遊び.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.29929,
+          34.810953333333302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "焼津鰹節水産加工業協同組合・焼津鰹節製造技術",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "無形文化財",
+        "item8": "その製造技術による鰹節の品質は日本最高級を誇る。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/67鰹節製造技術.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.285864444444002,
+          34.814781388888903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "徳川家康公床机据え跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "徳川家康が鷹狩りの際、宗高代官所を膳所とし代官屋敷の庭に床机を据えて小休止をしたとされる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/68徳川家康机床据え跡.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.285547777777992,
+          34.813830833333299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "静浜村外二ヶ村組合立静浜高等小学校跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "明治22年(1889)に志太・益津郡高等小学校の分校として開設。同39年に静浜村外二ヶ村組合立静浜高等小学校となる。同41年廃校。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/69静浜村外二ヶ村組合立静浜高等小学校跡.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.285430277778005,
+          34.813118055555599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "上小杉八幡宮",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "神社",
+        "item8": "鎌倉時代、鶴岡八幡宮より勧請したと伝わる。祭神は誉田別命。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/70上小杉八幡宮.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282758333332993,
+          34.815307777777797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "神相撲",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "民俗文化財",
+        "item8": "1歳になる子どもが親の介添えで相撲をとり、子どもの無病息災を願う。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/70-a神相撲(上小杉八幡宮).jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282758333332993,
+          34.815307777777797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "流鏑馬",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "民俗文化財",
+        "item8": "200mほどの距離を馬に騎乗して3ヶ所の的に向かって6往復する間に射る。現在は青年1人が射手として選ばれ、徒歩で3往復して的を射る。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/70-b流鏑馬(上小杉).JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282758333332993,
+          34.815307777777797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "高徳寺",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は十一面観世音菩薩。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/71高徳寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.283834444444011,
+          34.805424722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "山門",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "江戸時代末期の建築で彫刻が施されている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/71-a高徳寺山門.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.283834444444011,
+          34.805424722222199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "子安神社(上新田八幡宮)",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "神社",
+        "item8": "毎年8月に例祭がおこなわれる。安産祈願として岩田帯を買い求め、安産御礼として底を抜いた柄杓を奉納する。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/72子安神社.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.2691525,
+          34.820774166666702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "百ヶ間地田跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "寛文年間以降、大井川下流域の扇央部に七つの大区画とそれを102の長方形に区画にする大規模な耕地整理がおこなわれた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/73百ケ間地田跡.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.272074722221987,
+          34.817772777777797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "舟形屋敷",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "近世、大井川の洪水から屋敷を守るために、大井川の上流方向に舳先を向けたような舟形の敷地が考案された。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/74舟形屋敷.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.27006138888899,
+          34.818295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "旧相良街道跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "相良藩主田沼意次が相良城を築城のころ整備された。上新田に一部が残り、「田沼街道」と呼ばれて親しまれる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/75-1旧相良街道跡.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.272362222222,
+          34.814135277777801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "旧相良街道跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "相良藩主田沼意次が相良城を築城のころ整備された。上新田に一部が残り、「田沼街道」と呼ばれて親しまれる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/75-2旧相良街道.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.271033888889008,
+          34.819938611111098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "福翁山大満寺跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "高野山普門院末、平安時代の開創と伝わる。明治3年(1870)廃寺。現在は大師堂、鬼子母神堂、歴住墓地を残す。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/76大満寺跡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.26948,
+          34.810433888888902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "英雲上人寿蔵の碑",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "英雲上人は大満寺最後の住職。寺子屋を開き子弟は600人を超えた。明治8年(1875)入寂。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/76-a英雲上人寿蔵の碑.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.26948,
+          34.810433888888902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "笑山辞世の句碑",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "「明月や西にいるもの月と我」は笑山(西島地区出身の俳人)の辞世の句。寛政10年(1798)俳諧仲間「六鯨舎」らによってたてられた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/77笑山辞世の句.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.267118055556011,
+          34.799231944444401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "盤石寺",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は釈迦如来。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/78盤石寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.275204444444,
+          34.791838333333303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "掛川城主山内一豊の判物",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "古文書",
+        "item8": "慶長2年(1597)、当時の掛川城主山内一豊が盤石寺住職に与えた寺領安堵・諸役免除の判物。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/78-a掛川城主山内一豊の判物.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.275204444444,
+          34.791838333333303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "長徳寺",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "寺院",
+        "item8": "曹洞宗、本尊は不動明王。「飯淵のお不動さん」として親しまれる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/79長徳寺.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.278213055555995,
+          34.7899216666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "格天井の絵",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "絵画",
+        "item8": "明治29年(1896)本堂落成を祝い、野口幽谷の門人益頭峻南らが格天井96枚にそれぞれ異なる花々を描いた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/79-a格天井.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.278213055555995,
+          34.7899216666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "不動明王立像",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "彫刻",
+        "item8": "長徳寺の本尊仏。12年に一度の酉年9月に御開帳される秘仏。像高128cm、檜寄木造。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/79-b不動明王立像.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.278213055555995,
+          34.7899216666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "イボとり地蔵",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "奉納されている穴のあいた石を借りイボを撫でると治るとされる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/80イボ取り地蔵.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.278381666667002,
+          34.787169722222202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "薬師堂",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "利右衛門の円永坊跡に建てられた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/81、81-a薬師堂・円永坊跡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.290373888889008,
+          34.792737777777802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "円永坊跡",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "史跡",
+        "item8": "医王山真福寺ともいわれ、真言宗で平安時代に創建と伝わる。吉永八幡宮の別当寺院として、広大な寺域を持っていた。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/81、81-a薬師堂・円永坊跡.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.290373888889008,
+          34.792737777777802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "今川義元判物",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "古文書",
+        "item8": "天文9年(1540)今川義元が遠江国榛原郡吉永郷円永坊に対し、棟別役(家屋の棟数別に賦課された役)2間等を免除し、神講田・屋敷を安堵した判物。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/81-b今川義元判物.jpg",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.290373888889008,
+          34.792737777777802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "鰐口",
+        "item5": "大井川",
+        "item6": "市指定",
+        "item7": "工芸品",
+        "item8": "江戸時代中期の宝永5年(1708)に円永坊に奉納されたもの。青銅製。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/81-c円永坊鰐口.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.290373888889008,
+          34.792737777777802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "吉永八幡宮",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "神社",
+        "item8": "大同元年(806)創建と伝わる。祭神は誉田別命。川除け八幡とも呼ばれる。3年に一度9月中旬に例大祭がおこなわれる。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/82吉永八幡宮.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.292788611111007,
+          34.793608888888897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "大名行列",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "民俗文化財",
+        "item8": "例大祭でおこなわれる大名行列は、神輿渡御に伴う大名行列として奴道中、さらに鹿島踊りがあとに続く。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/82-a大名行列.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/82-a大名行列-2.JPG",
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.292788611111007,
+          34.793608888888897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "川除地蔵",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "大井川下流の各地に祀られている水難除けの石造りの地蔵。その多くは小川の海蔵寺から勧請された。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/83川除地蔵(相川).JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.258394722221993,
+          34.805770555555597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "浪除地蔵",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "建造物",
+        "item8": "利右衛門の地蔵堂に祀られている石造りの地蔵。海上安全を祈願して小川の海蔵寺から勧請された。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/84波除地蔵.JPG",
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.296961944444007,
+          34.782851388888901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "軽便鉄道跡",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "史跡",
+        "item8": "昭和23年(1948)に中遠鉄道と藤相鉄道がつながり誕生した静岡鉄道駿遠線の軌道跡。袋井から藤枝までを結び、当時日本一長い64.6kmの走行距離を誇った。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/85-1軽便鉄道軌道跡.JPG",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/85-2軽便鉄道用地杭.JPG",
+        "item13": "https://yaizu-smartcity.jp/images/opendata/85-3軽便鉄道橋台跡.JPG",
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.266517777778006,
+          34.812919722222198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": "六十六部廻国供養塔",
+        "item5": "大井川",
+        "item6": null,
+        "item7": "有形民俗文化財",
+        "item8": "宝永6〜7年(1709〜1710)に横山九郎右衛門、谷澤兵三郎、法月三郎兵衛の3人が行った日本最大の巡礼「六十六部廻国巡礼」の廻国成就の供養塔。この廻国に使用した旅道具や納経帳等の資料群は、市指定文化財になっている。",
+        "item11": "https://yaizu-smartcity.jp/images/opendata/86-1六十六部(供養塔).jpg",
+        "item12": "https://yaizu-smartcity.jp/images/opendata/86-2六十六部(横山九郎右衛門の笈).JPG",
+        "item13": "https://yaizu-smartcity.jp/images/opendata/86-3六十六部(法月三郎兵衛の笈).JPG",
+        "item14": "https://yaizu-smartcity.jp/images/opendata/86-4六十六部(納経帳・縁起・旅日記等).JPG",
+        "item15": "https://yaizu-smartcity.jp/images/opendata/86-5六十六部(谷澤兵三郎錫杖頭).JPG",
+        "item16": "https://yaizu-smartcity.jp/images/opendata/86-6六十六部(編笠・漆椀).JPG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.31283083333301,
+          34.812278055555602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "item4": null,
+        "item5": null,
+        "item6": null,
+        "item7": null,
+        "item8": null,
+        "item11": null,
+        "item12": null,
+        "item13": null,
+        "item14": null,
+        "item15": null,
+        "item16": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.79769313486231571E+308,
+          -1.79769313486231571E+308
+        ]
+      }
+    }
+  ]
+}

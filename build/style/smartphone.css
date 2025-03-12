@@ -1,0 +1,694 @@
+@charset "utf-8";
+
+@media screen and (max-width : 480px) {
+/* ==================================================
+contents
+================================================== */
+/* ヘッダー
+============================== */
+#wrapper{
+	min-width:auto;
+}
+.accordion1 {
+  position: absolute;
+  z-index: 999;
+	top: 34px;
+right: 0;
+width: 100%;
+}
+.header01 {
+	width: 100%;
+	padding: 6px 0;
+}
+.header01 p {
+	font-size: 77.78%;
+	text-align: left;
+	padding-left: 30px;
+}
+#menu {
+	font-size: 55.5%;
+	min-width: 43px;
+	text-align: center;
+	background-size: 50% !important;
+	background-position: center 10px !important;
+	padding-top: 27px;
+	position: absolute;
+	top: -24px;
+	right: 10px;
+	border-radius: 3px;
+}
+
+#wrapper #home_page_top #ac1 #menu {
+	background-size:15px !important;
+}
+#wrapper #home_page_top #ac1 #menu.ac_close {
+	background-size:20px !important;
+}
+.global_menu_box {
+  min-width: auto;
+  min-height: auto;
+}
+.global_menu_box .cnt {
+	padding: 30px;
+	padding-top: 27px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.global_menu_box div.ttl {
+	padding-left: 35px;
+	min-height: auto;
+	width: 100%;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.gaibu_link {
+	padding-left: 24px;
+	font-size: 88.89%;
+	background-size: 15px;
+}
+.global_menu_box .cnt ul li a {
+	padding: 14px;
+	font-size: 88.89%;
+	padding-left: 48px;
+	background-position: 10px center !important;
+	background-size: 26px !important;
+}
+.global_menu_box div.ttl::after {
+	width: 38px;
+	height: 40px;
+	bottom: -35px;
+	left: calc(50% - 19px);
+	background-size: 100%;
+}
+.other_info {
+	font-size: 116.8%;
+	margin-bottom: 5px;
+}
+.ul1 {
+	margin-bottom: 23px;
+}
+.global_menu_box .cnt ul.ul2 li a {
+	font-size: 74.1%;
+	padding: 10px;
+	padding-left: 44px;
+	background-size: 17px !important;
+	background-position: 15px center !important;
+}
+/* メインビジュアル
+============================== */
+#tmp_wrapper {
+	padding-bottom: 10px;
+	margin-bottom: 0;
+}
+#tmp_wrapper .wrapper:after {
+	background: url(../images/sp/line.png) no-repeat;
+    background-size: auto;
+	z-index: 0;
+	position: absolute;
+	display: block;
+	height: auto;
+	background-position: center top;
+	position: absolute;
+	width: 100%;
+	padding-bottom: 48%;
+	background-size: 100%;
+	top: 26px;
+	left: 0;
+}
+#tmp_wrapper .wrapper:before{
+	display:none;
+}
+#tmp_wrapper .container {
+	width: 92%;
+	margin: 0 auto;
+	max-height:none;
+	height: auto;
+	z-index: 10;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-bottom: 50px;
+}
+#tmp_wrapper .gmenu {
+	max-width: 300px;
+}
+ 
+#tmp_wrapper .gmenu ul li {
+    width:100%;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+#tmp_wrapper .container h1 {
+	width: 100%;
+	height: auto;
+	background-size: 100%;
+	display: block;
+	padding-top: 10.86%;
+}
+#tmp_wrapper .container h2 {
+	background: url(../images/sp/smart_city_yaizu_sub_title.png) no-repeat;
+	background-size: auto;
+	width: 100%;
+	height: auto;
+	background-size: 100%;
+	padding-top: 12.18%;
+}
+h2 {
+	font-size: 122.23%;
+}
+
+#tmp_wrapper .gmenu ul li.list1 p .list_waku,
+#tmp_wrapper .gmenu ul li.list2 p .list_waku,
+#tmp_wrapper .gmenu ul li.list3 p .list_waku {
+	display: block;
+	padding-left: 0;
+	width:100%;
+	padding-top: 18%;
+	background-position: center top;
+	background:none;
+}
+#tmp_wrapper .gmenu ul li.list1 p .list_waku .list_txt1,
+#tmp_wrapper .gmenu ul li.list1 p .list_waku .list_txt2,
+#tmp_wrapper .gmenu ul li.list2 p .list_waku .list_txt1,
+#tmp_wrapper .gmenu ul li.list2 p .list_waku .list_txt2,
+#tmp_wrapper .gmenu ul li.list3 p .list_waku .list_txt1,
+#tmp_wrapper .gmenu ul li.list3 p .list_waku .list_txt2{
+	display:inline-block;
+}
+#tmp_wrapper .gmenu ul li.list1 p a:hover .list_waku,
+#tmp_wrapper .gmenu ul li.list1 p a:focus .list_waku,
+#tmp_wrapper .gmenu ul li.list2 p a:hover .list_waku,
+#tmp_wrapper .gmenu ul li.list2 p a:focus .list_waku,
+#tmp_wrapper .gmenu ul li.list3 p a:hover .list_waku,
+#tmp_wrapper .gmenu ul li.list3 p a:focus .list_waku{
+	background-image:none;
+}
+#tmp_wrapper .gmenu ul li.list1 p .list_waku{
+	width: 62px;
+}
+#tmp_wrapper .gmenu ul li a{
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 33px !important;
+}
+
+
+#tmp_wrapper .gmenu ul li.list1 p a {
+	background-image:url(../images/icon1.png);
+	background-position: center 10px;
+	background-repeat:no-repeat;
+	background-size: 30px;
+}
+#tmp_wrapper .gmenu ul li.list2 p a {
+	background-image:url(../images/icon2.png);
+	background-position: center 10px;
+	background-repeat:no-repeat;
+	background-size: 30px;
+}
+#tmp_wrapper .gmenu ul li.list3 p a {
+	background-image:url(../images/icon3.png);
+	background-position: center 10px;
+	background-repeat:no-repeat;
+	background-size: 30px;
+}
+#tmp_wrapper .gmenu ul li.list1 a:hover,
+#tmp_wrapper .gmenu ul li.list1 a:focus{
+	background-image:url(../images/icon1_white.png);
+	background-repeat:no-repeat;
+	background-position: center 10px;
+	background-size: 30px;
+}
+#tmp_wrapper .gmenu ul li.list2 a:hover,
+#tmp_wrapper .gmenu ul li.list2 a:focus{
+	background-image:url(../images/icon2_white.png);
+	background-repeat:no-repeat;
+	background-position: center 10px;
+	background-size: 30px;
+}
+#tmp_wrapper .gmenu ul li.list3 a:hover,
+#tmp_wrapper .gmenu ul li.list3 a:focus{
+	background-image:url(../images/icon3_white.png);
+	background-repeat:no-repeat;
+	background-position: center 10px;
+	background-size: 30px;
+}
+#tmp_wrapper .gmenu ul li p a:hover {
+	border-radius: 5px;
+ }
+.big_txt {
+	font-size: 185.7%;
+}
+#tmp_wrapper .gmenu ul li {
+	font-size: 66.67%;
+  }
+#tmp_wrapper .gmenu ul li p a::after {
+	width: 15px;
+	height: auto;
+	padding-top: 11%;
+	background-size: 100%;
+	margin: 0 auto;
+	margin-top: 6px;
+}
+#tmp_wrapper .gmenu ul li p a {
+	min-height: 89px;
+}
+/* 地域課題の解決や新たな価値・サービスの創出に向けて
+============================== */
+
+
+#tmp_wrapper .wrapper {
+  display: block;
+  min-height: auto;
+  padding-bottom: 0;
+  padding-top: 0;
+  width: 100%;
+  padding: 10px;
+  padding-top: 70px;
+  padding-bottom: 39%;
+}
+ 
+/* お知らせ
+============================== */
+.container3 {
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+.container3::after {
+	width: 100%;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.container3 .container3_ttl h2::after {
+	border-bottom-width: 3px;
+	width: 40px;
+	margin-bottom: 25px;
+
+}
+.container3 .container3_ttl h2 {
+  font-size: 120%;
+}
+.container3 ul li p {
+  font-size: 88.89%;
+}
+.container3 .container3_cnt{
+  margin-bottom: 45px;
+  width:100%;
+}
+/* 地域課題の解決や新たな価値・サービスの創出に向けて
+============================== */
+.container4 {
+	width: 100%;
+	padding: 20px;
+	position: relative;
+	box-sizing: border-box;
+	position:relative;
+	margin-bottom: 1.7em;
+}
+.container4_wraper{
+	padding: 20px;
+}
+.container4_ttl h2{
+	font-size: 122.23%;
+	text-align: left;
+}
+.container4 .container4_cnt {
+  width: 100%;
+  margin: 0 auto;
+    margin-bottom: 0px;
+  margin-bottom: 23px;
+}
+.container4:before {
+	width: 25px;
+	height: 25px;
+	background-size: 100%;
+}
+.container4:after {
+	width: 25px;
+	height: 25px;
+	background-size: 100%;
+}
+.container4 .container4_sub_box:before{
+	width: 25px;
+	height: 25px;
+	background-size: 100%;
+}
+.container4 .container4_sub_box:after{
+	width: 25px;
+	height: 25px;
+	background-size: 100%;
+}
+.container4 .container4_cnt p {
+  font-weight: normal;
+  font-size: 88.89%;
+}
+
+/* 地図で見る焼津
+============================== */
+.container5 {
+	padding: 20px;
+	background: url(../images/sp/blue_square.jpg) no-repeat;
+	background-size: cover;
+	padding-top: 44px;
+	margin-bottom: 0;
+	padding-bottom: 30px;
+}
+.container5 .container5_sub_box {
+	width: 100%;
+}
+.container5 .container5_cnt2 {
+  max-width: none;
+  width: 100%;
+}
+.data_map {
+  padding:0;
+  margin-top: 0;
+  min-width: auto;
+  width: 100%;
+}
+.data_map p a:hover {
+	padding: 22px;
+}
+.data_map p a span {
+	background-size: 17px;
+}
+.data_map p a:hover span {
+	background-size: 17px;
+}
+.container5 .data_map{
+	padding:0;
+	margin-top: 0;
+	min-width: auto;
+	width: 100%;
+	background: url(../images/yaizu_map_illust_icon.png) no-repeat;
+	padding-top: 72%;
+	background-size: contain;
+	background-position: center top;
+	margin-top: 25px;
+}
+.container5 .container5_sub_box {
+	width:100%;
+	background-position: center bottom;
+	min-height: auto;
+	display: block;
+	background-size: 100%;
+	padding-bottom: 0;
+	background: none;
+}
+.container5 .container5_sub_box .container5_ttl {
+  padding-left: 61px;
+  background-position: left top;
+  margin-bottom: 22px;
+  min-height:60px;
+  background-size: 46px;
+}
+.container5_ttl p {
+  font-size: 77.78%;
+}
+.container5 .container5_cnt2 p {
+  padding-left: 0;
+  font-size: 88.89%;
+}
+.container5 .container5_cnt2 .data_map p {
+  padding-left: 0;
+}
+/* データで見る焼津
+============================== */
+.container6 {
+	padding: 20px;
+	width: 100%;
+	position: relative;
+	padding-bottom: 0;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+.container6_ttl p {
+  font-size: 77.78%;
+}
+.container6 .data_map {
+	position: relative;
+	top: auto;
+	right: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.data_map p a {
+	min-width: auto;
+	width: 100%;
+	padding: 22px;
+}
+.container6 .container6_ttl{
+	padding-left: 61px;
+	background-position: left top;
+	margin-bottom: 10px;
+	min-height:60px;
+	background-size: 46px;
+}
+.container6 .container6_cnt p {
+	padding-left: 0;
+	font-size: 88.89%;
+}
+.tableauPlaceholder {
+  margin-bottom:30px;
+}
+/* データで活用する焼津
+============================== */
+.container7 {
+	padding: 20px;
+	padding-bottom: 50px;
+	background: url(../images/sp/blue_square2.jpg) no-repeat;
+	background-size: cover;
+	margin-bottom: 0;
+	padding-top: 50px;
+}
+.container7 .container7_sub_box {
+	width: 100%;
+	margin: 0 auto;
+	background-position: center bottom;
+	min-height: auto;
+	display: block;
+	padding-bottom: 0;
+	background-size: 100%;
+	background-image: none;
+}
+.container7 .container7_sub_box .container7_sub2_box {
+	margin-top: 0;
+}
+.container7 .container7_sub_box .container7_ttl{
+	padding-left: 61px;
+	background-position: left top;
+	margin-bottom: 10px;
+	min-height:60px;
+	background-size: 46px;
+	padding-top: 0;
+}
+.container7_cnt p {
+  padding-left: 0;
+  font-size: 88.89%;
+  margin-bottom: 22px;
+}
+.container7 .container7_cnt2 .data_map p {
+  padding-left: 0;
+}
+.container7 .data_map {
+  padding: 0;
+  margin-top: 0;
+  min-width: auto;
+  width: 100%;
+  background: url(../images/yaizu_api_illust_icon.png) no-repeat;
+    background-size: auto;
+  background-size: 100%;
+  padding-top: 111%;
+}
+.container7_ttl p {
+  font-size: 77.78%;
+}
+/* その他
+============================== */
+.other{
+	padding: 20px;
+	padding-bottom: 34px;
+	padding-top: 50px;
+}
+.other_infomation_box {
+  width: 100%;
+}
+.other_infomation_box .other_infomation_ttl h4 {
+	font-size: 155.56%;
+	margin-bottom: 10px;
+}
+.other_infomation_cnt {
+  display: block;
+}
+.other_info_left_box {
+	width: 100%;
+	padding-right: 0;
+	border-right: none;
+	margin-bottom: 30px;
+}
+.other_info_right_box {
+	width: 100%;
+	padding-left: 0;
+}
+.other_info_left_ttl {
+	margin-bottom: 10px;
+}
+.other_info_left_ttl h5 {
+	color: #222222;
+	font-size: 100%;
+	padding-left: 46px;
+	padding-bottom: 0;
+	background-size: 40px;
+	background-position: left center;
+	margin-bottom: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.map_txt {
+	margin-bottom: 18px;
+	font-size: 88.89%;
+}
+.yaizu_bousai_mail a {
+	padding-left: 26px;
+	background-size: 20px;
+	font-size: 88.89%;
+}
+.other_info_right_ttl h5{
+	color: #222222;
+	font-size: 100%;
+	padding-left: 46px;
+	padding-bottom: 0;
+	background-size: 40px;
+	background-position: left center;
+	margin-bottom: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	background-size: 35px;
+}
+.other_info_left_box:after{
+	content:"";
+	display:block;
+	width:100%;
+	height:1px;
+	background:#dcdcdc;
+	position:relative;
+	margin-top: 30px;
+}
+.other_info_right_cnt p{
+	font-size: 88.89%;
+	margin-bottom: 30px;
+}
+.other_infomation_box {
+	padding-bottom: 0;
+}
+/* フッター
+============================== */
+.page_top a {
+  background: url(../images/arrow_top.png) no-repeat;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  background-size: 100%;
+  top: -75px;
+}
+.page_top a:hover {
+  background: url(../images/arrow_top2.png) no-repeat;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  background-size: 100%;
+  top: -75px;
+}
+.footer {
+	width: 100%;
+	display: block;
+}
+.footer .footer_left_box {
+  width: 100%;
+  padding-left: 0;
+  min-height: auto;
+  padding-top: 27%;
+  background-size: 85px;
+  background-position: center top;
+}
+.footer .footer_right_box {
+	width: 100%;
+}
+.yaizu_line p a {
+	width: 100%;
+	height: auto;
+	display: block;
+	padding: 0;
+	margin: 0;
+	padding-top: 28.7%;
+	background-size: 100%;
+}
+.footer .footer_left_ttl p {
+  font-size: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+.sub_txt {
+  margin-bottom: 0.7em;
+  font-size: 77.78%;
+  text-align: center;
+}
+.footer .footer_left_cnt address p {
+  font-style: normal;
+  line-height: 1.7;
+  font-size: 77.78%;
+}
+.footer .footer_right_box ul li a {
+	padding: 14px 10px 14px 30px;
+	background-size: 18px;
+	font-size: 77.78%;
+}
+.footer_right_cnt .yaizu_city a {
+	font-size: 88.89%;
+	padding: 5px 25px 5px 52px;
+}
+.footer_right_cnt .yaizu_city a::before {
+	width: 20px;
+	height: 20px;
+	left: 20px;
+	top: 24%;
+	background-size: 100%;
+}
+.footer_right_cnt .yaizu_city a::after {
+	width: 14px;
+	height: 14px;
+	right: 19px;
+	top: 30%;
+	background-size: 100%;
+}
+.footer_address {
+	text-align: center;
+	color: #000000;
+	font-size: 77.78%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.footer_left_cnt address{
+  margin-bottom: 23px;
+}
+.footer_wrapper {
+	padding-bottom: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/* ==================================================
+clearfix
+================================================== */
+/* for modern browser */
+.clearfix:after {
+	content:"."; /* 変更しない */
+	display:block; /* 変更しない */
+	height:0; /* 変更しない */
+	font-size:0.1%; /* 変更しない */
+	line-height:0.1; /* 変更しない */
+	clear:both; /* 変更しない */
+	visibility:hidden; /* 変更しない */
+}
+}

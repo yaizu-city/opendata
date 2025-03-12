@@ -1,0 +1,10 @@
+mapping.json
+node_modules
+build/**/*.geojson
+build/**/*.json
+build/**/*.csv
+*/attributes.json
+*/**/attributes.json
+src/*-categories.json
+repository.zip
+smartcity-smartmap-v2-cli/

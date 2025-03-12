@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>11767</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable>Atr11767</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>SAFIELD000</ColID>
+        <DataType>S</DataType>
+        <Title>用途地域</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>SAFIELD001</ColID>
+        <DataType>L</DataType>
+        <Title>容積率（％）</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>SAFIELD002</ColID>
+        <DataType>L</DataType>
+        <Title>建ぺい率（％）</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>

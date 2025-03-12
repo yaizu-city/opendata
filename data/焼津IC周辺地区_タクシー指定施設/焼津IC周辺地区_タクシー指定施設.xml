@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>29952</LayerNo>
+    <Primitive>100</Primitive>
+    <AttributeTable>Atr_29952_0_2_20250210100525</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAANGLE">
+        <ColID />
+      </Field>
+      <Field id="SASIZE">
+        <ColID />
+      </Field>
+      <Field id="SASYMBOLNO">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>item1</ColID>
+        <DataType>L</DataType>
+        <Title>ID</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>item2</ColID>
+        <DataType>S</DataType>
+        <Title>���</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>item3</ColID>
+        <DataType>S</DataType>
+        <Title>����</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD003">
+        <ColID>item23</ColID>
+        <DataType>S</DataType>
+        <Title>����</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD004">
+        <ColID>item24</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_1��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD005">
+        <ColID>item25</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_2��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD006">
+        <ColID>item26</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_3��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD007">
+        <ColID>item27</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_4��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD008">
+        <ColID>item28</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_5��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD009">
+        <ColID>item29</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_6��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD010">
+        <ColID>item30</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_7��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD011">
+        <ColID>item31</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_8��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD012">
+        <ColID>item32</ColID>
+        <DataType>S</DataType>
+        <Title>�\����ߐ؂莞��_9��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD013">
+        <ColID>item33</ColID>
+        <DataType>S</DataType>
+        <Title>1��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD014">
+        <ColID>item34</ColID>
+        <DataType>S</DataType>
+        <Title>2��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD015">
+        <ColID>item35</ColID>
+        <DataType>S</DataType>
+        <Title>3��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD016">
+        <ColID>item36</ColID>
+        <DataType>S</DataType>
+        <Title>4��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD017">
+        <ColID>item37</ColID>
+        <DataType>S</DataType>
+        <Title>5��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD018">
+        <ColID>item38</ColID>
+        <DataType>S</DataType>
+        <Title>6��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD019">
+        <ColID>item39</ColID>
+        <DataType>S</DataType>
+        <Title>7��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD020">
+        <ColID>item40</ColID>
+        <DataType>S</DataType>
+        <Title>8��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD021">
+        <ColID>item41</ColID>
+        <DataType>S</DataType>
+        <Title>9��</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD022">
+        <ColID>ITEM0001</ColID>
+        <DataType>S</DataType>
+        <Title>�^�s���</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD023">
+        <ColID>ITEM0002</ColID>
+        <DataType>S</DataType>
+        <Title>�d�b�ԍ��i�\��j</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD024">
+        <ColID>ITEM0003</ColID>
+        <DataType>S</DataType>
+        <Title>���̂ق�</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>

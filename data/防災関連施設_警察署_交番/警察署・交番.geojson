@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "警察署・交番",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "大富交番", "住所": "焼津市中新田1012-1" }, "geometry": { "type": "Point", "coordinates": [ 138.287492601143953, 34.839550586529512 ] } },
+{ "type": "Feature", "properties": { "種別": "警察署", "名称": "焼津警察署", "住所": "静岡県焼津市道原723" }, "geometry": { "type": "Point", "coordinates": [ 138.306940571945347, 34.836153959668188 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "大井川交番", "住所": "焼津市宗高989-5" }, "geometry": { "type": "Point", "coordinates": [ 138.283889994262381, 34.805919997561894 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "八楠交番", "住所": "焼津市八楠4-3-22" }, "geometry": { "type": "Point", "coordinates": [ 138.304446196924658, 34.877657122614238 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "小川交番", "住所": "焼津市石津787-3" }, "geometry": { "type": "Point", "coordinates": [ 138.318293961374508, 34.846826900359396 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "西焼津駅前交番", "住所": "焼津市西焼津22-4" }, "geometry": { "type": "Point", "coordinates": [ 138.286702775802837, 34.859638226977005 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "焼津駅前交番", "住所": "焼津市栄1-7-1" }, "geometry": { "type": "Point", "coordinates": [ 138.317568677586507, 34.87158725676381 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "中央交番", "住所": "焼津市焼津6-5-17" }, "geometry": { "type": "Point", "coordinates": [ 138.318052018331798, 34.863822044691723 ] } },
+{ "type": "Feature", "properties": { "種別": "交番", "名称": "和田交番", "住所": "焼津市田尻2002" }, "geometry": { "type": "Point", "coordinates": [ 138.322339991200863, 34.827169998452149 ] } }
+]
+}

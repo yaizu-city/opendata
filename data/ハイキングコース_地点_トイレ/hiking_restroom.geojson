@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "hiking_restroom",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 4, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.329930417046796, 34.901638897086372 ] } },
+{ "type": "Feature", "properties": { "ID": 5, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.330077904349935, 34.904924012421091 ] } },
+{ "type": "Feature", "properties": { "ID": 6, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.340598686485038, 34.918264628982023 ] } },
+{ "type": "Feature", "properties": { "ID": 7, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.314916774820603, 34.893683361566687 ] } },
+{ "type": "Feature", "properties": { "ID": 8, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.322743036690554, 34.892121126690206 ] } },
+{ "type": "Feature", "properties": { "ID": 9, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.302613791011993, 34.894183534121048 ] } },
+{ "type": "Feature", "properties": { "ID": 11, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.336205652323969, 34.880205574165956 ] } },
+{ "type": "Feature", "properties": { "ID": 12, "地点名称": "トイレ" }, "geometry": { "type": "Point", "coordinates": [ 138.333741851495944, 34.878255065112818 ] } }
+]
+}

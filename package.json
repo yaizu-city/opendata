@@ -1,0 +1,44 @@
+{
+  "name": "opendata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build-csv": "node src/build-csv.js && npm run build-csv:nkf",
+    "build-csv:nkf": "type nkf && find data -type f -name \"*.csv\" -exec nkf -w --overwrite {} \\;",
+    "build-location-data": "node src/build-location-data.js",
+    "build-standard-data": "node src/build-standard-data.js",
+    "build-readme": "npm run build-config-json && node src/build-readme.js",
+    "build-api": "node src/build-api.js",
+    "build-data-updates": "node src/build-data-updates.js",
+    "build-config-json": "node src/build-config-json.js",
+    "csvdiff": "./src/csvdiff.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takamatsu-city/opendata.git"
+  },
+  "author": "",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/takamatsu-city/opendata/issues"
+  },
+  "homepage": "https://github.com/takamatsu-city/opendata#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "csv-parse": "^5.3.5",
+    "csv-stringify": "^6.3.0",
+    "csv2geojson": "^5.1.2",
+    "csvtojson": "^2.0.10",
+    "glob": "^8.1.0",
+    "js-yaml": "^4.1.0",
+    "klaw": "^4.1.0",
+    "papaparse": "^5.4.1",
+    "read-excel-file": "^5.6.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.0/xlsx-0.20.0.tgz"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
