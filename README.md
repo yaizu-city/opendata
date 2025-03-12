@@ -21,7 +21,7 @@
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
 | AED設置箇所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED設置箇所一覧) | [CSV](https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/AED設置箇所一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) |
-| R70312_TEST1 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/R70312_TEST1) | | [GeoJSON](https://yaizu-smartcity.jp/R70312_TEST1/data.geojson) | |
+| R70312_TEST1_2 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/R70312_TEST1_2) | | [GeoJSON](https://yaizu-smartcity.jp/R70312_TEST1_2/data.geojson) | |
 | あかちゃんえき一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あかちゃんえき一覧) | [CSV](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) |
 | あんしん歩行エリア整備台帳（整備区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あんしん歩行エリア整備台帳) | | [GeoJSON](https://yaizu-smartcity.jp/あんしん歩行エリア整備台帳/data.geojson) | |
 | お食事 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/お食事) | [CSV](https://yaizu-smartcity.jp/お食事/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/お食事/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/お食事/data.csv) |
