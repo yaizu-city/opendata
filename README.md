@@ -20,6 +20,7 @@
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
+| AED（テスト10） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/20250312_10) | | [GeoJSON](https://yaizu-smartcity.jp/20250312_10/data.geojson) | |
 | AED（テスト6） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/20250312_7) | | [GeoJSON](https://yaizu-smartcity.jp/20250312_7/data.geojson) | |
 | AED（テスト8） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/20250312_8) | | [GeoJSON](https://yaizu-smartcity.jp/20250312_8/data.geojson) | |
 | AED（テスト9） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/20250312_9) | | [GeoJSON](https://yaizu-smartcity.jp/20250312_9/data.geojson) | |
