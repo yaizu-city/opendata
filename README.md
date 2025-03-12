@@ -1,6 +1,6 @@
 # 焼津オープンデータカタログ
 
-焼津市では、以下のデータをオープンデータとして提供しています
+焼津市では、以下の地図データをオープンデータとして提供しています。
 
 ご利用にあたっては、[焼津市オープンデータカタログ利用規約](https://yaizu-smartcity.jp/%E7%84%BC%E6%B4%A5%E3%82%AA%E3%83%BC%E3%83%95%E3%82%9A%E3%83%B3%E3%83%86%E3%82%99%E3%83%BC%E3%82%BF%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%AF%E3%82%99%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%8420250306.pdf) をご確認ください。
 
@@ -20,7 +20,7 @@
 
 | データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |
 | --- | --- | --- | --- | --- |
-| AED（テスト6） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/202503126) | | [GeoJSON](https://yaizu-smartcity.jp/202503126/data.geojson) | |
+| AED（テスト6） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/20250312_7) | | [GeoJSON](https://yaizu-smartcity.jp/20250312_7/data.geojson) | |
 | AED設置箇所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED設置箇所一覧) | [CSV](https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/AED設置箇所一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) |
 | あかちゃんえき一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あかちゃんえき一覧) | [CSV](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) |
 | あんしん歩行エリア整備台帳（整備区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あんしん歩行エリア整備台帳) | | [GeoJSON](https://yaizu-smartcity.jp/あんしん歩行エリア整備台帳/data.geojson) | |
