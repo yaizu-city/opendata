@@ -1,0 +1,10 @@
+﻿original_name,display_name,label_flag
+SAFIELD000,RecID,
+SAFIELD001,UserID,
+SAFIELD002,ID,
+SAFIELD003,作成月日,
+SAFIELD004,コメント,
+SAFIELD005,tRegist,
+SAFIELD006,lRegistOpID,
+SAFIELD007,tUpdate,
+SAFIELD008,lUpdateOpID,
