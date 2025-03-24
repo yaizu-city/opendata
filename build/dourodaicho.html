@@ -30,6 +30,20 @@
         zoom: 12,
     });
     map.on('load', () => {
+        map.addSource('urbanPlan', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-kihonzu/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+        map.addLayer({
+            'id': 'urbanPlanLayer',
+            'type': 'line',
+            'source': 'urbanPlan',
+            'source-layer': '地形図_都市計画基本図',
+            'paint': {
+                'line-color': '#00FF00',
+                'line-opacity': 0.5
+            }
+        });
         map.addSource('roadSource', {
             type: 'vector',
             url: 'https://tileserver.geolonia.com/yaizu-smartmap-dourodaicho-20250106/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
@@ -43,20 +57,6 @@
             'paint': {
                 'line-color': '#ff0000',
                 'line-width': 10
-            }
-        });
-        map.addSource('urbanPlan', {
-            type: 'vector',
-            url: 'https://tileserver.geolonia.com/yaizu-smartmap-kihonzu/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
-        });
-        map.addLayer({
-            'id': 'urbanPlanLayer',
-            'type': 'line',
-            'source': 'urbanPlan',
-            'source-layer': '地形図_都市計画基本図',
-            'paint': {
-                'line-color': '#00FF00',
-                'line-opacity': 0.5
             }
         });
     })
