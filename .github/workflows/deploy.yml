@@ -36,7 +36,6 @@ jobs:
 
       - run: npm ci
 
-      # gitに日本語ファイル名に対応させる。
       - run: git config --global core.quotepath false
 
       - run: sudo apt-get install -y nkf tippecanoe
@@ -99,8 +98,12 @@ jobs:
       - name: Generate Vector Tiles
         if: github.ref == 'refs/heads/main'
         run: |
-          mkdir -p ./tiles
-          tippecanoe -e ./tiles -z14 -Z5 -l $(basename $(pwd)) ./build/*.geojson
+          while read -r dir; do
+            [[ -z "$dir" ]] && continue
+            DIR_NAME=$(basename "$dir")
+            mkdir -p "./build/tiles/$DIR_NAME"
+            tippecanoe -e "./build/tiles/$DIR_NAME/" "./build/$DIR_NAME/data.geojson" -l "$DIR_NAME" -Z 9 -z 14 -r1 --no-feature-limit --no-tile-size-limit --no-tile-stats --force
+          done < changed_dirs.txt
 
       # AWS Credentials設定
       - name: Configure AWS Credentials
@@ -114,7 +117,7 @@ jobs:
       - name: Deploy Vector Tiles to S3
         if: github.ref == 'refs/heads/main'
         run: |
-          aws s3 sync ./tiles s3://yaizu-smartcity-jp-frontend-v1/tiles \
+          aws s3 sync ./build/tiles s3://yaizu-smartcity-jp-frontend-v1/tiles \
             --exact-timestamps \
             --cache-control "public,max-age=3600"
 
