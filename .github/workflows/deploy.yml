@@ -12,7 +12,7 @@ on:
     branches:
       - "*"
   workflow_dispatch:
-  
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -35,18 +35,16 @@ jobs:
           token: ${{ secrets.GEOLONIA_BOT_PAT_TOKEN }}
 
       - run: npm ci
+
       # gitに日本語ファイル名に対応させる。
       - run: git config --global core.quotepath false
 
-      - run: sudo apt-get install -y nkf
+      - run: sudo apt-get install -y nkf tippecanoe
 
-      # ディレクトリ名のチェック
       - run: bash ./src/validate-dir-name.sh ../data
 
       - run: npm run build-config-json
-      # - run: npm run test
 
-      # Excel を CSV に変換（TODO: 差分更新に変更）
       - run: npm run build-csv
         continue-on-error: true
         id: build-step
@@ -66,113 +64,64 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gdal-bin
 
-      # Shapeファイルを GeoJSON に変換（差分更新対応）
       - name: 差分を取得
         id: changed-dirs
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "Processing pull request"
-            
-            # Pull requestの場合、変更されたファイルを取得し、data/以下のみにフィルタ
             git diff --name-only origin/main | grep "^data/" > changed_files.txt || true
           elif [[ "${{ github.event_name }}" == "push" ]]; then
-            echo "Processing push to main"
-
-            # Pushの場合、現在のコミットと1つ前のコミットの差分を取得し、data/以下のみにフィルタ
             PREVIOUS_COMMIT=$(git rev-parse HEAD^)
             CURRENT_COMMIT=$(git rev-parse HEAD)
             git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
-          else
-            echo "Unknown event: ${{ github.event_name }}"
-            exit 1
           fi
 
-          # ディレクトリ名を抽出してユニークにする
-          if [[ -s changed_files.txt ]]; then
-            echo "Changes detected."
-
-            cat changed_files.txt
-            
-            # Changed directories
-            xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt
-            echo "Changed directories:"
-            cat changed_dirs.txt
-
-            # Deleted directories
-            git diff --name-only --diff-filter=D $PREVIOUS_COMMIT $CURRENT_COMMIT | xargs -n1 dirname | sort -u > deleted_dirs.txt || true
-            echo "Deleted directories:"
-            cat deleted_dirs.txt
-          else
-            echo "No changes detected."
-            echo "" > changed_dirs.txt  # 空ファイルを作成
-            echo "" > deleted_dirs.txt  # 空ファイルを作成
-          fi
-        shell: bash
+          xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt || true
 
       - name: GeoJSON に変換
         run: |
-          if [[ -s changed_dirs.txt ]]; then
-            while read -r dir; do
-              # 空行をスキップ
-              [[ -z "$dir" ]] && continue
-              
-              echo "Processing directory: $dir"
-
-              # CSV を GeoJSON に変換
-              node ./src/build-location-data.js "$dir"
-
-              # Shapeファイルを GeoJSON に変換
-              ./src/shape2Geojson.sh "$dir"
-
-            done < changed_dirs.txt
-          else
-            echo "No changes detected in data directories."
-          fi
-        shell: bash
+          while read -r dir; do
+            [[ -z "$dir" ]] && continue
+            node ./src/build-location-data.js "$dir"
+            ./src/shape2Geojson.sh "$dir"
+          done < changed_dirs.txt
 
       - name: GeoJSONの属性を変換
         run: |
-          if [[ -s changed_dirs.txt ]]; then
-            while read -r dir; do
-              # 空行をスキップ
-              [[ -z "$dir" ]] && continue
-              
-              echo "Processing directory: $dir"
-              ./src/convertAttributes.sh "$dir"
-            done < changed_dirs.txt
-          else
-            echo "No changes detected in data directories."
-          fi
-        shell: bash
+          while read -r dir; do
+            [[ -z "$dir" ]] && continue
+            ./src/convertAttributes.sh "$dir"
+          done < changed_dirs.txt
 
       - run: npm run build-standard-data
       - run: npm run build-api
-      # - run: npm run build-data-updates
 
-      - name: Update README
-        if: github.event_name == 'pull_request'
+      # ベクトルタイル生成（xyz形式）
+      - name: Generate Vector Tiles
+        if: github.ref == 'refs/heads/main'
         run: |
-          git config --global user.name "geolonia-bot"
-          git config --global user.email "geolonia-bot@users.noreply.github.com"
-          git checkout $GITHUB_HEAD_REF
-          git fetch origin main
-          git merge origin/main
-          npm run build-readme
-          if ! git diff --quiet README.md; then
-            git add README.md
-            git commit -m "Update README By GitHub Actions"
-            git push -f
-          fi
+          mkdir -p ./tiles
+          tippecanoe -e ./tiles -z14 -Z5 -l $(basename $(pwd)) ./build/*.geojson
 
-      # NOTE: GitHub の Quta に引っかかったため、デプロイ処理を移動
+      # AWS Credentials設定
       - name: Configure AWS Credentials
-        if : github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
           aws-region: ap-northeast-1
 
-      - name: Deploy to S3（差分追加）
+      # ベクトルタイルをS3にデプロイ
+      - name: Deploy Vector Tiles to S3
+        if: github.ref == 'refs/heads/main'
+        run: |
+          aws s3 sync ./tiles s3://yaizu-smartcity-jp-frontend-v1/tiles \
+            --exact-timestamps \
+            --cache-control "public,max-age=3600"
+
+          aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/tiles/*"
+
+      # 既存のフロントエンドコンテンツもデプロイ
+      - name: Deploy Frontend Contents to S3
         if: github.ref == 'refs/heads/main'
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
@@ -180,17 +129,3 @@ jobs:
             --cache-control "public,max-age=60"
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
-
-      # - name: Deploy to S3（差分削除）
-      #   if: github.ref == 'refs/heads/main'
-      #   run: |
-      #     if [[ -s deleted_dirs.txt ]]; then
-      #       while read -r dir; do
-      #         echo "Removing directory: $dir"
-      #         # 必要に応じてS3バケットやビルド環境から削除
-      #         aws s3 rm "s3://yaizu-smartcity-jp-frontend-v1/$dir" --recursive
-      #       done < deleted_dirs.txt
-      #     else
-      #       echo "No deleted directories detected."
-      #     fi
-      #   shell: bash
