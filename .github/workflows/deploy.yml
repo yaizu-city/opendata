@@ -110,7 +110,7 @@ jobs:
 
       # AWS Credentials設定
       - name: Configure AWS Credentials
-        if: github.ref == 'refs/heads/main'
+        # if: github.ref == 'refs/heads/main'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
