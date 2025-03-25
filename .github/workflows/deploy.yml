@@ -113,13 +113,18 @@ jobs:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
           aws-region: ap-northeast-1
 
-      # ベクトルタイルをS3にデプロイ
+      # ベクトルタイルをS3にデプロイ（各ディレクトリごとに削除・再アップロード）
       - name: Deploy Vector Tiles to S3
         if: github.ref == 'refs/heads/main'
         run: |
-          aws s3 sync ./build/tiles s3://yaizu-smartcity-jp-frontend-v1/tiles \
-            --exact-timestamps \
-            --cache-control "public,max-age=3600"
+          while read -r dir; do
+            [[ -z "$dir" ]] && continue
+            DIR_NAME=$(basename "$dir")
+            aws s3 rm s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME --recursive
+            aws s3 sync ./build/tiles/$DIR_NAME s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME \
+              --exact-timestamps \
+              --cache-control "public,max-age=3600"
+          done < changed_dirs.txt
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/tiles/*"
 
