@@ -100,7 +100,6 @@ jobs:
 
       # ベクトルタイル生成（xyz形式）
       - name: Generate Vector Tiles
-        if: github.ref == 'refs/heads/main'
         run: |
           while read -r dir; do
             [[ -z "$dir" ]] && continue
