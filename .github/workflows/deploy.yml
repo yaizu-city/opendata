@@ -118,7 +118,7 @@ jobs:
 
       # ベクトルタイルをS3にデプロイ（各ディレクトリごとに削除・再アップロード）
       - name: Deploy Vector Tiles to S3
-        if: github.ref == 'refs/heads/main'
+        # if: github.ref == 'refs/heads/main'
         run: |
           while read -r dir; do
             [[ -z "$dir" ]] && continue
