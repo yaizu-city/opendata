@@ -105,7 +105,7 @@ jobs:
             [[ -z "$dir" ]] && continue
             DIR_NAME=$(basename "$dir")
             mkdir -p "./build/tiles/$DIR_NAME"
-            tippecanoe -e "./build/tiles/$DIR_NAME/" "./build/$DIR_NAME/data.geojson" -l "$DIR_NAME" -Z 9 -z 14 -r1 --no-feature-limit --no-tile-size-limit --no-tile-stats --force
+            tippecanoe -e "./build/tiles/$DIR_NAME/" "./build/$DIR_NAME/data.geojson" -l "$DIR_NAME" -Z 9 -z 14 -r1 --no-feature-limit --no-tile-size-limit --force
           done < changed_dirs.txt
 
       # AWS Credentials設定
