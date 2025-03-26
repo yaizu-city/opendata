@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>焼津市　都市計画基本図/道路台帳図
-  </title>
+  <title>スマートマップ焼津 | 道路台帳図</title>
   <style>
     html,
     body,
@@ -26,8 +25,10 @@
 
     const map = new geolonia.Map({
         container: '#map',
-        center: [138.3431629, 34.8511467],
+        center: [138.3091,34.8437],
         zoom: 12,
+        style: 'https://smartmap.styles.geoloniamaps.com/style.json',
+        hash: true,
     });
     map.on('load', () => {
         map.addSource('urbanPlan', {
@@ -40,8 +41,9 @@
             'source': 'urbanPlan',
             'source-layer': '地形図_都市計画基本図',
             'paint': {
-                'line-color': '#00FF00',
-                'line-opacity': 0.5
+                'line-color': 'rgb(100,100,100)',
+                'line-opacity': 0.5,
+                'line-width': 1
             }
         });
         map.addSource('roadSource', {
@@ -55,8 +57,8 @@
             'source-layer': '道路台帳図',
             'layout': {},
             'paint': {
-                'line-color': '#ff0000',
-                'line-width': 10
+                'line-color': '#030B99',
+                'line-width': 2
             }
         });
     })
