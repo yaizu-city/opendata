@@ -6,7 +6,7 @@ while read -r dir; do
   [[ -z "$dir" ]] && continue
   DIR_NAME=$(basename "$dir")
   TILE_DIR="./build/tiles/$DIR_NAME"
-  TILE_URL="https://yaizu-smartcity.jp/tiles/$DIR_NAME/{z}/{x}/{y}.pbf"
+  TILE_URL="https://yaizu-smartcity.jp/tiles/opendata/$DIR_NAME/{z}/{x}/{y}.pbf"
   ATTR_FILE="$dir/attributes.csv"
 
   mkdir -p "$TILE_DIR"

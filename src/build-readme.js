@@ -23,7 +23,7 @@ class BuildReadme {
       // locationDataCategories が存在する場合のみ処理
       if (locationDataCategories.length > 0) {
 
-        readme += "| データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |\n";
+        readme += "| データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |\n";
         readme += "| --- | --- | --- | --- | --- |\n";
     
         for (let i = 0; i < locationDataCategories.length; i++) {
@@ -32,12 +32,13 @@ class BuildReadme {
           const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
           const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
           const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
+          const tileJsonFileUrl = `https://yaizu-smartcity.jp/tiles/opendata/${category.category}/tiles.json`;
           const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
   
           if (!csvFile || path.basename(csvFile) === "attributes.csv") {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) |\n`;
           } else {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | [編集](${mapUrl}) |\n`;
           }
         }
       }
