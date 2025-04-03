@@ -108,6 +108,10 @@ jobs:
             tippecanoe -e "./build/tiles/$DIR_NAME/" "./build/$DIR_NAME/data.geojson" -l "$DIR_NAME" -Z 9 -z 14 -r1 --no-feature-limit --no-tile-size-limit --force
           done < changed_dirs.txt
 
+      # tiles.json を生成
+      - name: Generate tile.json
+        run: bash ./src/build-tilejson.sh
+
       # AWS Credentials設定
       - name: Configure AWS Credentials
         # if: github.ref == 'refs/heads/main'
