@@ -114,43 +114,42 @@ jobs:
 
       # AWS Credentials設定
       - name: Configure AWS Credentials
-        # if: github.ref == 'refs/heads/main'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
           aws-region: ap-northeast-1
+          role-duration-seconds: 3600
 
-      # ベクトルタイルをS3にデプロイ（各ディレクトリごとに削除・再アップロード）
+      # ベクトルタイルをS3にデプロイ（最適化）
       - name: Deploy Vector Tiles to S3
-        # if: github.ref == 'refs/heads/main'
         run: |
           while read -r dir; do
             [[ -z "$dir" ]] && continue
             DIR_NAME=$(basename "$dir")
             TARGET_DIR=./build/tiles/$DIR_NAME
 
-            # 既存ファイルをS3から削除
+            echo "🧹 S3をクリーンアップ中: $DIR_NAME"
             aws s3 rm s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME --recursive
 
-            # .pbf ファイルをアップロード（gzip + vector tile content-type）
-            find "$TARGET_DIR" -type f -name "*.pbf" | while read -r file; do
-              REL_PATH=${file#./build/tiles/}
-              aws s3 cp "$file" "s3://yaizu-smartcity-jp-frontend-v1/tiles/$REL_PATH" \
-                --content-type "application/vnd.mapbox-vector-tile" \
-                --content-encoding "gzip" \
-                --cache-control "public,max-age=3600"
-            done
+            echo "📦 .pbf ファイルをアップロード: $DIR_NAME"
+            aws s3 sync "$TARGET_DIR" "s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME" \
+              --exclude "*" --include "*.pbf" \
+              --content-type "application/vnd.mapbox-vector-tile" \
+              --content-encoding "gzip" \
+              --cache-control "public,max-age=3600"
 
-            # .json ファイルをアップロード（gzip なし + JSON content-type）
-            find "$TARGET_DIR" -type f -name "*.json" | while read -r file; do
-              REL_PATH=${file#./build/tiles/}
-              aws s3 cp "$file" "s3://yaizu-smartcity-jp-frontend-v1/tiles/$REL_PATH" \
-                --content-type "application/json" \
-                --cache-control "public,max-age=60"
-            done
+            echo "📦 .json ファイルをアップロード: $DIR_NAME"
+            aws s3 sync "$TARGET_DIR" "s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME" \
+              --exclude "*" --include "*.json" \
+              --content-type "application/json" \
+              --cache-control "public,max-age=60"
 
           done < changed_dirs.txt
 
+      # CloudFront キャッシュ無効化
+      - name: Invalidate CloudFront Cache
+        run: |
+          echo "🚀 CloudFront キャッシュを無効化中..."
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/tiles/*"
 
       # 既存のフロントエンドコンテンツもデプロイ
