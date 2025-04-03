@@ -36,7 +36,7 @@ class BuildReadme {
           const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
   
           if (!csvFile || path.basename(csvFile) === "attributes.csv") {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [GeoJSON](${jsonFileUrl}) | | [TileJSON](${tileJsonFileUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | | [TileJSON](${tileJsonFileUrl}) |\n`;
           } else {
             readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | [編集](${mapUrl}) |\n`;
           }
