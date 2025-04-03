@@ -120,44 +120,49 @@ jobs:
           aws-region: ap-northeast-1
           role-duration-seconds: 3600
 
-      # ベクトルタイルをS3にデプロイ（最適化）
-      - name: Deploy Vector Tiles to S3
+      - name: Upload updated vector tiles to S3 (overwrite only)
         run: |
           while read -r dir; do
             [[ -z "$dir" ]] && continue
             DIR_NAME=$(basename "$dir")
             TARGET_DIR=./build/tiles/$DIR_NAME
+            S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME
 
-            echo "🧹 S3をクリーンアップ中: $DIR_NAME"
-            aws s3 rm s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME --recursive
-
-            echo "📦 .pbf ファイルをアップロード: $DIR_NAME"
-            aws s3 sync "$TARGET_DIR" "s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME" \
+            echo "🔼 Uploading .pbf files to $S3_DIR"
+            aws s3 sync "$TARGET_DIR" "$S3_DIR" \
               --exclude "*" --include "*.pbf" \
+              --exact-timestamps \
               --content-type "application/vnd.mapbox-vector-tile" \
-              --content-encoding "gzip" \
-              --cache-control "public,max-age=3600"
+              --content-encoding "gzip"
 
-            echo "📦 .json ファイルをアップロード: $DIR_NAME"
-            aws s3 sync "$TARGET_DIR" "s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME" \
+            echo "🔼 Uploading .json files to $S3_DIR"
+            aws s3 sync "$TARGET_DIR" "$S3_DIR" \
               --exclude "*" --include "*.json" \
-              --content-type "application/json" \
-              --cache-control "public,max-age=60"
+              --exact-timestamps \
+              --content-type "application/json"
 
           done < changed_dirs.txt
 
-      # CloudFront キャッシュ無効化
-      - name: Invalidate CloudFront Cache
+      - name: Delete outdated files from S3
         run: |
-          echo "🚀 CloudFront キャッシュを無効化中..."
-          aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/tiles/*"
+          while read -r dir; do
+            [[ -z "$dir" ]] && continue
+            DIR_NAME=$(basename "$dir")
+            TARGET_DIR=./build/tiles/$DIR_NAME
+            S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME
+
+            echo "🧹 Deleting obsolete files in $S3_DIR"
+            aws s3 sync "$TARGET_DIR" "$S3_DIR" \
+              --delete \
+              --exact-timestamps
+
+          done < changed_dirs.txt
 
       # 既存のフロントエンドコンテンツもデプロイ
       - name: Deploy Frontend Contents to S3
         if: github.ref == 'refs/heads/main'
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
-            --exact-timestamps \
-            --cache-control "public,max-age=60"
+            --exact-timestamps
 
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
