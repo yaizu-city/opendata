@@ -10,7 +10,7 @@
 
 ## ▼焼津オープンデータカタログの使い方
 
-- 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。
+- 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」**、 **「TileJSON」**をクリックすると、最新の該当データが得られます。
 
  - 「フォルダ」には、xlsxファイルが格納されています。
 
@@ -19,7 +19,7 @@
  - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。
 
 | データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | AED設置箇所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED設置箇所一覧) | [CSV](https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/AED設置箇所一覧/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/opendata/AED設置箇所一覧/tiles.json) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) |
 | あかちゃんえき一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あかちゃんえき一覧) | [CSV](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/あかちゃんえき一覧/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/opendata/あかちゃんえき一覧/tiles.json) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/あかちゃんえき一覧/data.csv) |
 | あんしん歩行エリア整備台帳（整備区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/あんしん歩行エリア整備台帳) | [GeoJSON](https://yaizu-smartcity.jp/あんしん歩行エリア整備台帳/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/opendata/あんしん歩行エリア整備台帳/tiles.json) |
