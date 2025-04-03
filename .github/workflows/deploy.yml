@@ -126,7 +126,7 @@ jobs:
             [[ -z "$dir" ]] && continue
             DIR_NAME=$(basename "$dir")
             TARGET_DIR=./build/tiles/$DIR_NAME
-            S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME
+            S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/opendata/$DIR_NAME
 
             echo "🔼 Uploading .pbf files to $S3_DIR"
             aws s3 sync "$TARGET_DIR" "$S3_DIR" \
@@ -149,7 +149,7 @@ jobs:
             [[ -z "$dir" ]] && continue
             DIR_NAME=$(basename "$dir")
             TARGET_DIR=./build/tiles/$DIR_NAME
-            S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME
+            S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/opendata/$DIR_NAME
 
             echo "🧹 Deleting obsolete files in $S3_DIR"
             aws s3 sync "$TARGET_DIR" "$S3_DIR" \
