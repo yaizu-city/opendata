@@ -32,7 +32,7 @@ class BuildReadme {
           const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
           const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
           const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
-          const tileJsonFileUrl = `https://yaizu-smartcity.jp/tiles/opendata/${category.category}/tiles.json`;
+          const tileJsonFileUrl = `https://yaizu-smartcity.jp/tiles/${category.category}/tiles.json`;
           const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
   
           if (!csvFile || path.basename(csvFile) === "attributes.csv") {
