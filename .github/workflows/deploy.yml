@@ -66,22 +66,18 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gdal-bin
 
-      # - name: 差分を取得
-      #   id: changed-dirs
-      #   run: |
-      #     if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-      #       git diff --name-only origin/main | grep "^data/" > changed_files.txt || true
-      #     elif [[ "${{ github.event_name }}" == "push" ]]; then
-      #       PREVIOUS_COMMIT=$(git rev-parse HEAD^)
-      #       CURRENT_COMMIT=$(git rev-parse HEAD)
-      #       git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
-      #     fi
-
-      #     xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt || true
-
-      - name: 差分ではなく一時的に全ディレクトリを取得
+      - name: 差分を取得
+        id: changed-dirs
         run: |
-          find data -mindepth 1 -type d > changed_dirs.txt
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git diff --name-only origin/main | grep "^data/" > changed_files.txt || true
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            PREVIOUS_COMMIT=$(git rev-parse HEAD^)
+            CURRENT_COMMIT=$(git rev-parse HEAD)
+            git diff --name-only $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
+          fi
+
+          xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt || true
 
       - name: GeoJSON に変換
         run: |
