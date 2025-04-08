@@ -165,7 +165,7 @@ jobs:
             DIR_NAME=$(basename "$dir")
             TARGET_DIR=./build/tiles/$DIR_NAME
             S3_DIR=s3://yaizu-smartcity-jp-frontend-v1/tiles/$DIR_NAME
-
+            
             echo "🧹 Deleting obsolete files in $S3_DIR"
             aws s3 sync "$TARGET_DIR" "$S3_DIR" \
               --delete \
@@ -179,5 +179,4 @@ jobs:
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
             --exact-timestamps
-
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
