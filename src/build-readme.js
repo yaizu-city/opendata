@@ -13,7 +13,7 @@ class BuildReadme {
     readme += "[本データ](https://github.com/yaizu-city/opendata/tree/main/data)は、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。\n\n";
     readme += "なお、このリポジトリに含まれるソースコードは、上記ライセンスの適用外です。\n\n";
     readme += "## ▼焼津オープンデータカタログの使い方\n\n";
-    readme += "- 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」**、 **「TileJSON」**をクリックすると、最新の該当データが得られます。\n\n - 「フォルダ」には、xlsxファイルが格納されています。\n\n - CSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\n";
+    readme += "- 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。\n\n - 「フォルダ」には、xlsxファイルが格納されています。\n\n - CSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\n";
 
     if (fs.existsSync(locationDataCategoriesPath)) {
 
@@ -23,8 +23,8 @@ class BuildReadme {
       // locationDataCategories が存在する場合のみ処理
       if (locationDataCategories.length > 0) {
 
-        readme += "| データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |\n";
-        readme += "| --- | --- | --- | --- | --- | --- |\n";
+        readme += "| データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |\n";
+        readme += "| --- | --- | --- | --- | --- |\n";
     
         for (let i = 0; i < locationDataCategories.length; i++) {
           const category = locationDataCategories[i];
@@ -32,13 +32,12 @@ class BuildReadme {
           const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
           const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
           const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
-          const tileJsonFileUrl = `https://yaizu-smartcity.jp/tiles/opendata/${category.category}/tiles.json`;
           const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
   
           if (!csvFile || path.basename(csvFile) === "attributes.csv") {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | | \n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | |\n`;
           } else {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | [編集](${mapUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
           }
         }
       }
