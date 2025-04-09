@@ -23,6 +23,8 @@ for csv in "$CURRENT_DIR"/*.csv; do
     main_csv="$MAIN_DIR/$filename"
     if [ -f "$main_csv" ]; then
         echo "◆ $filename の差分" >> "$TEMP_DIFF"
+
+        echo "ああああああ"
         diff -u "$main_csv" "$csv"
         # 同じファイルが存在する場合、unified diff 形式で出力
         diff -u "$main_csv" "$csv" >> "$TEMP_DIFF" || true
@@ -50,6 +52,7 @@ for csv in "$MAIN_DIR"/*.csv; do
 done
 
 # 一時ファイルの内容を comment.txt に追記
+echo "いいいいいいいい"
 cat "$TEMP_DIFF"
 
 cat "$TEMP_DIFF" >> "$OUTPUT"
