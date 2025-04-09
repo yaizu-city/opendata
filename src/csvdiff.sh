@@ -20,14 +20,6 @@ TEMP_DIFF=$(mktemp)
 for csv in "$CURRENT_DIR"/*.csv; do
     filename=$(basename "$csv")
 
-    # $CURRENT_DIR に .xlsx があればスキップ
-    if [ -f "$CURRENT_DIR/*.xlsx" ]; then
-        echo "◆ $filename の差分" >> "$TEMP_DIFF"
-        echo "カレントブランチ側に .xlsx が存在するため、$filename の差分はスキップされました。" >> "$TEMP_DIFF"
-        echo "" >> "$TEMP_DIFF"
-        continue
-    fi
-
     main_csv="$MAIN_DIR/$filename"
     if [ -f "$main_csv" ]; then
         echo "◆ $filename の差分" >> "$TEMP_DIFF"
@@ -47,14 +39,6 @@ done
 for csv in "$MAIN_DIR"/*.csv; do
     filename=$(basename "$csv")
     current_csv="$CURRENT_DIR/$filename"
-
-        # $CURRENT_DIR に .xlsx があればスキップ
-    if [ -f "$CURRENT_DIR/*.xlsx" ]; then
-        echo "◆ $filename の差分" >> "$TEMP_DIFF"
-        echo "カレントブランチ側に .xlsx が存在するため、$filename の差分はスキップされました。" >> "$TEMP_DIFF"
-        echo "" >> "$TEMP_DIFF"
-        continue
-    fi
     
     if [ ! -f "$current_csv" ]; then
         echo "- 削除された CSV ファイル: $filename" >> "$TEMP_DIFF"
