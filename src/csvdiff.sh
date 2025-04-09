@@ -16,20 +16,25 @@ echo '```diff' >> "$OUTPUT"
 # 一時ファイルに差分を集約
 TEMP_DIFF=$(mktemp)
 
+echo "ああああああ"
+echo $CURRENT_DIR
+
+ls $CURRENT_DIR
+
 # カレントブランチ側の CSV を走査（新規追加・更新ファイルを判定）
 for csv in "$CURRENT_DIR"/*.csv; do
     filename=$(basename "$csv")
 
-    echo "ああああああ"
+    echo "いいいいい"
 
     main_csv="$MAIN_DIR/$filename"
 
     echo $main_csv
-    
+
     if [ -f "$main_csv" ]; then
         echo "◆ $filename の差分" >> "$TEMP_DIFF"
 
-        echo "いいいい"
+        echo "うううう"
         diff -u "$main_csv" "$csv"
         # 同じファイルが存在する場合、unified diff 形式で出力
         diff -u "$main_csv" "$csv" >> "$TEMP_DIFF" || true
@@ -57,7 +62,7 @@ for csv in "$MAIN_DIR"/*.csv; do
 done
 
 # 一時ファイルの内容を comment.txt に追記
-echo "うううううう"
+echo "ええええええ"
 cat "$TEMP_DIFF"
 
 cat "$TEMP_DIFF" >> "$OUTPUT"
