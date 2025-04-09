@@ -13,13 +13,13 @@ cat <<__COMMENT1__ > "./comment.txt"
 今回更新されたデータの CSV 差分は以下の通りです:
 
 \`\`\`diff
-$(diff --unified -r main_branch_content/data/ current_branch_content/data/)
+$(diff --unified -r main_branch_content/build/ current_branch_content/build/)
 \`\`\`
 
 ※現行のデータから、赤の行が削除され、緑の行が追加されます。
 __COMMENT1__
 
-if [[ -n "$(diff --unified -r main_branch_content/data/ current_branch_content/data/)" ]]; then
+if [[ -n "$(diff --unified -r main_branch_content/build/ current_branch_content/build/)" ]]; then
   exit 0
 else
   exit 1
