@@ -21,7 +21,7 @@ echo $CURRENT_DIR
 
 ls $CURRENT_DIR
 
-diff -u "$MAIN_DIR/data.csv" "$CURRENT_DIR/data.csv"
+diff -u "$MAIN_DIR/AED設置箇所一覧/data.csv" "$CURRENT_DIR/AED設置箇所一覧/data.csv"
 
 # カレントブランチ側の CSV を走査（新規追加・更新ファイルを判定）
 for csv in "$CURRENT_DIR"/*.csv; do
