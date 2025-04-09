@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# nullglob を有効にすることで、マッチしないグロブパターンを空リストにする
+shopt -s nullglob
+
 # CSV ファイルの保存先ディレクトリ（必要に応じてパスを調整）
 MAIN_DIR="main_branch_content/build"
 CURRENT_DIR="current_branch_content/build"
