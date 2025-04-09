@@ -1,26 +1,45 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -e
 
-set -eu
+# CSV ファイルの保存先ディレクトリ（必要に応じてパスを調整）
+MAIN_DIR="main_branch_content/build"
+CURRENT_DIR="current_branch_content/build"
+OUTPUT="comment.txt"
 
-PR_ID=$(echo $GITHUB_REF | sed -e 's/[^0-9]//g')
+# ヘッダー出力（GitHub のコードブロックを利用して diff 表示できるようにする）
+echo "今回更新されたデータの CSV 差分は以下の通りです" > "$OUTPUT"
+echo '```diff' >> "$OUTPUT"
 
-if [[ -z "${PR_ID}" ]]; then
-  echo "Generating CSV diff skipped because this action is not triggered by Pull Request."
-  exit 0
-fi
+# 一時ファイルに差分を集約
+TEMP_DIFF=$(mktemp)
 
-cat <<__COMMENT1__ > "./comment.txt"
-今回更新されたデータの CSV 差分は以下の通りです:
+# カレントブランチ側の CSV を走査（新規追加・更新ファイルを判定）
+for csv in "$CURRENT_DIR"/*.csv; do
+    filename=$(basename "$csv")
+    main_csv="$MAIN_DIR/$filename"
+    if [ -f "$main_csv" ]; then
+        echo "◆ $filename の差分" >> "$TEMP_DIFF"
+        # 同じファイルが存在する場合、unified diff 形式で出力
+        diff -u "$main_csv" "$csv" >> "$TEMP_DIFF" || true
+        echo "" >> "$TEMP_DIFF"
+    else
+        echo "＋ 新規 CSV ファイル: $filename" >> "$TEMP_DIFF"
+    fi
+done
 
-\`\`\`diff
-$(diff --unified -r main_branch_content/build/ current_branch_content/build/)
-\`\`\`
+# main ブランチ側には存在するが、カレントブランチ側にない CSV をチェック（削除ファイル）
+for csv in "$MAIN_DIR"/*.csv; do
+    filename=$(basename "$csv")
+    current_csv="$CURRENT_DIR/$filename"
+    if [ ! -f "$current_csv" ]; then
+        echo "－ 削除された CSV ファイル: $filename" >> "$TEMP_DIFF"
+    fi
+done
 
-※現行のデータから、赤の行が削除され、緑の行が追加されます。
-__COMMENT1__
+# 一時ファイルの内容を comment.txt に追記
+cat "$TEMP_DIFF" >> "$OUTPUT"
+echo '```' >> "$OUTPUT"
+rm "$TEMP_DIFF"
 
-if [[ -n "$(diff --unified -r main_branch_content/build/ current_branch_content/build/)" ]]; then
-  exit 0
-else
-  exit 1
-fi
+# 出力内容を標準出力にも出す（GitHub Actions のログに表示されます）
+cat "$OUTPUT"
