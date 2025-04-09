@@ -19,7 +19,8 @@ TEMP_DIFF=$(mktemp)
 echo "ああああああ"
 echo $CURRENT_DIR
 
-ls $CURRENT_DIR
+ls "$CURRENT_DIR/AED設置箇所一覧/data.csv"
+ls "$MAIN_DIR/AED設置箇所一覧/data.csv"
 
 diff -u "$MAIN_DIR/AED設置箇所一覧/data.csv" "$CURRENT_DIR/AED設置箇所一覧/data.csv"
 
