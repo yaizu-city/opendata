@@ -16,10 +16,15 @@ echo '```diff' >> "$OUTPUT"
 # 一時ファイルに差分を集約
 TEMP_DIFF=$(mktemp)
 
-echo "ああああああ"
+echo "----------CURRENT_DIRーーーーーーーー"
 
 ls "$CURRENT_DIR/AED設置箇所一覧/"
+
+echo "----------MAIN_DIR"
+
 ls "$MAIN_DIR/AED設置箇所一覧/"
+
+echo "----------diffーーーーーーーー"
 
 diff -u "$MAIN_DIR/AED設置箇所一覧/data.csv" "$CURRENT_DIR/AED設置箇所一覧/data.csv"
 
