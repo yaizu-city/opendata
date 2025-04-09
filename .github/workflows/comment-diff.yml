@@ -43,6 +43,8 @@ jobs:
         cd main_branch_content/
         npm ci
         npm run build-csv
+      continue-on-error: true
+      id: build-step
 
     - name: Checkout current branch into current_branch_content directory
       uses: actions/checkout@v4
@@ -54,6 +56,16 @@ jobs:
         cd current_branch_content/
         npm ci
         npm run build-csv
+
+    - name: Comment to PR if build fails
+      id: comment-build-error
+      if: steps.build-step.outcome == 'failure'
+      run: ./src/errorFiles.sh
+      env:
+        GH_TOKEN: ${{ github.token }}
+        OWNER: "${{ github.repository_owner }}"
+        REPO: "${{ github.event.repository.name }}"
+        BRANCH: "${{ github.event.pull_request.head.ref }}"
 
     - name: Add comment to show CSV diff
       id: csv_diff_step
