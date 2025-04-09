@@ -25,13 +25,17 @@ const main = async () => {
 
     /** 後ろから１つ目のスラッシュの前をカテゴリ名として取得 **/
     const category = file.path.split('/').slice(-2, -1)[0];
-    const outputDir = join(__dirname, `../build/${category}`);
+    // 現在のディレクトリに書き出し
+    const outputDir = join(__dirname, "../data", category);
+    
     /** outputDir が存在しない場合は作成 **/
     await mkdir(outputDir, { recursive: true });
     const csvPath = join(outputDir, `data.csv`);
 
     if (file.path.endsWith(".xlsx")) {
       const excelPath = file.path;
+
+      console.log(`Excel ファイル ${excelPath} を CSV に変換中...`);
 
       promises.push((async () => {
         try {
