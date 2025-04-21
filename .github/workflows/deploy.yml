@@ -125,6 +125,7 @@ jobs:
 
       # AWS Credentials設定
       - name: Configure AWS Credentials
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::302263045312:role/yaizu-smartcity-jp-github-actions-deploy-v1
@@ -132,6 +133,7 @@ jobs:
           role-duration-seconds: 3600
 
       - name: Upload updated vector tiles to S3 (overwrite only)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           while read -r dir; do
             [[ -z "$dir" ]] && continue
@@ -155,6 +157,7 @@ jobs:
           done < changed_dirs.txt
 
       - name: Delete outdated files from S3
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           while read -r dir; do
             [[ -z "$dir" ]] && continue
@@ -171,7 +174,7 @@ jobs:
 
       # 既存のフロントエンドコンテンツもデプロイ
       - name: Deploy Frontend Contents to S3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
             --exact-timestamps
