@@ -8,7 +8,7 @@ const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-catego
 class BuildReadme {
   run() {
     const opendataViewerUrl = "https://geolonia.github.io/opendata-editor/";
-    let readme = "# 焼津オープンデータカタログ\n\n";
+    let readme = "<h1 id=\"yaizu-open-data\">焼津オープンデータカタログ</h1>\n\n";
     readme += "焼津市では、以下の地図データをオープンデータとして提供しています。\n\nご利用にあたっては、[焼津市オープンデータカタログ利用規約](https://yaizu-smartcity.jp/yaizuopendatacatalog_kiyaku.pdf) をご確認ください。\n\n";
     readme += "[本データ](https://github.com/yaizu-city/opendata/tree/main/data)は、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。\n\n";
     readme += "なお、このリポジトリに含まれるソースコードは、上記ライセンスの適用外です。\n\n";
