@@ -1,26 +1,80 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -e
 
-set -eu
+# nullglob を有効にし、グロブパターンにマッチするファイルがなければ空リストとする
+shopt -s nullglob
 
-PR_ID=$(echo $GITHUB_REF | sed -e 's/[^0-9]//g')
+# CSV ファイルの保存先ディレクトリ（必要に応じてパスを調整）
+MAIN_DIR="main_branch_content/data"
+CURRENT_DIR="current_branch_content/data"
+OUTPUT="comment.txt"
 
-if [[ -z "${PR_ID}" ]]; then
-  echo "Generating CSV diff skipped because this action is not triggered by Pull Request."
-  exit 0
-fi
+# ヘッダー出力（GitHub のコードブロックを利用して diff 表示できるようにする）
+echo "今回更新されたデータの CSV 差分は以下の通りです" > "$OUTPUT"
+echo '```diff' >> "$OUTPUT"
 
-cat <<__COMMENT1__ > "./comment.txt"
-今回更新されたデータの CSV 差分は以下の通りです:
+# 一時ファイルに差分を集約
+TEMP_DIFF=$(mktemp)
 
-\`\`\`diff
-$(diff --unified -r main_branch_content/data/ current_branch_content/data/)
-\`\`\`
+echo "----------CURRENT_DIRーーーーーーーー"
 
-※現行のデータから、赤の行が削除され、緑の行が追加されます。
-__COMMENT1__
+ls "$CURRENT_DIR/AED設置箇所一覧/"
 
-if [[ -n "$(diff --unified -r main_branch_content/data/ current_branch_content/data/)" ]]; then
-  exit 0
-else
-  exit 1
-fi
+echo "----------MAIN_DIR"
+
+ls "$MAIN_DIR/AED設置箇所一覧/"
+
+echo "----------diffーーーーーーーー"
+
+diff -u "$MAIN_DIR/AED設置箇所一覧/data.csv" "$CURRENT_DIR/AED設置箇所一覧/data.csv"
+
+# カレントブランチ側の CSV を走査（新規追加・更新ファイルを判定）
+for csv in "$CURRENT_DIR"/*.csv; do
+    filename=$(basename "$csv")
+
+    echo "いいいいい"
+
+    main_csv="$MAIN_DIR/$filename"
+
+    echo $main_csv
+
+    if [ -f "$main_csv" ]; then
+        echo "◆ $filename の差分" >> "$TEMP_DIFF"
+
+        echo "うううう"
+        diff -u "$main_csv" "$csv"
+        # 同じファイルが存在する場合、unified diff 形式で出力
+        diff -u "$main_csv" "$csv" >> "$TEMP_DIFF" || true
+        echo "" >> "$TEMP_DIFF"
+    else
+        # 新規 CSV ファイルの場合、ファイル名と内容を表示
+        echo "+ 新規 CSV ファイル: $filename" >> "$TEMP_DIFF"
+        # ファイル全体の内容を行頭に「+」を付けて出力
+        sed 's/^/+/g' "$csv" >> "$TEMP_DIFF"
+        echo "" >> "$TEMP_DIFF"
+    fi
+done
+
+# main ブランチ側には存在するが、カレントブランチ側にない CSV をチェック（削除ファイル）
+for csv in "$MAIN_DIR"/*.csv; do
+    filename=$(basename "$csv")
+    current_csv="$CURRENT_DIR/$filename"
+    
+    if [ ! -f "$current_csv" ]; then
+        echo "- 削除された CSV ファイル: $filename" >> "$TEMP_DIFF"
+        # 削除されたファイルの全内容を行頭に「-」を付けて出力
+        sed 's/^/-/g' "$csv" >> "$TEMP_DIFF"
+        echo "" >> "$TEMP_DIFF"
+    fi
+done
+
+# 一時ファイルの内容を comment.txt に追記
+echo "ええええええ"
+cat "$TEMP_DIFF"
+
+cat "$TEMP_DIFF" >> "$OUTPUT"
+echo '```' >> "$OUTPUT"
+rm "$TEMP_DIFF"
+
+# 出力内容を標準出力にも出す（GitHub Actions のログに表示されます）
+cat "$OUTPUT"
