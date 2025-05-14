@@ -1,8 +1,8 @@
-# 焼津オープンデータカタログ
+<h1 id="yaizu-open-data">焼津オープンデータカタログ</h1>
 
 焼津市では、以下の地図データをオープンデータとして提供しています。
 
-ご利用にあたっては、[焼津市オープンデータカタログ利用規約](https://yaizu-smartcity.jp/%E7%84%BC%E6%B4%A5%E3%82%AA%E3%83%BC%E3%83%95%E3%82%9A%E3%83%B3%E3%83%86%E3%82%99%E3%83%BC%E3%82%BF%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%AF%E3%82%99%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%8420250306.pdf) をご確認ください。
+ご利用にあたっては、[焼津市オープンデータカタログ利用規約](https://yaizu-smartcity.jp/yaizuopendatacatalog_kiyaku.pdf) をご確認ください。
 
 [本データ](https://github.com/yaizu-city/opendata/tree/main/data)は、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。
 
