@@ -168,6 +168,7 @@
 | 駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/駐車場) | | [GeoJSON](https://yaizu-smartcity.jp/駐車場/data.geojson) | |
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区/data.geojson) | |
 | 高度利用地区（Geolonia テスト） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区_geolonia_test) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区_geolonia_test/data.geojson) | |
+| 高度利用地区（テスト） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区（テスト）) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区（テスト）/data.geojson) | |
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
