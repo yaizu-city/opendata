@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スマートマップ焼津 | 道路台帳図</title>
+  <style>
+    html,
+    body,
+    #map {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=a1255d96fbee4081952af3ddbb7847c7"></script>
+    <script>
+
+    const map = new geolonia.Map({
+        container: '#map',
+        center: [138.3091,34.8437],
+        zoom: 12,
+        style: 'https://smartmap.styles.geoloniamaps.com/style.json',
+        hash: true,
+    });
+    map.on('load', () => {
+        map.addSource('urbanPlan', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-kihonzu/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+        map.addLayer({
+            'id': 'urbanPlanLayer',
+            'type': 'line',
+            'source': 'urbanPlan',
+            'source-layer': '地形図_都市計画基本図',
+            'paint': {
+                'line-color': 'rgb(100,100,100)',
+                'line-opacity': 0.5,
+                'line-width': 1
+            }
+        });
+        map.addSource('roadSource', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-city-dourodaicho-20250124/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+        map.addLayer({
+            'id': 'roadSource-layer',
+            'type': 'line',
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+            'layout': {},
+            'paint': {
+                'line-color': '#030B99',
+                'line-width': 2
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>
