@@ -146,7 +146,6 @@
 | 通学路（ 焼津西小学校 ） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/通学路_焼津西小学校) | | [GeoJSON](https://yaizu-smartcity.jp/通学路_焼津西小学校/data.geojson) | |
 | 通学路（ 豊田小学校 ） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/通学路_豊田小学校) | | [GeoJSON](https://yaizu-smartcity.jp/通学路_豊田小学校/data.geojson) | |
 | 通学路（ 黒石小学校 ） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/通学路_黒石小学校) | | [GeoJSON](https://yaizu-smartcity.jp/通学路_黒石小学校/data.geojson) | |
-| 連携試験0516 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/連携試験0516) | | [GeoJSON](https://yaizu-smartcity.jp/連携試験0516/data.geojson) | |
 | 避難所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/避難所一覧) | [CSV](https://yaizu-smartcity.jp/避難所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/避難所一覧/data.geojson) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/避難所一覧/data.csv) |
 | 都市計画図（商業地域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/都市計画図_商業地域) | | [GeoJSON](https://yaizu-smartcity.jp/都市計画図_商業地域/data.geojson) | |
 | 都市計画図（工業地域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/都市計画図_工業地域) | | [GeoJSON](https://yaizu-smartcity.jp/都市計画図_工業地域/data.geojson) | |
