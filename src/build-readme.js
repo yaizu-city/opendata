@@ -8,12 +8,12 @@ const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-catego
 class BuildReadme {
   run() {
     const opendataViewerUrl = "https://geolonia.github.io/opendata-editor/";
-    let readme = "# 焼津オープンデータカタログ\n\n";
-    readme += "焼津市では、以下の地図データをオープンデータとして提供しています。\n\nご利用にあたっては、[焼津市オープンデータカタログ利用規約](https://yaizu-smartcity.jp/%E7%84%BC%E6%B4%A5%E3%82%AA%E3%83%BC%E3%83%95%E3%82%9A%E3%83%B3%E3%83%86%E3%82%99%E3%83%BC%E3%82%BF%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%AF%E3%82%99%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%8420250306.pdf) をご確認ください。\n\n";
+    let readme = "<h1 id=\"yaizu-open-data\">焼津オープンデータカタログ</h1>\n\n";
+    readme += "焼津市では、以下の地図データをオープンデータとして提供しています。\n\nご利用にあたっては、[焼津市オープンデータカタログ利用規約](https://yaizu-smartcity.jp/yaizuopendatacatalog_kiyaku.pdf) をご確認ください。\n\n";
     readme += "[本データ](https://github.com/yaizu-city/opendata/tree/main/data)は、[公共データ利用規約（第1.0版）](https://www.digital.go.jp/resources/open_data/public_data_license_v1.0)の下に提供されています。\n\n";
     readme += "なお、このリポジトリに含まれるソースコードは、上記ライセンスの適用外です。\n\n";
     readme += "## ▼焼津オープンデータカタログの使い方\n\n";
-    readme += "- 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」** をクリックすると、最新の該当データが得られます。\n\n - 「フォルダ」には、xlsxファイルが格納されています。\n\n - CSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\n";
+    readme += "- 表内の **「CSV」** や **「GeoJSON」** 、 **「JSON」**、 **「TileJSON」**をクリックすると、最新の該当データが得られます。\n\n - 「フォルダ」には、xlsxファイルが格納されています。\n\n - CSVファイルダウンロード時、文字化けする場合は、xlsxファイルをダウンロードしてください。\n\n - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。\n\n";
 
     if (fs.existsSync(locationDataCategoriesPath)) {
 
@@ -23,8 +23,8 @@ class BuildReadme {
       // locationDataCategories が存在する場合のみ処理
       if (locationDataCategories.length > 0) {
 
-        readme += "| データ名 | フォルダ | CSV | GeoJSON | 地図で編集 |\n";
-        readme += "| --- | --- | --- | --- | --- |\n";
+        readme += "| データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |\n";
+        readme += "| --- | --- | --- | --- | --- | --- |\n";
     
         for (let i = 0; i < locationDataCategories.length; i++) {
           const category = locationDataCategories[i];
@@ -32,12 +32,13 @@ class BuildReadme {
           const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
           const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
           const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
+          const tileJsonFileUrl = `https://yaizu-smartcity.jp/tiles/${category.category}/tiles.json`;
           const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
   
           if (!csvFile || path.basename(csvFile) === "attributes.csv") {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | | \n`;
           } else {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [編集](${mapUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | [編集](${mapUrl}) |\n`;
           }
         }
       }
