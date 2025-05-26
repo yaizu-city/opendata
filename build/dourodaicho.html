@@ -15,14 +15,50 @@
       padding: 0;
       margin: 0;
     }
+    #goto-form {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 12px 12px 12px;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 15px;
+      width: 318px;;
+      box-sizing: border-box;
+    }
+    #goto-coord {
+      width: 210px;
+      padding: 4px 8px;
+      font-size: 15px;
+    }
+    #goto-btn {
+      padding: 4px 10px;
+      margin-left: 5px;
+      font-size: 15px;
+    }
+    #goto-error {
+      margin-top: 5px;
+      color: #b50000;
+      font-size: 13px;
+      min-height: 1.5em;
+      transition: color 0.2s;
+      display: none;
+      word-break:break-all
+    }
   </style>
 </head>
 
 <body>
+    <div id="goto-form">
+      <input id="goto-coord" type="text" placeholder="例: 34.89,138.25" aria-describedby="goto-error" />
+      <button id="goto-btn">移動</button>
+      <span id="goto-error" role="alert" aria-live="polite"></span>
+    </div>
     <div id="map"></div>
     <script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=a1255d96fbee4081952af3ddbb7847c7"></script>
     <script>
-
     const map = new geolonia.Map({
         container: '#map',
         center: [138.3091,34.8437],
@@ -30,6 +66,7 @@
         style: 'https://smartmap.styles.geoloniamaps.com/style.json',
         hash: true,
     });
+
     map.on('load', () => {
         map.addSource('urbanPlan', {
             type: 'vector',
@@ -61,8 +98,57 @@
                 'line-width': 2
             }
         });
-    })
+    });
+
+    // エラーメッセージを出力する関数
+    function showError(msg) {
+      const errorElem = document.getElementById('goto-error');
+      if (msg) {
+        errorElem.textContent = msg;
+        errorElem.style.display = 'block';
+      } else {
+        errorElem.textContent = '';
+        errorElem.style.display = 'none';
+      }
+    }
+
+    // 入力フォームの動作
+    function gotoCoordHandler(e) {
+      if (e) e.preventDefault();
+      showError('');
+      const value = document.getElementById('goto-coord').value.trim();
+      const parts = value.split(',');
+      if (parts.length === 2) {
+        const lat = parseFloat(parts[0]);
+        const lng = parseFloat(parts[1]);
+        if (!isNaN(lat) && !isNaN(lng)) {
+          if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+            showError('緯度または経度が範囲外です');
+            return;
+          }
+          map.flyTo({ center: [lng, lat], zoom: 17 });
+          showError('');
+        } else {
+          showError('数値として認識できません。\n例: 34.89236450643736,138.257245314618');
+        }
+      } else {
+        showError('カンマ区切りで入力してください。\n例: 34.89236450643736,138.257245314618');
+      }
+    }
+
+    document.getElementById('goto-btn').addEventListener('click', gotoCoordHandler);
+
+    // Enterキーでも移動可能に
+    document.getElementById('goto-coord').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        gotoCoordHandler(e);
+      }
+    });
+
+    // 入力値変更時はエラークリア＆非表示
+    document.getElementById('goto-coord').addEventListener('input', function() {
+      showError('');
+    });
     </script>
 </body>
-
 </html>
