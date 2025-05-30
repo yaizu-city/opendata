@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>11081</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable>Atr_11081_10500300_2_20250527162727</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>ITEM000</ColID>
+        <DataType>S</DataType>
+        <Title>ID</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>ITEM001</ColID>
+        <DataType>S</DataType>
+        <Title>分類</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
