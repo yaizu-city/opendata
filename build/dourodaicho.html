@@ -95,7 +95,6 @@
             'type': 'line',
             'source': 'roadSource',
             'source-layer': '道路台帳図',
-            'layout': {},
             'filter': ['has', 'stroke'],
             'paint': {
               'line-color': '#000000',
@@ -107,12 +106,12 @@
             'type': 'fill',
             'source': 'roadSource',
             'source-layer': '道路台帳図',
-            'layout': {},
+            'filter': ['has', 'fill'],
             'paint': {
                 'fill-color': [
                   'case',
-                  ['has', 'stroke'],
-                  ['get', 'stroke'],
+                  ['has', 'fill'],
+                  ['get', 'fill'],
                   'rgba(0,0,0,0)'
                 ]
             }
