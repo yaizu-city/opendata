@@ -74,8 +74,19 @@
         container: '#map',
         center: [138.3091,34.8437],
         zoom: 12,
-        // https://github.com/geoloniamaps/smartmap-mapstyle の 注記レイヤーを削除したスタイルを使用
-        style: './style.json',
+        style: {
+            version: 8,
+            sources: {},
+            layers: [
+          {
+              id: 'background',
+              type: 'background',
+              paint: {
+            'background-color': '#ffffff'
+              }
+          }
+            ]
+        },
         hash: true,
         minZoom: 12,
         maxZoom: 19,
