@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スマートマップ焼津 | 道路台帳図</title>
+  <meta name="description" content="焼津市の道路台帳図を閲覧できるスマートマップシステムです。">
+  <meta name="keywords" content="焼津市, 道路台帳図, スマートマップ, 地図, 都市計画">
+  <meta property="og:title" content="スマートマップ焼津 | 道路台帳図">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="焼津市の道路台帳図を閲覧できるスマートマップシステムです。">
+  <meta property="og:url" content="https://yaizu-smartcity.jp/dourodaicho.html">
+  <meta property="og:image" content="https://maps.yaizu-smartcity.jp/ogp.png">
+  <meta property="og:site_name" content="スマートマップ焼津 | 道路台帳図">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="https://maps.yaizu-smartcity.jp/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="222x222" href="https://maps.yaizu-smartcity.jp/favicon.ico">
   <style>
     html,
     body,
@@ -63,13 +74,15 @@
         container: '#map',
         center: [138.3091,34.8437],
         zoom: 12,
-        style: 'https://smartmap.styles.geoloniamaps.com/style.json',
+        // https://github.com/geoloniamaps/smartmap-mapstyle の 注記レイヤーを削除したスタイルを使用
+        style: './style.json',
         hash: true,
         minZoom: 12,
         maxZoom: 19,
     });
 
     map.on('load', () => {
+
         map.addSource('urbanPlan', {
             type: 'vector',
             url: 'https://tileserver.geolonia.com/yaizu-smartmap-kihonzu-20250605/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
@@ -90,6 +103,7 @@
             url: 'https://tileserver.geolonia.com/yaizu-smartmap-dourodaichouzu-20250610/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
         });
 
+        // 縁取り
         map.addLayer({
             'id': 'roadSource-layer-filter-outline',
             'type': 'line',
@@ -101,6 +115,8 @@
               'line-width': 4
             }
         });
+
+        // 黄色の番号ポリゴンの塗りつぶし
         map.addLayer({
             'id': 'roadSource-layer-fill',
             'type': 'fill',
@@ -116,19 +132,31 @@
                 ]
             }
         });
+
+        // 黄色の中心線
         map.addLayer({
-            'id': 'roadSource-layer',
+            'id': 'roadSource-layer-centerline',
             'type': 'line',
             'source': 'roadSource',
             'source-layer': '道路台帳図',
             'layout': {},
+            'filter': ['has', 'stroke'],
             'paint': {
-                'line-color': [
-                  'case',
-                  ['has', 'stroke'],
-                  ['get', 'stroke'],
-                  '#030B99'
-                ],
+                'line-color':  ['get', 'stroke'],
+                'line-width': 2
+            }
+        });
+
+        // 青色のサイドライン
+        map.addLayer({
+            'id': 'roadSource-layer-sideline',
+            'type': 'line',
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+            'layout': {},
+            'filter': ['!has', 'stroke'],
+            'paint': {
+                'line-color': '#030B99',
                 'line-width': 2
             }
         });
