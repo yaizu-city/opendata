@@ -1,211 +1,214 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, maximum-scale=3.0">
-<meta name="author" content="焼津市">
-<meta name="format-detection" content="telephone=no">
-<meta property="og:title" content="スマートシティYAIZUポータルサイト">
-<meta property="og:type" content="article"> <meta property="og:description" content="デジタルによる、豊かで快適な新しい暮らしの実現を目指し未来の街づくりを進めていきます">
-<meta property="og:url" content="https://www.city.yaizu.lg.jp/smartcity-yaizu/index.html">
-<meta property="og:image" content="https://www.city.yaizu.lg.jp/smartcity-yaizu/images/ogp/ogp.jpg">
-<meta property="og:site_name" content="焼津市">
-<meta property="og:locale" content="ja_JP">
-<title>スマートシティYAIZUポータルサイト</title>
-<link rel="stylesheet" href="style/layout.css" type="text/css">
-<link rel="stylesheet" href="style/smartphone.css" type="text/css">
-<link href="images/favicon/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-<link href="images/favicon/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/kaihei.js"></script>
-<script type="text/javascript" src="js/timer.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SD3JC0KS3N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SD3JC0KS3N');
-</script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スマートマップ焼津 | 道路台帳図</title>
+  <meta name="description" content="焼津市の道路台帳図を閲覧できるスマートマップシステムです。">
+  <meta name="keywords" content="焼津市, 道路台帳図, スマートマップ, 地図, 都市計画">
+  <meta property="og:title" content="スマートマップ焼津 | 道路台帳図">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="焼津市の道路台帳図を閲覧できるスマートマップシステムです。">
+  <meta property="og:url" content="https://yaizu-smartcity.jp/dourodaicho.html">
+  <meta property="og:image" content="https://maps.yaizu-smartcity.jp/ogp.png">
+  <meta property="og:site_name" content="スマートマップ焼津 | 道路台帳図">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="https://maps.yaizu-smartcity.jp/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="222x222" href="https://maps.yaizu-smartcity.jp/favicon.ico">
+  <style>
+    html,
+    body,
+    #map {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    #goto-form {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 12px 12px 12px;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 15px;
+      width: 318px;;
+      box-sizing: border-box;
+    }
+    #goto-coord {
+      width: 210px;
+      padding: 4px 8px;
+      font-size: 15px;
+    }
+    #goto-btn {
+      padding: 4px 10px;
+      margin-left: 5px;
+      font-size: 15px;
+    }
+    #goto-error {
+      margin-top: 5px;
+      color: #b50000;
+      font-size: 13px;
+      min-height: 1.5em;
+      transition: color 0.2s;
+      display: none;
+      word-break:break-all
+    }
+  </style>
 </head>
-<body>
-<div id="wrapper">
-<div class="accordion1" id="home_page_top">
-        <p class="ac1" id="ac1"><a href="javascript:void(0);" id="menu" class="ac_close">メニュー</a></p>
-        <div class="inner" style="display:none;" >
-            <div class="content1-1">
-<div class="global_menu_box">
-<div class="ttl">
-<p class="gaibu_link"><span>外部サイトへリンクします</span></p>
-</div>
-<div class="cnt">
-<ul class="ul1">
-	<li class="glist1"><a href="https://maps.yaizu-smartcity.jp">スマートマップ焼津</a></li>
-  <li class="glist2"><a href="https://github.com/yaizu-city/opendata#yaizu-open-data">焼津オープンデータカタログ</a></li>
-	<li class="glist2"><a href="https://public.tableau.com/app/profile/smartcityyaizu">焼津データ分析サイト</a></li>
-	<li class="glist3"><a href="https://city-api-catalog.smartcity-pf.com/yaizu">焼津APIカタログ</a></li>
-  <li class="glist3"><a href="https://docs.yaizu-smartcity.jp">焼津都市情報API</a></li>
-</ul>
-<p class="other_info">関連情報</p>
-<ul class="ul2">
-	<li class="glist4"><a href="https://www.city.yaizu.lg.jp/city-info/koho-miryoku/koho/line/index.html
-">LINEの登録はこちらへ</a></li>
-	<li class="glist5"><a href="https://prod-apnortheast-a.online.tableau.com/#/site/smartcityyaizu/home">事業者向け分析サイト</a></li>
-	<li class="glist6"><a href="https://www.city.yaizu.lg.jp">焼津市公式ホームページ</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="header01">
-<p>スマートシティYAIZUポータルサイト</p>
-</div>
-<div id="tmp_wrapper">
-<div class="wrapper">
-<div class="container">
-<h1><span>スマートシティYAIZU</span></h1>
-<h2><span>デジタルによる、豊かで快適な新しい暮らしの実現を目指し未来の街づくりを進めていきます</span></h2>
-</div>
-</div>
-<div class="container2">
-<div class="gmenu">
-<ul>
-<li class="list1"><p><a href="#map_yaizu"><span class="list_waku"><span class="list_txt1"><span class="big_txt">地図</span>で</span><span class="list_txt2">見る焼津</span></span></a></p></li>
-<li class="list2"><p><a href="#data_yaizu"><span class="list_waku"><span class="list_txt1"><span class="big_txt">データ</span>で</span><span class="list_txt2">見る焼津</span></span></a></p></li>
-<li class="list3"><p><a href="#data_yaizu2"><span class="list_waku"><span class="list_txt1"><span class="big_txt">データ</span>で</span><span class="list_txt2">活用する焼津</span></span></a></p></li>
-</ul>
-</div>
-</div>
-</div>
 
-<div class="container4_wraper">
-<div class="container4">
-<div class="container4_sub_box">
-<div class="container4_ttl">
-<h2>～　お知らせ　～</h2>
-</div>
-<div class="container4_cnt">
-<p>焼津都市情報APIをリリースしました</p>
-<p>スマートマップ焼津の地図データを活用して、新たな地図アプリなどにご活用いただけます！</p>
-</div>
-</div>
-</div>
-</div>
-<div class="container5" id="map_yaizu">
-<div class="container5_sub_box">
-<div class="container5_sub2_box">
-<div class="container5_ttl">
-<h2>地図で見る焼津</h2>
-<p>スマートマップ焼津</p>
-</div>
-<div class="container5_cnt">
-<div class="container5_cnt2">
-<p>リアルタイム災害情報や観光・まちづくり情報など</p>
-<p>焼津の今がわかるデジタルマップをぜひご利用ください。</p>
-<div class="data_map"><p><a href="https://maps.yaizu-smartcity.jp"><span>スマートマップ焼津</span></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="container6" id="data_yaizu">
-<div class="container6_sub_box">
-<div class="container6_ttl">
-<h2>データで見る焼津</h2>
-<p>焼津データ分析サイト</p>
-</div>
-<div class="container6_cnt">
-<p>さまざまなデータから焼津を可視化した情報を公開します。</p>
-<p>お知り合いやお友だちに話したくなる“焼津のデータ“をご覧ください。　</p>
-<div class="data_map"><p><a href="https://public.tableau.com/app/profile/smartcityyaizu"><span>焼津データ分析サイト</span></a></p>
-</div>
-</div>
-</div>
-<div class='tableauPlaceholder' id='viz1675936929704' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16741994844240&#47;sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='_16741994844240&#47;sheet4' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16741994844240&#47;sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1675936929704');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='1500px';vizElement.style.width='100%';vizElement.style.height='850px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='1500px';vizElement.style.width='100%';vizElement.style.height='850px';} else { vizElement.style.width='100%';vizElement.style.height='850px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-<div class='tableauPlaceholder' id='viz1674533509177' style='position: relative'><noscript><a href='#'><img alt='焼津市のふるさと納税 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16745272001400&#47;sheet0&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='_16745272001400&#47;sheet0' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16745272001400&#47;sheet0&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1674533509177');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-</div>
-<div class="container7" id="data_yaizu2">
-<div class="container7_sub_box">
-<div class="container7_sub2_box">
-<div class="container7_ttl">
-<h2>データで活用する焼津</h2>
-</div>
-<div class="container7_cnt">
-<div class="container7_cnt2">
-<p>IoT情報のAPIや地図情報などのデータを提供しています。サービスやアプリケーションにご活用いただけます。※焼津APIカタログ、独自ドメインでの焼津都市情報APIのご利用には登録が必要です。</p>
-<div class="data_map">  
-  <p><a href="https://github.com/yaizu-city/opendata#yaizu-open-data"><span>焼津オープンデータカタログ</span></a></p>
-  <p><a href="https://city-api-catalog.smartcity-pf.com/yaizu"><span>焼津APIカタログ</span></a></p>
-  <p><a href="https://docs.yaizu-smartcity.jp"><span>焼津都市情報API</span></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="other">
-<div class="other_infomation_box">
-<div class="other_infomation_ttl">
-<h4>関連情報</h4>
-</div>
-<div class="other_infomation_cnt">
-<div class="other_info_left_box">
-<div class="other_info_left_ttl">
-<h5>LINEの登録はこちらへ</h5>
-</div>
-<div class="other_info_left_cnt">
-<p class="map_txt">スマートマップ焼津で表示される、市が発令した避難情報を、自動でやいづ防災メールや焼津市LINE公式アカウントで配信します。</p>
-<div class="yaizu_line"><p><a href="https://www.city.yaizu.lg.jp/city-info/koho-miryoku/koho/line/index.html
-"><span>焼津市LINE公式アカウント</span></a></p></div>
-<div class="yaizu_bousai_mail"><a href="https://www.city.yaizu.lg.jp/safety/bosai/bosai-info/obtain-info/bosai-mail.html
-">やいづ防災メールについて</a></div>
-</div>
-</div>
-<div class="other_info_right_box">
-<div class="other_info_right_ttl">
-<h5>事業者向け分析サイト</h5>
-</div>
-<div class="other_info_right_cnt">
-<p class="furusato_nouzei_txt">市内のふるさと納税協力事業者等（事前申込者）を対象に、当市のふるさと納税の統計情報を公開しています。</p>
-<div class="data_map"><p><a href="https://prod-apnortheast-a.online.tableau.com/#/site/smartcityyaizu/home"><span>事業者向け分析サイト</span></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="footer_wrapper">
-<div class="footer">
-<div class="page_top"><p><a href="#home_page_top"><span>ページの先頭へ</span></a></p></div>
-<div class="footer_left_box">
-<div class="footer_left_ttl">
-  <a class="text-link white" href="https://www.city.yaizu.lg.jp/city-info/digital-dx/smartcity/association.html" target="_blank" rel="noopener noreferrer"><p>焼津市スマートシティ推進協議会</p></a>
-</div>
-<div class="footer_left_cnt">
-<p class="sub_txt">(事務局:焼津市行政経営部ＤＸ推進課)</p>
-<address>
-<p>郵便番号：425-8502<br>
-静岡県焼津市本町2丁目16番32号（市役所本庁舎3階）</p>
-</address>
-</div>
-</div>
-<div class="footer_right_box">
-<div class="footer_right_ttl">
-<ul>
-<li class="list01"><p><a href="about_this_site/index.html">サイトポリシー・プライバシーポリシー</a></p></li>
-<li><p><a href="https://logoform.jp/form/tWbQ/206951">お問い合わせ</a></p></li>
-</ul>
-</div>
-<div class="footer_right_cnt">
-<p class="yaizu_city"><a href="https://www.city.yaizu.lg.jp">焼津市公式ホームページ</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="footer_address" lang="en" xml:lang="en">Copyright &copy; Yaizu City All rights reserved.</div>
-</div>
+<body>
+    <div id="goto-form">
+      <input id="goto-coord" type="text" placeholder="例: 34.89,138.25" aria-describedby="goto-error" />
+      <button id="goto-btn">移動</button>
+      <span id="goto-error" role="alert" aria-live="polite"></span>
+    </div>
+    <div id="map"></div>
+    <script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=a1255d96fbee4081952af3ddbb7847c7"></script>
+    <script>
+    const map = new geolonia.Map({
+        container: '#map',
+        center: [138.3091,34.8437],
+        zoom: 12,
+        style: 'https://smartmap.styles.geoloniamaps.com/style.json',
+        hash: true,
+        minZoom: 12,
+        maxZoom: 19,
+    });
+
+    map.on('load', () => {
+        map.addSource('urbanPlan', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-kihonzu-20250605/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+        map.addLayer({
+            'id': 'urbanPlanLayer',
+            'type': 'line',
+            'source': 'urbanPlan',
+            'source-layer': '地形図_都市計画基本図',
+            'paint': {
+                'line-color': '#000000',
+                'line-opacity': 1,
+                'line-width': 1
+            }
+        });
+        map.addSource('roadSource', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-dourodaichouzu-20250610/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+
+        // 縁取り
+        map.addLayer({
+            'id': 'roadSource-layer-filter-outline',
+            'type': 'line',
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+            'filter': ['has', 'stroke'],
+            'paint': {
+              'line-color': '#000000',
+              'line-width': 4
+            }
+        });
+
+        // 黄色の番号ポリゴンの塗りつぶし
+        map.addLayer({
+            'id': 'roadSource-layer-fill',
+            'type': 'fill',
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+            'filter': ['has', 'fill'],
+            'paint': {
+                'fill-color': [
+                  'case',
+                  ['has', 'fill'],
+                  ['get', 'fill'],
+                  'rgba(0,0,0,0)'
+                ]
+            }
+        });
+
+        // 黄色の中心線
+        map.addLayer({
+            'id': 'roadSource-layer-centerline',
+            'type': 'line',
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+            'layout': {},
+            'filter': ['has', 'stroke'],
+            'paint': {
+                'line-color':  ['get', 'stroke'],
+                'line-width': 2
+            }
+        });
+
+        // 青色のサイドライン
+        map.addLayer({
+            'id': 'roadSource-layer-sideline',
+            'type': 'line',
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+            'layout': {},
+            'filter': ['!has', 'stroke'],
+            'paint': {
+                'line-color': '#030B99',
+                'line-width': 2
+            }
+        });
+    });
+
+    // エラーメッセージを出力する関数
+    function showError(msg) {
+      const errorElem = document.getElementById('goto-error');
+      if (msg) {
+        errorElem.textContent = msg;
+        errorElem.style.display = 'block';
+      } else {
+        errorElem.textContent = '';
+        errorElem.style.display = 'none';
+      }
+    }
+
+    // 入力フォームの動作
+    function gotoCoordHandler(e) {
+      if (e) e.preventDefault();
+      showError('');
+      const value = document.getElementById('goto-coord').value.trim();
+      const parts = value.split(',');
+      if (parts.length === 2) {
+        const lat = parseFloat(parts[0]);
+        const lng = parseFloat(parts[1]);
+        if (!isNaN(lat) && !isNaN(lng)) {
+          if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+            showError('緯度または経度が範囲外です');
+            return;
+          }
+          map.flyTo({ center: [lng, lat], zoom: 17 });
+          showError('');
+        } else {
+          showError('数値として認識できません。\n例: 34.89236450643736,138.257245314618');
+        }
+      } else {
+        showError('カンマ区切りで入力してください。\n例: 34.89236450643736,138.257245314618');
+      }
+    }
+
+    document.getElementById('goto-btn').addEventListener('click', gotoCoordHandler);
+
+    // Enterキーでも移動可能に
+    document.getElementById('goto-coord').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        gotoCoordHandler(e);
+      }
+    });
+
+    // 入力値変更時はエラークリア＆非表示
+    document.getElementById('goto-coord').addEventListener('input', function() {
+      showError('');
+    });
+    </script>
 </body>
 </html>
