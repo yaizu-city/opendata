@@ -102,9 +102,11 @@ jobs:
           git config --global user.name "geolonia-bot"
           git config --global user.email "geolonia-bot@users.noreply.github.com"
 
+          git checkout $GITHUB_HEAD_REF
+
           npm run build-readme
           git fetch --no-tags --prune origin main
-          
+
           if ! git diff --quiet origin/main -- README.md; then
             git add README.md
             git commit -m "Update README By GitHub Actions"
