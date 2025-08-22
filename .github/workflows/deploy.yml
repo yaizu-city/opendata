@@ -67,11 +67,13 @@ jobs:
         run: |
           # pull_request の場合は origin/main との差分
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "pull_request event detected"
             git fetch origin main
             git diff --name-only --diff-filter=ACMR origin/main | grep "^data/" > changed_files.txt || true
       
           # push の場合はひとつ前のコミットとの差分
           elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "push event detected"
             PREVIOUS_COMMIT=$(git rev-parse HEAD^)
             CURRENT_COMMIT=$(git rev-parse HEAD)
             git diff --name-only --diff-filter=ACMR $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
