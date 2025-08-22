@@ -67,21 +67,17 @@ jobs:
         run: |
           # pull_request の場合は origin/main との差分
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "pull_request event detected"
-            git fetch --no-tags --prune origin main
-            git diff --name-only --diff-filter=ACMR origin/main...HEAD | grep '^data/' > changed_files.txt || true
+            git fetch origin main
+            git diff --name-only --diff-filter=ACMR origin/main | grep "^data/" > changed_files.txt || true
       
           # push の場合はひとつ前のコミットとの差分
           elif [[ "${{ github.event_name }}" == "push" ]]; then
-            echo "push event detected"
             PREVIOUS_COMMIT=$(git rev-parse HEAD^)
             CURRENT_COMMIT=$(git rev-parse HEAD)
             git diff --name-only --diff-filter=ACMR $PREVIOUS_COMMIT $CURRENT_COMMIT | grep "^data/" > changed_files.txt || true
           fi
       
           xargs -n1 dirname < changed_files.txt | sort -u > changed_dirs.txt || true
-          echo "差分のあるディレクトリ:"
-          cat changed_dirs.txt
       - name: GeoJSON に変換
         run: |
           while read -r dir; do
