@@ -1,0 +1,13 @@
+original_name,display_name,label_flag
+23:select,区分,
+10:text,名称,
+11:text,名称カナ,
+12:zipcode,郵便番号,
+12:prefecture,都道府県,
+12:address1,市区町村,
+12:address2,番地,
+12:address3,方書,
+18:text,説明,
+21:tel,電話番号,
+41:file,画像,
+22:text,URL,
