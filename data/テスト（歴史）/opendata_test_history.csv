@@ -1,12 +1,2 @@
-﻿original_name,display_name,label_flag
-10:text,名称,
-11:text,名称カナ,
-12:zipcode,郵便番号,
-12:prefecture,都道府県,
-12:address1,市区町村,
-12:address2,番地,
-12:address3,方書,
-18:text,説明,
-21:tel,電話番号,
-41:file,画像,
-22:text,URL,
+﻿回答番号,受付番号,回答日時,申請状況,申請状況補足,申請方式,処理状況,処理状況補足,利用者番号,10:text,11:text,12:zipcode,12:prefecture,12:address1,12:address2,12:address3,緯度,経度,18:text,21:tel,41:file,22:text
+1,YZ00000122,2025-08-25T10:11:53,受付,,オンライン,受付,,,テスト,テスト,,,,,,34.8674358,138.326448,,,,
