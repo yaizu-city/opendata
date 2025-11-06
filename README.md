@@ -182,6 +182,14 @@
 | 飲料水用貯水槽一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/飲料水用貯水槽一覧) | [CSV](https://yaizu-smartcity.jp/飲料水用貯水槽一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/飲料水用貯水槽一覧/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/飲料水用貯水槽一覧/tiles.json) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/飲料水用貯水槽一覧/data.csv) |
 | 駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/駐車場) | | [GeoJSON](https://yaizu-smartcity.jp/駐車場/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/駐車場/tiles.json) | | 
 | 高度利用地区 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/高度利用地区) | | [GeoJSON](https://yaizu-smartcity.jp/高度利用地区/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/高度利用地区/tiles.json) | | 
+| 魚フェス交通規制 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス交通規制) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス交通規制/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス交通規制/tiles.json) | | 
+| 魚フェス会場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス会場) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス会場/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス会場/tiles.json) | | 
+| 魚フェス周辺スポット_その他 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_その他) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_その他/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_その他/tiles.json) | | 
+| 魚フェス周辺スポット_休憩場所 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_休憩場所) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_休憩場所/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_休憩場所/tiles.json) | | 
+| 魚フェス周辺スポット_史跡 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_史跡) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_史跡/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_史跡/tiles.json) | | 
+| 魚フェス周辺スポット_有料駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_有料駐車場) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_有料駐車場/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_有料駐車場/tiles.json) | | 
+| 魚フェス周辺スポット_自動販売機 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_自動販売機) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_自動販売機/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_自動販売機/tiles.json) | | 
+| 魚フェス駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス駐車場) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス駐車場/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス駐車場/tiles.json) | | 
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
