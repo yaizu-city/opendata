@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>29125</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable>Atr_29125_10200220_6607_20251105114335</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>ITEM0000</ColID>
+        <DataType>S</DataType>
+        <Title>名称</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>ITEM0001</ColID>
+        <DataType>S</DataType>
+        <Title>ご来場のお願い</Title>
+        <FieldSize>300</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>ITEM0002</ColID>
+        <DataType>S</DataType>
+        <Title>特設サイト</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>

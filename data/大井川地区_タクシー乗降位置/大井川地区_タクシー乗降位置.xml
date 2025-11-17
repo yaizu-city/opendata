@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>11131</LayerNo>
+    <Primitive>100</Primitive>
+    <AttributeTable>Atr11131</AttributeTable>
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAANGLE">
+        <ColID />
+      </Field>
+      <Field id="SASIZE">
+        <ColID />
+      </Field>
+      <Field id="SASYMBOLNO">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>item1</ColID>
+        <DataType>L</DataType>
+        <Title>ID</Title>
+        <FieldSize>9</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>item41</ColID>
+        <DataType>L</DataType>
+        <Title>停留所番号</Title>
+        <FieldSize>10</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>item2</ColID>
+        <DataType>S</DataType>
+        <Title>名称</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD003">
+        <ColID>item3</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD004">
+        <ColID>item4</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_1便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD005">
+        <ColID>item5</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_1便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD006">
+        <ColID>item6</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_2便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD007">
+        <ColID>item7</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_2便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD008">
+        <ColID>item8</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_3便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD009">
+        <ColID>item9</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_3便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD010">
+        <ColID>item10</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_4便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD011">
+        <ColID>item11</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_4便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD012">
+        <ColID>item12</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_5便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD013">
+        <ColID>item13</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_5便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD014">
+        <ColID>item14</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_6便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD015">
+        <ColID>item15</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_6便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD016">
+        <ColID>item16</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_7便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD017">
+        <ColID>item17</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_7便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD018">
+        <ColID>item18</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_8便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD019">
+        <ColID>item19</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_8便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD020">
+        <ColID>item20</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_9便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD021">
+        <ColID>item21</ColID>
+        <DataType>S</DataType>
+        <Title>方面_1_9便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD022">
+        <ColID>item22</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD023">
+        <ColID>item23</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_1便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD024">
+        <ColID>item24</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_1便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD025">
+        <ColID>item25</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_2便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD026">
+        <ColID>item26</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_2便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD027">
+        <ColID>item27</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_3便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD028">
+        <ColID>item28</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_3便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD029">
+        <ColID>item29</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_4便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD030">
+        <ColID>item30</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_4便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD031">
+        <ColID>item31</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_5便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD032">
+        <ColID>item32</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_5便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD033">
+        <ColID>item33</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_6便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD034">
+        <ColID>item34</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_6便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD035">
+        <ColID>item35</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_7便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD036">
+        <ColID>item36</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_7便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD037">
+        <ColID>item37</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_8便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD038">
+        <ColID>item38</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_8便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD039">
+        <ColID>item39</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_9便</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD040">
+        <ColID>item40</ColID>
+        <DataType>S</DataType>
+        <Title>方面_2_9便_土曜日運行</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD041">
+        <ColID>item42</ColID>
+        <DataType>S</DataType>
+        <Title>運行会社</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD042">
+        <ColID>item43</ColID>
+        <DataType>S</DataType>
+        <Title>電話番号（予約）</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD043">
+        <ColID>item44</ColID>
+        <DataType>S</DataType>
+        <Title>そのほか</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
