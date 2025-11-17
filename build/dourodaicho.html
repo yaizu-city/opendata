@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM3TW4JQD9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-WM3TW4JQD9');
+  </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,15 +68,6 @@
       word-break:break-all
     }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD3JC0KS3N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-SD3JC0KS3N');
-  </script>
 </head>
 
 <body>
@@ -120,65 +120,144 @@
         });
         map.addSource('roadSource', {
             type: 'vector',
-            url: 'https://tileserver.geolonia.com/yaizu-smartmap-dourodaichouzu-20250610/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-dourodaichouzu_hodou-20250822_dourodaicho/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
         });
 
-        // 縁取り
-        map.addLayer({
-            'id': 'roadSource-layer-filter-outline',
-            'type': 'line',
+        const baseStyle = {
             'source': 'roadSource',
             'source-layer': '道路台帳図',
-            'filter': ['has', 'stroke'],
+        };
+
+        const outlineStyle = {
+            ...baseStyle,
+            'type': 'line',
             'paint': {
-              'line-color': '#000000',
-              'line-width': 4
+                'line-color': '#000000',
+                'line-width': 4
             }
+        };
+
+        const lineStyle = (color, width) => {
+            return {
+                ...baseStyle,
+                'type': 'line',
+                'paint': {
+                    'line-color': color,
+                    'line-width': width
+                }
+            };
+        };
+
+        const fillStyle = (color, opacity) => {
+            return {
+                ...baseStyle,
+                'type': 'fill',
+                'paint': {
+                    'fill-color': color,
+                    'fill-opacity': opacity ? opacity : 1
+                }
+            };
+        };
+
+        // 薄紫色
+        map.addLayer({
+            'id': 'road-light-purple-fill',
+            'filter': ['==', 'filename', '会下ノ島石津地区.shp'],
+            ...baseStyle,
+            ...fillStyle('#884898', 0.5)
+        });
+
+        // 黄色
+        map.addLayer({
+            'id': 'road-yellow-outline',
+            'filter': ['any', ['==', 'filename', '中心線_11_中心線_L.shp'], ['==', 'filename', '道路台帳図_要素_100_路線番号_T.shp']],
+            ...baseStyle,
+            ...outlineStyle
         });
 
         // 黄色の番号ポリゴンの塗りつぶし
         map.addLayer({
-            'id': 'roadSource-layer-fill',
-            'type': 'fill',
-            'source': 'roadSource',
-            'source-layer': '道路台帳図',
-            'filter': ['has', 'fill'],
-            'paint': {
-                'fill-color': [
-                  'case',
-                  ['has', 'fill'],
-                  ['get', 'fill'],
-                  'rgba(0,0,0,0)'
-                ]
-            }
+            'id': 'road-yellow-center-line',
+            'filter': ['==', 'filename', '中心線_11_中心線_L.shp'],
+            ...lineStyle('#FFFE00', 2)
         });
 
         // 黄色の中心線
         map.addLayer({
-            'id': 'roadSource-layer-centerline',
-            'type': 'line',
-            'source': 'roadSource',
-            'source-layer': '道路台帳図',
-            'layout': {},
-            'filter': ['has', 'stroke'],
-            'paint': {
-                'line-color':  ['get', 'stroke'],
-                'line-width': 2
-            }
+            'id': 'road-yellow-number',
+            ...baseStyle,
+            'filter': ['==', 'filename', '道路台帳図_要素_100_路線番号_T.shp'],
+            ...fillStyle('#FFFE00', 1)
         });
 
-        // 青色のサイドライン
+        // 緑色
         map.addLayer({
-            'id': 'roadSource-layer-sideline',
-            'type': 'line',
-            'source': 'roadSource',
-            'source-layer': '道路台帳図',
-            'layout': {},
-            'filter': ['!has', 'stroke'],
-            'paint': {
-                'line-color': '#030B99',
-                'line-width': 2
-            }
+            'id': 'road-green-outline',
+            'filter': ['any', ['==', 'filename', '道路台帳図_要素_142_中央帯幅員値_T.shp'], ['==', 'filename', '道路台帳図_要素_141_中央帯幅員線_L.shp']],
+            ...baseStyle,
+            ...outlineStyle
+        });
+        map.addLayer({
+            'id': 'road-green',
+            'filter': ['==', 'filename', '道路台帳図_要素_141_中央帯幅員線_L.shp'],
+            ...lineStyle('#00FF00', 2)
+        });
+        
+        map.addLayer({
+            'id': 'road-green-number',
+            ...baseStyle,
+            'filter': ['==', 'filename', '道路台帳図_要素_142_中央帯幅員値_T.shp'],
+            ...fillStyle('#00FF00', 1)
+        });
+
+        // 紫
+        map.addLayer({
+            'id': 'road-purple-outline',
+            'filter': ['any', ['==', 'filename', '道路台帳図_要素_174_歩道幅員値_T.shp'], ['==', 'filename', '道路台帳図_要素_173_歩道幅員線_L.shp']],
+            ...baseStyle,
+            ...outlineStyle
+        });
+        map.addLayer({
+            'id': 'road-purple',
+            'filter': ['==', 'filename', '道路台帳図_要素_173_歩道幅員線_L.shp'],
+            ...lineStyle('#C77EB5', 2)
+        });
+        
+        map.addLayer({
+            'id': 'road-purple-number',
+            ...baseStyle,
+            'filter': ['==', 'filename', '道路台帳図_要素_174_歩道幅員値_T.shp'],
+            ...fillStyle('#C77EB5', 1)
+        });
+
+        // 紺
+        map.addLayer({
+            'id': 'road-navy',
+            'filter': [
+                'all',
+                [
+                    '!=', 'filename', '中心線_11_中心線_L.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_100_路線番号_T.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_174_歩道幅員値_T.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_173_歩道幅員線_L.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_142_中央帯幅員値_T.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_141_中央帯幅員線_L.shp'
+                ],
+                [
+                    '!=', 'filename', '会下ノ島石津地区.shp'
+                ],
+            ],
+            ...lineStyle('#030B99', 2)
         });
     });
 
