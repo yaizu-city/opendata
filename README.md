@@ -18,8 +18,6 @@
 
  - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。
 
-<<<<<<< HEAD
-=======
 | データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |
 | --- | --- | --- | --- | --- | --- |
 | AED設置箇所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED設置箇所一覧) | [CSV](https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/AED設置箇所一覧/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/AED設置箇所一覧/tiles.json) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) |
@@ -38,6 +36,7 @@
 | テスト（安心安全） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト（安心安全）) | | [GeoJSON](https://yaizu-smartcity.jp/テスト（安心安全）/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/テスト（安心安全）/tiles.json) | | 
 | テスト（歴史） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト（歴史）) | | [GeoJSON](https://yaizu-smartcity.jp/テスト（歴史）/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/テスト（歴史）/tiles.json) | | 
 | テスト（移動） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト（移動）) | | [GeoJSON](https://yaizu-smartcity.jp/テスト（移動）/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/テスト（移動）/tiles.json) | | 
+| テスト（駐車場） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/テスト（駐車場）) | [CSV](https://yaizu-smartcity.jp/テスト（駐車場）/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/テスト（駐車場）/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/テスト（駐車場）/tiles.json) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/テスト（駐車場）/data.csv) |
 | ドライブコンテスト_スマホ使用 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ドライブコンテスト_スマホ使用) | | [GeoJSON](https://yaizu-smartcity.jp/ドライブコンテスト_スマホ使用/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/ドライブコンテスト_スマホ使用/tiles.json) | | 
 | ドライブコンテスト_急ハンドル | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ドライブコンテスト_急ハンドル) | | [GeoJSON](https://yaizu-smartcity.jp/ドライブコンテスト_急ハンドル/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/ドライブコンテスト_急ハンドル/tiles.json) | | 
 | ドライブコンテスト_急ブレーキ | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/ドライブコンテスト_急ブレーキ) | | [GeoJSON](https://yaizu-smartcity.jp/ドライブコンテスト_急ブレーキ/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/ドライブコンテスト_急ブレーキ/tiles.json) | | 
@@ -193,7 +192,6 @@
 | 魚フェス周辺スポット_有料駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_有料駐車場) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_有料駐車場/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_有料駐車場/tiles.json) | | 
 | 魚フェス周辺スポット_自動販売機 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス周辺スポット_自動販売機) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス周辺スポット_自動販売機/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス周辺スポット_自動販売機/tiles.json) | | 
 | 魚フェス駐車場 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/魚フェス駐車場) | | [GeoJSON](https://yaizu-smartcity.jp/魚フェス駐車場/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/魚フェス駐車場/tiles.json) | | 
->>>>>>> e45ccd8e9c5af9e9aefd71f542c6280e8ebee6cc
 ## 備考
 - Excel から CSV に変換する際、CSVに出力される値は、Excel のセル書式で指定された値が出力されます。
 - 日付（セル書式：日付、ユーザー定義）については、`m/d/yy` 形式で CSV に出力されます。ご注意ください。
