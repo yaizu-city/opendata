@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>29250</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable>Atr_29250_0_2_20251128153254</AttributeTable>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>UserId</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+      <Field id="SAFIELD000">
+        <ColID>ITEM0000</ColID>
+        <DataType>S</DataType>
+        <Title>名称</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD001">
+        <ColID>ITEM0001</ColID>
+        <DataType>S</DataType>
+        <Title>説明</Title>
+        <FieldSize>500</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>ITEM0003</ColID>
+        <DataType>U</DataType>
+        <Title>画像</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
