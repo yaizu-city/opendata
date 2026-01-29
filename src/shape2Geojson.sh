@@ -33,8 +33,7 @@ for dir in "$@"; do
             fi
         fi
 
-        # シェープファイルを一時ファイルに変換し、EPSG:4326 に変換して UTF-8 に設定
-        temp_file="${output_dir}/${base}_temp.shp"
+        # シェープファイルをGeoJSONに変換（EPSG:4326）
         geojson_file="${output_dir}/data.geojson"
 
         if [ ! -f "$prj_file" ]; then
@@ -45,7 +44,6 @@ for dir in "$@"; do
             ogr2ogr -f "GeoJSON" -t_srs EPSG:4326 "$geojson_file" "$shpfile"
         fi
 
-        rm -f "${temp_file}"* # 関連する一時ファイルの削除
         echo "Converted Shape to GeoJSON: $geojson_file"
     done
 done
