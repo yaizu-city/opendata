@@ -39,14 +39,12 @@ for dir in "$@"; do
 
         if [ ! -f "$prj_file" ]; then
             # .prj ファイルがない場合、EPSG:6676 を使用して変換
-            ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:6676 -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+            ogr2ogr -f "GeoJSON" -s_srs EPSG:6676 -t_srs EPSG:4326 "$geojson_file" "$shpfile"
         else
             # .prj ファイルがある場合はそのまま変換
-            ogr2ogr -f "ESRI Shapefile" -t_srs EPSG:4326 -lco ENCODING=UTF-8 "$temp_file" "$shpfile"
+            ogr2ogr -f "GeoJSON" -t_srs EPSG:4326 "$geojson_file" "$shpfile"
         fi
 
-        # 一時ファイルからGeoJSONに変換
-        ogr2ogr -f GeoJSON "$geojson_file" "$temp_file"
         rm -f "${temp_file}"* # 関連する一時ファイルの削除
         echo "Converted Shape to GeoJSON: $geojson_file"
     done
