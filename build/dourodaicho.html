@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM3TW4JQD9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-WM3TW4JQD9');
+  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スマートマップ焼津 | 道路台帳図</title>
+  <meta name="description" content="焼津市の道路台帳図を閲覧できるスマートマップシステムです。">
+  <meta name="keywords" content="焼津市, 道路台帳図, スマートマップ, 地図, 都市計画">
+  <meta property="og:title" content="スマートマップ焼津 | 道路台帳図">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="焼津市の道路台帳図を閲覧できるスマートマップシステムです。">
+  <meta property="og:url" content="https://yaizu-smartcity.jp/dourodaicho.html">
+  <meta property="og:image" content="https://maps.yaizu-smartcity.jp/ogp.png">
+  <meta property="og:site_name" content="スマートマップ焼津 | 道路台帳図">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="https://maps.yaizu-smartcity.jp/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="222x222" href="https://maps.yaizu-smartcity.jp/favicon.ico">
+  <style>
+    html,
+    body,
+    #map {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    #goto-form {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 12px 12px 12px;
+      border-radius: 8px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 15px;
+      width: 318px;;
+      box-sizing: border-box;
+    }
+    #goto-coord {
+      width: 210px;
+      padding: 4px 8px;
+      font-size: 15px;
+    }
+    #goto-btn {
+      padding: 4px 10px;
+      margin-left: 5px;
+      font-size: 15px;
+    }
+    #goto-error {
+      margin-top: 5px;
+      color: #b50000;
+      font-size: 13px;
+      min-height: 1.5em;
+      transition: color 0.2s;
+      display: none;
+      word-break:break-all
+    }
+  </style>
+</head>
+
+<body>
+    <div id="goto-form">
+      <input id="goto-coord" type="text" placeholder="例: 34.89,138.25" aria-describedby="goto-error" />
+      <button id="goto-btn">移動</button>
+      <span id="goto-error" role="alert" aria-live="polite"></span>
+    </div>
+    <div id="map"></div>
+    <script type="text/javascript" src="https://cdn.geolonia.com/v1/embed?geolonia-api-key=a1255d96fbee4081952af3ddbb7847c7"></script>
+    <script>
+    const map = new geolonia.Map({
+        container: '#map',
+        center: [138.3091,34.8437],
+        zoom: 12,
+        style: {
+            version: 8,
+            sources: {},
+            layers: [
+          {
+              id: 'background',
+              type: 'background',
+              paint: {
+            'background-color': '#ffffff'
+              }
+          }
+            ]
+        },
+        hash: true,
+        minZoom: 12,
+        maxZoom: 19,
+    });
+
+    map.on('load', () => {
+
+        map.addSource('urbanPlan', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-kihonzu-20250605/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+        map.addLayer({
+            'id': 'urbanPlanLayer',
+            'type': 'line',
+            'source': 'urbanPlan',
+            'source-layer': '地形図_都市計画基本図',
+            'paint': {
+                'line-color': '#000000',
+                'line-opacity': 1,
+                'line-width': 1
+            }
+        });
+        map.addSource('roadSource', {
+            type: 'vector',
+            url: 'https://tileserver.geolonia.com/yaizu-smartmap-dourodaichouzu_hodou-20250822_dourodaicho/tiles.json?key=a1255d96fbee4081952af3ddbb7847c7',
+        });
+
+        const baseStyle = {
+            'source': 'roadSource',
+            'source-layer': '道路台帳図',
+        };
+
+        const outlineStyle = {
+            ...baseStyle,
+            'type': 'line',
+            'paint': {
+                'line-color': '#000000',
+                'line-width': 4
+            }
+        };
+
+        const lineStyle = (color, width) => {
+            return {
+                ...baseStyle,
+                'type': 'line',
+                'paint': {
+                    'line-color': color,
+                    'line-width': width
+                }
+            };
+        };
+
+        const fillStyle = (color, opacity) => {
+            return {
+                ...baseStyle,
+                'type': 'fill',
+                'paint': {
+                    'fill-color': color,
+                    'fill-opacity': opacity ? opacity : 1
+                }
+            };
+        };
+
+        // 薄紫色
+        map.addLayer({
+            'id': 'road-light-purple-fill',
+            'filter': ['==', 'filename', '会下ノ島石津地区.shp'],
+            ...baseStyle,
+            ...fillStyle('#884898', 0.5)
+        });
+
+        // 黄色
+        map.addLayer({
+            'id': 'road-yellow-outline',
+            'filter': ['any', ['==', 'filename', '中心線_11_中心線_L.shp'], ['==', 'filename', '道路台帳図_要素_100_路線番号_T.shp']],
+            ...baseStyle,
+            ...outlineStyle
+        });
+
+        // 黄色の番号ポリゴンの塗りつぶし
+        map.addLayer({
+            'id': 'road-yellow-center-line',
+            'filter': ['==', 'filename', '中心線_11_中心線_L.shp'],
+            ...lineStyle('#FFFE00', 2)
+        });
+
+        // 黄色の中心線
+        map.addLayer({
+            'id': 'road-yellow-number',
+            ...baseStyle,
+            'filter': ['==', 'filename', '道路台帳図_要素_100_路線番号_T.shp'],
+            ...fillStyle('#FFFE00', 1)
+        });
+
+        // 緑色
+        map.addLayer({
+            'id': 'road-green-outline',
+            'filter': ['any', ['==', 'filename', '道路台帳図_要素_142_中央帯幅員値_T.shp'], ['==', 'filename', '道路台帳図_要素_141_中央帯幅員線_L.shp']],
+            ...baseStyle,
+            ...outlineStyle
+        });
+        map.addLayer({
+            'id': 'road-green',
+            'filter': ['==', 'filename', '道路台帳図_要素_141_中央帯幅員線_L.shp'],
+            ...lineStyle('#00FF00', 2)
+        });
+        
+        map.addLayer({
+            'id': 'road-green-number',
+            ...baseStyle,
+            'filter': ['==', 'filename', '道路台帳図_要素_142_中央帯幅員値_T.shp'],
+            ...fillStyle('#00FF00', 1)
+        });
+
+        // 紫
+        map.addLayer({
+            'id': 'road-purple-outline',
+            'filter': ['any', ['==', 'filename', '道路台帳図_要素_174_歩道幅員値_T.shp'], ['==', 'filename', '道路台帳図_要素_173_歩道幅員線_L.shp']],
+            ...baseStyle,
+            ...outlineStyle
+        });
+        map.addLayer({
+            'id': 'road-purple',
+            'filter': ['==', 'filename', '道路台帳図_要素_173_歩道幅員線_L.shp'],
+            ...lineStyle('#C77EB5', 2)
+        });
+        
+        map.addLayer({
+            'id': 'road-purple-number',
+            ...baseStyle,
+            'filter': ['==', 'filename', '道路台帳図_要素_174_歩道幅員値_T.shp'],
+            ...fillStyle('#C77EB5', 1)
+        });
+
+        // 紺
+        map.addLayer({
+            'id': 'road-navy',
+            'filter': [
+                'all',
+                [
+                    '!=', 'filename', '中心線_11_中心線_L.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_100_路線番号_T.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_174_歩道幅員値_T.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_173_歩道幅員線_L.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_142_中央帯幅員値_T.shp'
+                ],
+                [
+                    '!=', 'filename', '道路台帳図_要素_141_中央帯幅員線_L.shp'
+                ],
+                [
+                    '!=', 'filename', '会下ノ島石津地区.shp'
+                ],
+            ],
+            ...lineStyle('#030B99', 2)
+        });
+    });
+
+    // エラーメッセージを出力する関数
+    function showError(msg) {
+      const errorElem = document.getElementById('goto-error');
+      if (msg) {
+        errorElem.textContent = msg;
+        errorElem.style.display = 'block';
+      } else {
+        errorElem.textContent = '';
+        errorElem.style.display = 'none';
+      }
+    }
+
+    // 入力フォームの動作
+    function gotoCoordHandler(e) {
+      if (e) e.preventDefault();
+      showError('');
+      const value = document.getElementById('goto-coord').value.trim();
+      const parts = value.split(',');
+      if (parts.length === 2) {
+        const lat = parseFloat(parts[0]);
+        const lng = parseFloat(parts[1]);
+        if (!isNaN(lat) && !isNaN(lng)) {
+          if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+            showError('緯度または経度が範囲外です');
+            return;
+          }
+          map.flyTo({ center: [lng, lat], zoom: 17 });
+          showError('');
+        } else {
+          showError('数値として認識できません。\n例: 34.89236450643736,138.257245314618');
+        }
+      } else {
+        showError('カンマ区切りで入力してください。\n例: 34.89236450643736,138.257245314618');
+      }
+    }
+
+    document.getElementById('goto-btn').addEventListener('click', gotoCoordHandler);
+
+    // Enterキーでも移動可能に
+    document.getElementById('goto-coord').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        gotoCoordHandler(e);
+      }
+    });
+
+    // 入力値変更時はエラークリア＆非表示
+    document.getElementById('goto-coord').addEventListener('input', function() {
+      showError('');
+    });
+    </script>
+</body>
+</html>
