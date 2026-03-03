@@ -18,6 +18,12 @@
 
  - 位置情報を含むデータを編集する場合には、**編集**リンクをクリックします。データが地図上に表示され、表組み形式でデータを編集し、編集済みデータをダウンロードすることができます。
 
+## ▼データ貢献方法（更新リクエスト）
+
+掲載データの誤り・追加・更新などについて、リクエストを送ることができます。
+リクエストを希望するデータの編集済みデータをプルリクエストとして送ってください。
+焼津市で確認の上、反映を検討いたします。詳しくは [焼津市オープンデータ貢献方法](CONTRIBUTING.md) を参照してください。
+
 | データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |
 | --- | --- | --- | --- | --- | --- |
 | AED設置箇所一覧 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/AED設置箇所一覧) | [CSV](https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) | [GeoJSON](https://yaizu-smartcity.jp/AED設置箇所一覧/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/AED設置箇所一覧/tiles.json) | [編集](https://geolonia.github.io/opendata-editor/?data=https://yaizu-smartcity.jp/AED設置箇所一覧/data.csv) |
