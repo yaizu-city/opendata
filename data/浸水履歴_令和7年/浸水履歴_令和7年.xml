@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<S2AConfig>
+  <LayerConfig>
+    <LayerNo>29085</LayerNo>
+    <Primitive>40</Primitive>
+    <AttributeTable />
+    <CoordinateSystemNo>208</CoordinateSystemNo>
+    <CoordinateSystemType>2000</CoordinateSystemType>
+  </LayerConfig>
+  <ShapeAttributeConfig>
+    <Fields>
+      <Field id="SAUID">
+        <ColID>userID</ColID>
+      </Field>
+      <Field id="SAUPDATE">
+        <ColID />
+      </Field>
+    </Fields>
+  </ShapeAttributeConfig>
+</S2AConfig>
