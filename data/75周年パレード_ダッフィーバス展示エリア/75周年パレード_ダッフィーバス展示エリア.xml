@@ -23,10 +23,17 @@
         <FieldScale>0</FieldScale>
       </Field>
       <Field id="SAFIELD001">
-        <ColID>ITEM0001</ColID>
+        <ColID>ITEM0002</ColID>
         <DataType>S</DataType>
-        <Title>îıçl</Title>
+        <Title>äJç√ì˙éû</Title>
         <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>ITEM0003</ColID>
+        <DataType>S</DataType>
+        <Title>íçà”éñçÄ</Title>
+        <FieldSize>300</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
     </Fields>

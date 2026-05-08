@@ -1,2 +1,5 @@
 ﻿original_name,display_name,label_flag
 SAFIELD000,名称,
+SAFIELD001,開催日時,
+SAFIELD002,説明,
+SAFIELD003,URL,

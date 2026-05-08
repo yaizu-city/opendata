@@ -22,6 +22,34 @@
         <FieldSize>100</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
+      <Field id="SAFIELD001">
+        <ColID>ITEM0001</ColID>
+        <DataType>S</DataType>
+        <Title>äJç√ì˙éû</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD002">
+        <ColID>ITEM0002</ColID>
+        <DataType>S</DataType>
+        <Title>ê‡ñæ</Title>
+        <FieldSize>100</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD003">
+        <ColID>ITEM0003</ColID>
+        <DataType>S</DataType>
+        <Title>íçà”éñçÄ</Title>
+        <FieldSize>500</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD004">
+        <ColID>ITEM0004</ColID>
+        <DataType>U</DataType>
+        <Title>URL</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
     </Fields>
   </ShapeAttributeConfig>
 </S2AConfig>

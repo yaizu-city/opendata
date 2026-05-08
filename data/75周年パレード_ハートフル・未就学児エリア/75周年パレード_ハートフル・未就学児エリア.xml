@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="shift_jis"?>
 <S2AConfig>
   <LayerConfig>
-    <LayerNo>29029</LayerNo>
+    <LayerNo>29457</LayerNo>
     <Primitive>40</Primitive>
-    <AttributeTable>Atr_29029_0_2_20260406145139</AttributeTable>
+    <AttributeTable>Atr_29457_0_2_20260507155150</AttributeTable>
     <CoordinateSystemNo>208</CoordinateSystemNo>
     <CoordinateSystemType>2000</CoordinateSystemType>
   </LayerConfig>
@@ -25,22 +25,15 @@
       <Field id="SAFIELD001">
         <ColID>ITEM0001</ColID>
         <DataType>S</DataType>
-        <Title>開催日時</Title>
-        <FieldSize>100</FieldSize>
+        <Title>注意事項</Title>
+        <FieldSize>500</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
       <Field id="SAFIELD002">
         <ColID>ITEM0002</ColID>
-        <DataType>S</DataType>
-        <Title>説明</Title>
-        <FieldSize>100</FieldSize>
-        <FieldScale>0</FieldScale>
-      </Field>
-      <Field id="SAFIELD003">
-        <ColID>ITEM0003</ColID>
-        <DataType>S</DataType>
+        <DataType>U</DataType>
         <Title>URL</Title>
-        <FieldSize>100</FieldSize>
+        <FieldSize>255</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
     </Fields>
