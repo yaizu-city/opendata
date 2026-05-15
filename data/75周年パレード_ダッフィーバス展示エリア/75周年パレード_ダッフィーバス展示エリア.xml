@@ -36,6 +36,13 @@
         <FieldSize>300</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
+      <Field id="SAFIELD003">
+        <ColID>ITEM0004</ColID>
+        <DataType>U</DataType>
+        <Title>URL</Title>
+        <FieldSize>255</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
     </Fields>
   </ShapeAttributeConfig>
 </S2AConfig>

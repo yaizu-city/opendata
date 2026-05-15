@@ -33,17 +33,24 @@
         <ColID>ITEM0002</ColID>
         <DataType>S</DataType>
         <Title>ê‡ñæ</Title>
-        <FieldSize>100</FieldSize>
+        <FieldSize>200</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
       <Field id="SAFIELD003">
+        <ColID>ITEM0005</ColID>
+        <DataType>S</DataType>
+        <Title>äœóóï˚ñ@</Title>
+        <FieldSize>200</FieldSize>
+        <FieldScale>0</FieldScale>
+      </Field>
+      <Field id="SAFIELD004">
         <ColID>ITEM0003</ColID>
         <DataType>S</DataType>
         <Title>íçà”éñçÄ</Title>
         <FieldSize>500</FieldSize>
         <FieldScale>0</FieldScale>
       </Field>
-      <Field id="SAFIELD004">
+      <Field id="SAFIELD005">
         <ColID>ITEM0004</ColID>
         <DataType>U</DataType>
         <Title>URL</Title>
