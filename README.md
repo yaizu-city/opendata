@@ -172,6 +172,7 @@
 | 自治会区域 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/自治会区域) | | [GeoJSON](https://yaizu-smartcity.jp/自治会区域/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/自治会区域/tiles.json) | | 
 | 行政区域界 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/行政区域界) | | [GeoJSON](https://yaizu-smartcity.jp/行政区域界/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/行政区域界/tiles.json) | | 
 | 要配慮者利用施設 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/要配慮者利用施設) | | [GeoJSON](https://yaizu-smartcity.jp/要配慮者利用施設/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/要配慮者利用施設/tiles.json) | | 
+| 要配慮者支援施設 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/要配慮者支援施設) | | [GeoJSON](https://yaizu-smartcity.jp/要配慮者支援施設/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/要配慮者支援施設/tiles.json) | | 
 | 路線網図 | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/路線網図) | | [GeoJSON](https://yaizu-smartcity.jp/路線網図/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/路線網図/tiles.json) | | 
 | 農業地域振興計画（農業用施設用地） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農業地域振興計画_農業用施設用地) | | [GeoJSON](https://yaizu-smartcity.jp/農業地域振興計画_農業用施設用地/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/農業地域振興計画_農業用施設用地/tiles.json) | | 
 | 農業地域振興計画（農用地区域） | [フォルダ](https://github.com/yaizu-city/opendata/tree/main/data/農業地域振興計画_農用地区域) | | [GeoJSON](https://yaizu-smartcity.jp/農業地域振興計画_農用地区域/data.geojson) | [TileJSON](https://yaizu-smartcity.jp/tiles/農業地域振興計画_農用地区域/tiles.json) | | 
