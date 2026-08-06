@@ -181,3 +181,26 @@ jobs:
           aws s3 sync ./build s3://yaizu-smartcity-jp-frontend-v1 \
             --exact-timestamps
           aws cloudfront create-invalidation --distribution-id "ENI2MYYW0W5YR" --paths "/*"
+
+      # 地理空間データ連携基盤へ連携。
+      # config.yml に sourceDataId があるデータセットのみが対象（オプトイン）。
+      - name: Sync to geospatial platform
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        env:
+          # 連携先ドメイン・API キーはコードに残さず Actions Secret から渡す
+          PLATFORM_UPLOAD_DOMAIN: ${{ secrets.PLATFORM_UPLOAD_DOMAIN }}
+          PLATFORM_API_KEY: ${{ secrets.PLATFORM_API_KEY }}
+        run: |
+          if [[ -z "${PLATFORM_UPLOAD_DOMAIN}" || -z "${PLATFORM_API_KEY}" ]]; then
+            echo "::warning::PLATFORM_UPLOAD_DOMAIN / PLATFORM_API_KEY が未設定のため、地理空間データ連携基盤への連携をスキップします"
+            exit 0
+          fi
+
+          if [[ ! -s changed_dirs.txt ]]; then
+            echo "変更されたデータディレクトリがないため連携をスキップします"
+            exit 0
+          fi
+
+          # ディレクトリ名に空白が含まれるため、1行1ディレクトリで配列に読み込んで渡す
+          mapfile -t CHANGED_DIRS < changed_dirs.txt
+          bash ./src/sync-to-platform.sh "${CHANGED_DIRS[@]}"
