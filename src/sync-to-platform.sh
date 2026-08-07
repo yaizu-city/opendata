@@ -9,6 +9,12 @@
 # sourceDataId をアップロード API の dataId、config.yml の name を description として渡す。
 # sourceDataId が無いデータセットはスキップする（連携はオプトイン）。
 #
+# このスクリプトが行うのは基盤側の「下書き（draft）プレビュー」の作成までで、公開はしない。
+# 公開（承認・デプロイ）は Cognito 認証が必要で、アップロード API キーでは実行できない。
+# また属性・スタイル設定は基盤側の latest-deployed から引き継がれる仕組みのため、一度も
+# デプロイされていない dataId に送るとデフォルトスタイルで登録される。初回投入と初回デプロイは
+# CLI (sgp) / 管理画面で行い、それが済んだデータセットにだけ sourceDataId を付けること。
+#
 # アップロードするファイルは build/<ディレクトリ名>/data.geojson（属性名変換済み）。
 # 無い場合は data/<ディレクトリ名>/data.geojson にフォールバックする。
 #
@@ -16,10 +22,15 @@
 #   PLATFORM_UPLOAD_DOMAIN アップロード API のドメイン。自治体ドメインの admin サブドメイン側を指定する。
 #                          サーバー側で "admin." を除去して自治体を識別するため、Host はこのままでよい。
 #   PLATFORM_API_KEY       アップロード API の x-api-key
+#   いずれも連携対象が 1 件も無ければ不要（未設定でも正常終了する）。連携対象があるのに
+#   未設定の場合は、連携漏れを見逃さないためエラーにする。
 # 任意の環境変数:
 #   PLATFORM_NOTIFY_EMAIL  処理結果の通知先メールアドレス
 #   PLATFORM_POLL_ATTEMPTS タイル生成完了を待つ回数（既定 40、0 で待たずに終了）
 #   PLATFORM_POLL_INTERVAL ポーリング間隔の秒数（既定 15）
+#   PLATFORM_CONNECT_TIMEOUT  接続タイムアウトの秒数（既定 10）
+#   PLATFORM_UPLOAD_MAX_TIME  アップロード 1 件あたりの上限秒数（既定 600）
+#   PLATFORM_STATUS_MAX_TIME  ステータス取得 1 回あたりの上限秒数（既定 30）
 #   PLATFORM_UPLOAD_SCHEME アップロード先のスキーム（既定 https）。テストでローカルの
 #                          スタブサーバーに向けるためだけに使う。本番では指定しない。
 
@@ -31,13 +42,15 @@ if [ "$#" -eq 0 ]; then
     exit 1
 fi
 
-: "${PLATFORM_UPLOAD_DOMAIN:?PLATFORM_UPLOAD_DOMAIN is required}"
-: "${PLATFORM_API_KEY:?PLATFORM_API_KEY is required}"
-
 POLL_ATTEMPTS="${PLATFORM_POLL_ATTEMPTS:-40}"
 POLL_INTERVAL="${PLATFORM_POLL_INTERVAL:-15}"
 UPLOAD_SCHEME="${PLATFORM_UPLOAD_SCHEME:-https}"
-UPLOAD_URL="${UPLOAD_SCHEME}://${PLATFORM_UPLOAD_DOMAIN}/v1/upload"
+
+# 応答が無いまま Actions のジョブが張り付かないよう、curl にタイムアウトを設ける。
+# アップロードの上限はアップロード API 側の ALB の idle timeout（600 秒）に合わせる。
+CONNECT_TIMEOUT="${PLATFORM_CONNECT_TIMEOUT:-10}"
+UPLOAD_MAX_TIME="${PLATFORM_UPLOAD_MAX_TIME:-600}"
+STATUS_MAX_TIME="${PLATFORM_STATUS_MAX_TIME:-30}"
 
 # config.yml から任意のキーの値を取り出す。
 # build-config-json.js と同じ FAILSAFE_SCHEMA を使い、数値やアンダースコアを含む ID が
@@ -64,16 +77,27 @@ config_value() {
 wait_for_status() {
     local url="$1"
     local label="$2"
-    local attempt body status
+    local attempt body status separator poll_url
 
     if [ "$POLL_ATTEMPTS" -le 0 ]; then
         echo "  受付済み（完了待ちなし）: ${label}"
         return 0
     fi
 
+    separator="?"
+    [[ "$url" == *"?"* ]] && separator="&"
+
     for ((attempt = 1; attempt <= POLL_ATTEMPTS; attempt++)); do
+        # status.json は CloudFront 経由で配信されるため、リクエストヘッダーだけでは
+        # 古い応答を掴み続けることがある。毎回異なるクエリを付けてキャッシュを回避する。
+        poll_url="${url}${separator}_=$(date +%s)-${attempt}"
+
         # 生成直後は status.json がまだ配信されず 403/404 になるため、失敗は空扱いでリトライする
-        body="$(curl -sS -H "Cache-Control: no-cache" "$url" 2>/dev/null)" || body=""
+        body="$(curl -sS \
+            --connect-timeout "$CONNECT_TIMEOUT" \
+            --max-time "$STATUS_MAX_TIME" \
+            -H "Cache-Control: no-cache" \
+            "$poll_url" 2>/dev/null)" || body=""
         status="$(jq -r '.status // empty' <<<"$body" 2>/dev/null)"
 
         case "$status" in
@@ -98,7 +122,10 @@ wait_for_status() {
 synced=()
 skipped=()
 failed=()
+target_categories=()
+target_data_ids=()
 
+# 先に連携対象を洗い出す。Secret の要否がここで決まるため、アップロードより前に行う。
 for dir in "$@"; do
     [ -z "$dir" ] && continue
 
@@ -122,6 +149,31 @@ for dir in "$@"; do
         skipped+=("$category")
         continue
     fi
+
+    target_categories+=("$category")
+    target_data_ids+=("$data_id")
+done
+
+# 連携対象があるのに接続情報が無い状態は、設定ミスによる連携漏れなのでエラーにする。
+# 対象が無ければ Secret は不要（連携するものが無いだけなので正常終了）。
+if [ "${#target_categories[@]}" -gt 0 ]; then
+    missing=()
+    [ -z "${PLATFORM_UPLOAD_DOMAIN:-}" ] && missing+=("PLATFORM_UPLOAD_DOMAIN")
+    [ -z "${PLATFORM_API_KEY:-}" ] && missing+=("PLATFORM_API_KEY")
+
+    if [ "${#missing[@]}" -gt 0 ]; then
+        echo "❌ 連携対象が ${#target_categories[@]} 件ありますが、${missing[*]} が未設定です" >&2
+        echo "   対象: ${target_categories[*]}" >&2
+        exit 1
+    fi
+fi
+
+UPLOAD_URL="${UPLOAD_SCHEME}://${PLATFORM_UPLOAD_DOMAIN:-}/v1/upload"
+
+for index in "${!target_categories[@]}"; do
+    category="${target_categories[$index]}"
+    data_id="${target_data_ids[$index]}"
+    config_file="data/${category}/config.yml"
 
     if [[ ! "$data_id" =~ ^[A-Za-z0-9_-]{1,32}$ ]]; then
         echo "❌ ${category}: sourceDataId \"${data_id}\" が不正です（英数字・アンダースコア・ハイフン、32文字以内）"
@@ -150,6 +202,8 @@ for dir in "$@"; do
 
     curl_args=(
         -sS
+        --connect-timeout "$CONNECT_TIMEOUT"
+        --max-time "$UPLOAD_MAX_TIME"
         -X POST "$UPLOAD_URL"
         -H "x-api-key: ${PLATFORM_API_KEY}"
         -F "dataId=${data_id}"
@@ -189,12 +243,12 @@ for dir in "$@"; do
     fi
 
     dataset_ok=1
-    for index in "${!status_urls[@]}"; do
+    for status_index in "${!status_urls[@]}"; do
         label="$data_id"
         if [ "${#status_urls[@]}" -gt 1 ]; then
-            label="${data_id} ($((index + 1))/${#status_urls[@]})"
+            label="${data_id} ($((status_index + 1))/${#status_urls[@]})"
         fi
-        wait_for_status "${status_urls[$index]}" "$label" || dataset_ok=0
+        wait_for_status "${status_urls[$status_index]}" "$label" || dataset_ok=0
     done
 
     if [ "$dataset_ok" -eq 1 ]; then

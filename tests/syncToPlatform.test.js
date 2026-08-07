@@ -16,9 +16,11 @@ const startStubServer = (options = {}) => {
     uploadStatus = 202,
     uploadBody = null,
     jobStatus = 'success',
+    uploadDelayMs = 0,
   } = options;
 
   const requests = [];
+  const statusRequests = [];
 
   const server = http.createServer((req, res) => {
     if (req.method === 'POST') {
@@ -43,11 +45,19 @@ const startStubServer = (options = {}) => {
             jobId: 'job-1',
             statusUrl: `http://127.0.0.1:${port}/status.json`,
           };
+        if (uploadDelayMs > 0) {
+          // 応答が返らないケースの再現。クライアントが切っていれば書き込みは捨てられる
+          setTimeout(() => {
+            if (!res.writableEnded) respondJson(res, uploadStatus, payload);
+          }, uploadDelayMs).unref();
+          return;
+        }
         respondJson(res, uploadStatus, payload);
       });
       return;
     }
 
+    statusRequests.push(req.url);
     respondJson(res, 200, {
       jobId: 'job-1',
       status: jobStatus,
@@ -62,6 +72,7 @@ const startStubServer = (options = {}) => {
     server.listen(0, '127.0.0.1', () => {
       resolve({
         requests,
+        statusRequests,
         domain: `127.0.0.1:${server.address().port}`,
         close: () => new Promise((done) => server.close(done)),
       });
@@ -404,7 +415,8 @@ describe('sync-to-platform.sh', () => {
     expect(stub.requests[0].fields.dataId).toBe('ok');
   });
 
-  it('必須の環境変数が無い場合は実行前に失敗する', async () => {
+  it('連携対象があるのに接続先ドメインが未設定なら失敗し、API を呼ばない', async () => {
+    stub = await startStubServer();
     const dir = workspace.addDataset({
       name: 'noenv',
       config: 'name: 環境変数なし\ndataType: location\nsourceDataId: noenv\n',
@@ -413,7 +425,81 @@ describe('sync-to-platform.sh', () => {
 
     const result = await runScript(workspace, [dir], { PLATFORM_UPLOAD_DOMAIN: '' });
 
-    expect(result.code).not.toBe(0);
+    // 設定ミスによる連携漏れを見逃さないよう、スキップではなくエラーにする
+    expect(result.code).toBe(1);
+    expect(stub.requests).toHaveLength(0);
+    expect(result.stderr).toContain('PLATFORM_UPLOAD_DOMAIN');
+  });
+
+  it('連携対象があるのに API キーが未設定なら失敗する', async () => {
+    stub = await startStubServer();
+    const dir = workspace.addDataset({
+      name: 'nokey',
+      config: 'name: キーなし\ndataType: location\nsourceDataId: nokey\n',
+      geojson: FEATURE_COLLECTION,
+    });
+
+    const result = await runScript(workspace, [dir], {
+      PLATFORM_UPLOAD_DOMAIN: stub.domain,
+      PLATFORM_API_KEY: '',
+    });
+
+    expect(result.code).toBe(1);
+    expect(stub.requests).toHaveLength(0);
+    expect(result.stderr).toContain('PLATFORM_API_KEY');
+  });
+
+  it('連携対象が無ければ接続情報が未設定でも正常終了する', async () => {
+    const dir = workspace.addDataset({
+      name: '対象外',
+      config: 'name: 対象外\ndataType: location\n',
+      geojson: FEATURE_COLLECTION,
+    });
+
+    const result = await runScript(workspace, [dir], {
+      PLATFORM_UPLOAD_DOMAIN: '',
+      PLATFORM_API_KEY: '',
+    });
+
+    expect(result.code).toBe(0);
+  });
+
+  it('アップロード API が応答しない場合はタイムアウトして失敗する', async () => {
+    stub = await startStubServer({ uploadDelayMs: 5000 });
+    const dir = workspace.addDataset({
+      name: 'hang',
+      config: 'name: 応答なし\ndataType: location\nsourceDataId: hang\n',
+      geojson: FEATURE_COLLECTION,
+    });
+
+    const result = await runScript(workspace, [dir], {
+      PLATFORM_UPLOAD_DOMAIN: stub.domain,
+      PLATFORM_UPLOAD_MAX_TIME: '1',
+    });
+
+    // タイムアウトせずジョブが張り付くと、この期待は満たされない
+    expect(result.code).toBe(1);
+    expect(result.stdout).toContain('接続に失敗');
+  }, 20000);
+
+  it('ステータス取得はキャッシュを避けるため毎回異なる URL で問い合わせる', async () => {
+    stub = await startStubServer({ jobStatus: 'processing' });
+    const dir = workspace.addDataset({
+      name: 'cachebust',
+      config: 'name: キャッシュ回避\ndataType: location\nsourceDataId: cachebust\n',
+      geojson: FEATURE_COLLECTION,
+    });
+
+    const result = await runScript(workspace, [dir], {
+      PLATFORM_UPLOAD_DOMAIN: stub.domain,
+      PLATFORM_POLL_ATTEMPTS: '3',
+    });
+
+    expect(result.code).toBe(1);
+    expect(stub.statusRequests).toHaveLength(3);
+    // status.json は CloudFront 配信のため、同じ URL だと古い応答を掴み続けうる
+    expect(stub.statusRequests.every((url) => /[?&]_=/.test(url))).toBe(true);
+    expect(new Set(stub.statusRequests).size).toBe(stub.statusRequests.length);
   });
 
   it('引数が無い場合は使い方を表示して失敗する', async () => {

@@ -184,6 +184,7 @@ jobs:
 
       # 地理空間データ連携基盤へ連携。
       # config.yml に sourceDataId があるデータセットのみが対象（オプトイン）。
+      # Secret 未設定時の扱いはスクリプト側で判定する（連携対象があれば失敗させる）。
       - name: Sync to geospatial platform
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         env:
@@ -191,11 +192,6 @@ jobs:
           PLATFORM_UPLOAD_DOMAIN: ${{ secrets.PLATFORM_UPLOAD_DOMAIN }}
           PLATFORM_API_KEY: ${{ secrets.PLATFORM_API_KEY }}
         run: |
-          if [[ -z "${PLATFORM_UPLOAD_DOMAIN}" || -z "${PLATFORM_API_KEY}" ]]; then
-            echo "::warning::PLATFORM_UPLOAD_DOMAIN / PLATFORM_API_KEY が未設定のため、地理空間データ連携基盤への連携をスキップします"
-            exit 0
-          fi
-
           if [[ ! -s changed_dirs.txt ]]; then
             echo "変更されたデータディレクトリがないため連携をスキップします"
             exit 0
