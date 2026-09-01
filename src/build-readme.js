@@ -5,6 +5,12 @@ const path = require('path');
 const locationDataCategoriesPath = path.resolve(__dirname, 'location-data-categories.json');
 const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
 
+// config.yml の source / sourceUrl から出典セルの表示用文字列を作る
+const formatSource = (category) => {
+  if (!category.source) return "";
+  return category.sourceUrl ? `[${category.source}](${category.sourceUrl})` : category.source;
+};
+
 class BuildReadme {
   run() {
     const opendataViewerUrl = "https://geolonia.github.io/opendata-editor/";
@@ -23,9 +29,17 @@ class BuildReadme {
       // locationDataCategories が存在する場合のみ処理
       if (locationDataCategories.length > 0) {
 
-        readme += "| データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |\n";
-        readme += "| --- | --- | --- | --- | --- | --- |\n";
-    
+        // 出典が1件も設定されていない場合、空欄だけの列を表示しないため列自体を出さない
+        const hasSource = locationDataCategories.some((category) => category.source);
+
+        if (hasSource) {
+          readme += "| データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 | 出典 |\n";
+          readme += "| --- | --- | --- | --- | --- | --- | --- |\n";
+        } else {
+          readme += "| データ名 | フォルダ | CSV | GeoJSON | TileJSON | 地図で編集 |\n";
+          readme += "| --- | --- | --- | --- | --- | --- |\n";
+        }
+
         for (let i = 0; i < locationDataCategories.length; i++) {
           const category = locationDataCategories[i];
           const csvFile = glob.sync(`data/${category.category}/*.csv`)[0];
@@ -34,11 +48,12 @@ class BuildReadme {
           const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.geojson`;
           const tileJsonFileUrl = `https://yaizu-smartcity.jp/tiles/${category.category}/tiles.json`;
           const mapUrl = `${opendataViewerUrl}?data=${csvFileUrl}`;
-  
+          const sourceCell = hasSource ? ` ${formatSource(category)} |` : "";
+
           if (!csvFile || path.basename(csvFile) === "attributes.csv") {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | | \n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | |${hasSource ? sourceCell : " "}\n`;
           } else {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | [編集](${mapUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [GeoJSON](${jsonFileUrl}) | [TileJSON](${tileJsonFileUrl}) | [編集](${mapUrl}) |${sourceCell}\n`;
           }
         }
       }
@@ -52,15 +67,24 @@ class BuildReadme {
       // standardDataCategories が存在する場合のみ処理
       if (standardDataCategories.length > 0) {
 
+        // 出典が1件も設定されていない場合、空欄だけの列を表示しないため列自体を出さない
+        const hasSource = standardDataCategories.some((category) => category.source);
+
         readme += "\n以下のデータは位置情報を含まないデータです。\n\n";
-        readme += "| データ名 | フォルダ | CSV | JSON |\n";
-        readme += "| --- | --- | --- | --- |\n";
+        if (hasSource) {
+          readme += "| データ名 | フォルダ | CSV | JSON | 出典 |\n";
+          readme += "| --- | --- | --- | --- | --- |\n";
+        } else {
+          readme += "| データ名 | フォルダ | CSV | JSON |\n";
+          readme += "| --- | --- | --- | --- |\n";
+        }
 
         for (let i = 0; i < standardDataCategories.length; i++) {
           const category = standardDataCategories[i];
           const csvFolderUrl = `https://github.com/yaizu-city/opendata/tree/main/data/${category.category}`;
           const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.csv`;
           const jsonFileUrl = `https://yaizu-smartcity.jp/${category.category}/data.json`;
+          const sourceCell = hasSource ? ` ${formatSource(category)} |` : "";
 
           if (category.category === "city_planning_basic_survey_information") {
             const csvFiles = glob.sync(`data/${category.category}/*.csv`);
@@ -73,15 +97,15 @@ class BuildReadme {
               const csvFileUrl = `https://yaizu-smartcity.jp/${category.category}/${filename}.csv`;
               const subCategory = filename.split('_')[1];
               if (filename === allFileNames[0]) {
-                readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |\n`;
+                readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |${sourceCell}\n`;
               } else {
-                readme += `||| [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |\n`;
+                readme += `||| [CSV(${subCategory})](${csvFileUrl}) | [JSON(${subCategory})](${jsonFileUrl}) |${sourceCell}\n`;
               }
             });
           } else if (category.historical) {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV(最新データ)](${csvFileUrl}) | [JSON(最新データ)](${jsonFileUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV(最新データ)](${csvFileUrl}) | [JSON(最新データ)](${jsonFileUrl}) |${sourceCell}\n`;
           } else {
-            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [JSON](${jsonFileUrl}) |\n`;
+            readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [JSON](${jsonFileUrl}) |${sourceCell}\n`;
           }
         }
       }
