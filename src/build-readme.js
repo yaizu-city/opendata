@@ -5,10 +5,22 @@ const path = require('path');
 const locationDataCategoriesPath = path.resolve(__dirname, 'location-data-categories.json');
 const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
 
+// Markdownテーブルのセルとして安全な1行テキストにする（| と改行が列崩れの原因になるため）
+const escapeMarkdownTableCell = (text) => String(text).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').trim();
+
+// リンクラベル（[...]の中）として安全な文字列にする
+const escapeMarkdownLinkLabel = (text) => escapeMarkdownTableCell(text).replace(/\[/g, '\\[').replace(/\]/g, '\\]');
+
+// リンク先（(...)の中）として安全な文字列にする（丸括弧があるとリンク構文が壊れるため）
+// encodeURIComponent は仕様上 ( ) をエスケープしないため、個別に置換する
+const escapeMarkdownLinkUrl = (url) => String(url).replace(/\r?\n/g, '').trim().replace(/\(/g, '%28').replace(/\)/g, '%29');
+
 // config.yml の source / sourceUrl から出典セルの表示用文字列を作る
 const formatSource = (category) => {
   if (!category.source) return "";
-  return category.sourceUrl ? `[${category.source}](${category.sourceUrl})` : category.source;
+  const label = escapeMarkdownLinkLabel(category.source);
+  if (!category.sourceUrl) return label;
+  return `[${label}](${escapeMarkdownLinkUrl(category.sourceUrl)})`;
 };
 
 class BuildReadme {
@@ -119,5 +131,9 @@ class BuildReadme {
   }
 }
 
-const buildReadme = new BuildReadme();
-buildReadme.run();
+if (require.main === module) {
+  const buildReadme = new BuildReadme();
+  buildReadme.run();
+} else {
+  module.exports = { formatSource, escapeMarkdownTableCell, escapeMarkdownLinkLabel, escapeMarkdownLinkUrl };
+}
