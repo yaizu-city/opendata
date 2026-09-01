@@ -29,6 +29,11 @@ describe('formatSource', () => {
       .toBe('[A](https://example.com/foo%281%29)');
   });
 
+  it('escapes a pipe in sourceUrl so the table row is not split', () => {
+    expect(formatSource({ source: 'A', sourceUrl: 'https://example.com/?a=1|2' }))
+      .toBe('[A](https://example.com/?a=1%7C2)');
+  });
+
   it('collapses newlines in source into a single line', () => {
     expect(formatSource({ source: 'line1\nline2' })).toBe('line1 line2');
   });
