@@ -1,0 +1,52 @@
+name: Check duplicate sourceDataId
+
+# data/**/config.yml の sourceDataId がデータセット間で重複していないかをチェックする。
+# 基盤API側は sourceDataId の値のみで新規／更新を判定するため、重複したまま連携すると
+# 後からpushした方が前のデータセットをサイレントに上書きしてしまう。
+# このワークフローは PR 作成時に必ず全データセットを横断的にスキャンする（差分だけでなく、
+# 既存のデータセットとの重複も検知するため）。
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-duplicate-source-data-ids:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: sourceDataId の重複をチェック
+        id: check
+        run: node ./src/check-duplicate-source-data-ids.js
+
+      - name: PR にコメント
+        if: failure() && steps.check.outcome == 'failure' && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --body-file="./duplicate-source-data-id-report.md" \
+            --repo="${{ github.repository }}"

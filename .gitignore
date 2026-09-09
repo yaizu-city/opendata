@@ -8,3 +8,4 @@ build/**/*.csv
 src/*-categories.json
 repository.zip
 smartcity-smartmap-v2-cli/
+duplicate-source-data-id-report.md
