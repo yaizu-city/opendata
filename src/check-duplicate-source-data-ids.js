@@ -9,19 +9,28 @@ const glob = require('glob');
 // サイレントに上書きしてしまう。この重複を PR 作成時 / main への push 時に検出する。
 //
 // sourceDataId が未設定のデータセットは連携対象外（オプトイン）なのでチェックしない。
-const findDuplicateSourceDataIds = (configFiles, dataRootDir) => {
+const scanSourceDataIds = (configFiles) => {
   const idToCategories = new Map();
+  const parseErrors = [];
+  let withSourceDataId = 0;
 
   for (const file of configFiles) {
-    const fileContent = fs.readFileSync(file, 'utf-8');
-    // NOTE: build-config-json.js と同じ FAILSAFE_SCHEMA を使い、数値やアンダースコアを
-    // 含む ID が勝手に変換されるのを防ぐ
-    const parsedYaml = yaml.load(fileContent, { schema: yaml.FAILSAFE_SCHEMA }) || {};
-    const sourceDataId = parsedYaml.sourceDataId == null ? '' : String(parsedYaml.sourceDataId).trim();
+    const category = path.basename(path.dirname(path.resolve(file)));
+    let parsedYaml;
+    try {
+      const fileContent = fs.readFileSync(file, 'utf-8');
+      // NOTE: build-config-json.js と同じ FAILSAFE_SCHEMA を使い、数値やアンダースコアを
+      // 含む ID が勝手に変換されるのを防ぐ
+      parsedYaml = yaml.load(fileContent, { schema: yaml.FAILSAFE_SCHEMA }) || {};
+    } catch (error) {
+      parseErrors.push({ category, file, message: error.message });
+      continue;
+    }
 
+    const sourceDataId = parsedYaml.sourceDataId == null ? '' : String(parsedYaml.sourceDataId).trim();
     if (!sourceDataId) continue;
 
-    const category = path.basename(path.dirname(path.resolve(file)));
+    withSourceDataId += 1;
     if (!idToCategories.has(sourceDataId)) idToCategories.set(sourceDataId, []);
     idToCategories.get(sourceDataId).push(category);
   }
@@ -34,8 +43,10 @@ const findDuplicateSourceDataIds = (configFiles, dataRootDir) => {
   }
   duplicates.sort((a, b) => a.sourceDataId.localeCompare(b.sourceDataId));
 
-  return duplicates;
+  return { duplicates, parseErrors, withSourceDataId };
 };
+
+const findDuplicateSourceDataIds = (configFiles) => scanSourceDataIds(configFiles).duplicates;
 
 const formatReport = (duplicates) => {
   const lines = [
@@ -53,15 +64,33 @@ const formatReport = (duplicates) => {
   return lines.join('\n');
 };
 
+const formatParseErrorReport = (parseErrors) => {
+  const lines = [
+    '## エラー：config.yml の読み取りに失敗しました',
+    '',
+    '以下の `config.yml` が不正な YAML のため、sourceDataId の重複チェックを実行できませんでした。修正してください。',
+    '',
+  ];
+  for (const { category, message } of parseErrors) {
+    lines.push(`- \`${category}\`: ${message}`);
+  }
+  lines.push('');
+  return lines.join('\n');
+};
+
 if (require.main === module) {
   const dataRootDir = path.join(__dirname, '..', 'data');
   const configFiles = glob.sync(path.join(dataRootDir, '**/config.yml'));
-  const duplicates = findDuplicateSourceDataIds(configFiles, dataRootDir);
+  const { duplicates, parseErrors, withSourceDataId } = scanSourceDataIds(configFiles);
 
-  const withSourceDataId = configFiles.filter((file) => {
-    const parsedYaml = yaml.load(fs.readFileSync(file, 'utf-8'), { schema: yaml.FAILSAFE_SCHEMA }) || {};
-    return parsedYaml.sourceDataId != null && String(parsedYaml.sourceDataId).trim() !== '';
-  }).length;
+  const reportPath = process.env.DUPLICATE_REPORT_PATH || path.join(__dirname, '..', 'duplicate-source-data-id-report.md');
+
+  if (parseErrors.length > 0) {
+    const report = formatParseErrorReport(parseErrors);
+    console.error(report);
+    fs.writeFileSync(reportPath, report);
+    process.exit(1);
+  }
 
   if (duplicates.length === 0) {
     console.log(`sourceDataId の重複はありません（sourceDataId 設定済み: ${withSourceDataId} / config.yml 総数: ${configFiles.length}）`);
@@ -70,11 +99,9 @@ if (require.main === module) {
 
   const report = formatReport(duplicates);
   console.error(report);
-
-  const reportPath = process.env.DUPLICATE_REPORT_PATH || path.join(__dirname, '..', 'duplicate-source-data-id-report.md');
   fs.writeFileSync(reportPath, report);
 
   process.exit(1);
 } else {
-  module.exports = { findDuplicateSourceDataIds, formatReport };
+  module.exports = { findDuplicateSourceDataIds, formatReport, scanSourceDataIds, formatParseErrorReport };
 }
