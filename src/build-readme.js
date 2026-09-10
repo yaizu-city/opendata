@@ -18,12 +18,19 @@ const escapeMarkdownLinkUrl = (url) => String(url).replace(/\r?\n/g, '').trim()
 
 // source にすでに Markdown リンク（[text](url)）が埋め込まれているかを判定する
 // 埋め込みリンクがある場合は文中の一部だけをリンク化する用途のため、ブラケットをエスケープせずそのまま出力する
-const hasInlineMarkdownLink = (text) => /\[[^[\]]*\]\([^()]*\)/.test(text);
+// URL部分は「丸括弧を含まない文字列」または「1階層だけネストした (...) を1個含む文字列」を許容する
+// （例: Wikipedia等の "https://example.com/Foo_(bar)" のような、丸括弧を含む正規URLを誤検知しないため）
+const hasInlineMarkdownLink = (text) =>
+  /\[[^[\]]*\]\((?:[^()]|\([^()]*\))*\)/.test(text);
 
 // config.yml の source / sourceUrl から出典セルの表示用文字列を作る
 const formatSource = (category) => {
   if (!category.source) return "";
   if (hasInlineMarkdownLink(category.source)) {
+    if (category.sourceUrl) {
+      // 埋め込みリンクと sourceUrl が両方指定された場合、二重リンクを避けるため sourceUrl 側を無視する
+      console.warn(`[build-readme] ${category.category}: source に埋め込みリンクがあるため sourceUrl は無視されます`);
+    }
     // source 内の埋め込みリンクをそのまま活かすため、ブラケットは維持し | と改行のみエスケープする
     return escapeMarkdownTableCell(category.source);
   }
