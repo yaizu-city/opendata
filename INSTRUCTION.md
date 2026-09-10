@@ -116,7 +116,17 @@ sourceUrl: https://www.police.pref.shizuoka.jp/
 ```
 
 - `source` のみ設定した場合は、README にプレーンテキストで表示されます。
-- `sourceUrl` も設定した場合は、README に `source` をラベルとしたリンクで表示されます。
+- `sourceUrl` も設定した場合は、README に `source` をラベルとしたリンクで表示されます（出典の文言全体がリンクになります）。
+- 出典の文中の一部だけをリンク化したい場合は、`sourceUrl` を使わずに `source` 自体へ Markdown リンク記法 `[表示テキスト](URL)` を直接埋め込んで下さい。
+
+  ```yaml
+  category: 交通事故分析情報_2019
+  name: 交通事故分析情報（2019年）
+  dataType: location
+  source: 交通事故統計情報オープンデータ本票01-12月（[警察庁](https://www.npa.go.jp/publications/statistics/koutsuu/opendata/index_opendata.html)）を加工して作成
+  ```
+
+  この場合、README では「警察庁」の部分だけがリンクになり、`sourceUrl` の指定は不要です（`source` に埋め込みリンクがあるときは `sourceUrl` を設定しても無視されます）。
 - どのデータセットにも `source` が設定されていない間は、README に出典列自体が表示されません。
 - `source` は 200 文字以内を目安にして下さい（地理空間データ連携基盤側の出典表示欄の上限に合わせています）。
 - 現時点では `source` / `sourceUrl` は地理空間データ連携基盤側には連携されません（README 表示のみ）。連携基盤側の地図に出典を表示したい場合は、連携基盤の管理画面（プレビュー編集）で個別に設定して下さい。

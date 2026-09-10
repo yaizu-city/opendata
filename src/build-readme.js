@@ -16,9 +16,17 @@ const escapeMarkdownLinkLabel = (text) => escapeMarkdownTableCell(text).replace(
 const escapeMarkdownLinkUrl = (url) => String(url).replace(/\r?\n/g, '').trim()
   .replace(/\(/g, '%28').replace(/\)/g, '%29').replace(/\|/g, '%7C');
 
+// source にすでに Markdown リンク（[text](url)）が埋め込まれているかを判定する
+// 埋め込みリンクがある場合は文中の一部だけをリンク化する用途のため、ブラケットをエスケープせずそのまま出力する
+const hasInlineMarkdownLink = (text) => /\[[^[\]]*\]\([^()]*\)/.test(text);
+
 // config.yml の source / sourceUrl から出典セルの表示用文字列を作る
 const formatSource = (category) => {
   if (!category.source) return "";
+  if (hasInlineMarkdownLink(category.source)) {
+    // source 内の埋め込みリンクをそのまま活かすため、ブラケットは維持し | と改行のみエスケープする
+    return escapeMarkdownTableCell(category.source);
+  }
   const label = escapeMarkdownLinkLabel(category.source);
   if (!category.sourceUrl) return label;
   return `[${label}](${escapeMarkdownLinkUrl(category.sourceUrl)})`;
