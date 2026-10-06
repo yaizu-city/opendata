@@ -3595,29 +3595,6 @@
           34.812278055555602
         ]
       }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "item4": null,
-        "item5": null,
-        "item6": null,
-        "item7": null,
-        "item8": null,
-        "item11": null,
-        "item12": null,
-        "item13": null,
-        "item14": null,
-        "item15": null,
-        "item16": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.79769313486231571E+308,
-          -1.79769313486231571E+308
-        ]
-      }
     }
   ]
 }
