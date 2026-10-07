@@ -4,6 +4,7 @@ const path = require('path');
 
 const locationDataCategoriesPath = path.resolve(__dirname, 'location-data-categories.json');
 const standardDataCategoriesPath = path.resolve(__dirname, 'standard-data-categories.json');
+const rasterDataPath = path.resolve(__dirname, 'raster-data.json');
 
 // Markdownテーブルのセルとして安全な1行テキストにする（| と改行が列崩れの原因になるため）
 const escapeMarkdownTableCell = (text) => String(text).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ').trim();
@@ -136,6 +137,27 @@ class BuildReadme {
             readme += `| ${category.name} | [フォルダ](${csvFolderUrl}) | [CSV](${csvFileUrl}) | [JSON](${jsonFileUrl}) |${sourceCell}\n`;
           }
         }
+      }
+    }
+
+    if (fs.existsSync(rasterDataPath)) {
+
+      const rasterData = JSON.parse(fs.readFileSync(rasterDataPath));
+
+      // rasterData が存在する場合のみ処理
+      if (rasterData.length > 0) {
+        readme += "\n## 地図タイルとして公開しているデータ（ラスタ）\n\n";
+        readme += "以下のハザード予測図は、画像（PNG）の地図タイルとして地理空間データ連携基盤で公開しており、このリポジトリにはデータファイルを格納していません。GeoJSON や CSV としてはダウンロードできません。地図タイルの URL（XYZ形式）と style.json の URL を、地図アプリケーション等からご利用ください。\n\n";
+        readme += "| 分類 | データ名 | タイルURL（XYZ） | スタイル（style.json） |\n";
+        readme += "| --- | --- | --- | --- |\n";
+
+        for (let i = 0; i < rasterData.length; i++) {
+          const item = rasterData[i];
+          // タイルURLは {z}/{x}/{y} を含むため、クリック不可のコード表記にする
+          const tileUrl = `\`${String(item.tileUrl).replace(/[`|]/g, '')}\``;
+          readme += `| ${escapeMarkdownTableCell(item.category)} | ${escapeMarkdownTableCell(item.name)} | ${tileUrl} | [style.json](${escapeMarkdownLinkUrl(item.styleUrl)}) |\n`;
+        }
+        readme += "\n";
       }
     }
 
