@@ -1,3 +1,4 @@
 category: 住まいるエリア_居住誘導区域
 name: 住まいるエリア（居住誘導区域）
 dataType: location
+sourceDataId: ResidenceTargetArea
