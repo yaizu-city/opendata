@@ -1,3 +1,4 @@
 category: 指定津波避難ビル一覧
 name: 指定津波避難ビル一覧
 dataType: location
+sourceDataId: TsunamiEvacuationBuilding
