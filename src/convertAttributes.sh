@@ -74,10 +74,11 @@ for dir in "$@"; do
             )
         ) |
         # 3回目のループ: CSVの属性順に並び替える
+        # title は、2回目のループで値が入ったとき（label_flag のあるデータ）だけ残す
         .features |= map(
             .properties as $original |
             .properties = (reduce ($m[]|select(.display_name?)) as $field ({}; .[$field.display_name] = $original[$field.display_name])
-                        + {"title": $original.title})
+                        + (if $original.title != null then {"title": $original.title} else {} end))
         ) |
         # 4回目のループ: 各 feature の properties 内にユニークな _id を追加
         .features |= (
