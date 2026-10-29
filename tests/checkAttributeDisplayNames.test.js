@@ -1,7 +1,11 @@
+const fs = require('fs');
+const os = require('os');
 const path = require('path');
+const { execFileSync } = require('child_process');
 const {
   displayNames,
   removedDisplayNames,
+  changedAttributeFiles,
   buildReport,
   MARKER,
 } = require(path.join(__dirname, '../src/check-attribute-display-names'));
@@ -52,5 +56,22 @@ describe('check-attribute-display-names', () => {
     const report = buildReport([{ name: '文化財マップ', removed: ['所在地', '電話番号'] }]);
     expect(report.startsWith(MARKER)).toBe(true);
     expect(report).toContain('- 文化財マップ：「所在地」、「電話番号」がなくなります');
+  });
+
+  it('日本語のディレクトリ名の attributes.csv を、変更されたファイルとして拾える', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'attr-check-'));
+    const git = (...args) => execFileSync('git', args, { cwd: dir, encoding: 'utf-8' }).trim();
+    git('init', '-q');
+    git('config', 'user.email', 'test@example.com');
+    git('config', 'user.name', 'test');
+    const file = path.join(dir, 'data', '文化財マップ', 'attributes.csv');
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, BASE);
+    git('add', '.');
+    git('commit', '-q', '-m', 'base');
+    const base = git('rev-parse', 'HEAD');
+    fs.writeFileSync(file, 'original_name,display_name,label_flag\nNAME,名称,1\n');
+    git('commit', '-q', '-am', 'head');
+    expect(changedAttributeFiles(base, 'HEAD', dir)).toEqual(['data/文化財マップ/attributes.csv']);
   });
 });
