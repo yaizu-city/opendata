@@ -46,11 +46,14 @@ const gitShow = (rev, file) => {
   }
 };
 
-const changedAttributeFiles = (base, head) =>
-  execFileSync('git', ['diff', '--name-only', '--diff-filter=M', `${base}...${head}`, '--', 'data/*/attributes.csv'], {
+// -z を付けないと、日本語のディレクトリ名が "data/\346\226..." のようにエスケープされ、
+// git show で読めなくなる（data のディレクトリ名はほとんどが日本語）
+const changedAttributeFiles = (base, head, cwd) =>
+  execFileSync('git', ['diff', '-z', '--name-only', '--diff-filter=M', `${base}...${head}`, '--', 'data/*/attributes.csv'], {
     encoding: 'utf-8',
+    cwd,
   })
-    .split('\n')
+    .split('\0')
     .filter(Boolean);
 
 const dataName = (head, file) => {
@@ -118,4 +121,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { decode, displayNames, removedDisplayNames, buildReport, MARKER, REPORT_FILE };
+module.exports = { decode, displayNames, removedDisplayNames, changedAttributeFiles, buildReport, MARKER, REPORT_FILE };
