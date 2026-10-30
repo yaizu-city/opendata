@@ -1,0 +1,66 @@
+name: Check attribute display names
+
+# PR で data/*/attributes.csv の display_name がなくなる（行の削除・表示名の書き換え）と、
+# マージ後に地理空間データ連携基盤の属性の設定（表示の ON/OFF・表示名）が警告なしに消える。
+# マージの前に気づけるよう、PR にコメントで知らせる。警告だけで、チェックは失敗させない。
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check-attribute-display-names:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - run: npm ci
+
+      - name: なくなる表示名を探す
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: node ./src/check-attribute-display-names.js
+
+      # 1つの PR にコメントは1つだけ。前に付けたコメントがあれば書き換える
+      - name: PR にコメント
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          MARKER='<!-- check-attribute-display-names -->'
+          COMMENT_ID=$(gh api --paginate "repos/$REPO/issues/$PR_NUMBER/comments" \
+            --jq ".[] | select(.body | startswith(\"$MARKER\")) | .id" | head -n 1)
+          if [ -f attribute-display-name-report.md ]; then
+            BODY_FILE=attribute-display-name-report.md
+          elif [ -n "$COMMENT_ID" ]; then
+            printf '%s\n## 属性の設定が消える変更はなくなりました\n\nこの PR の今の内容では、地図に表示する項目の名前はなくなりません。\n' "$MARKER" > resolved.md
+            BODY_FILE=resolved.md
+          else
+            exit 0
+          fi
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$COMMENT_ID" -F "body=@$BODY_FILE" > /dev/null
+          else
+            gh pr comment "$PR_NUMBER" --repo "$REPO" --body-file "$BODY_FILE"
+          fi
