@@ -1,0 +1,268 @@
+[
+  {
+    "id": "EarthquakeIntensityForecast",
+    "category": "防災",
+    "name": "地震被害想定（南海トラフ基本） / 震度予測図",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/EarthquakeIntensityForecast/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/EarthquakeIntensityForecast/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationAll",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 全域",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationAll/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationAll/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationAsahina",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 朝比奈川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationAsahina/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationAsahina/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationHanashi",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 葉梨川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationHanashi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationHanashi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationKiya",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 木屋川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationKiya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationKiya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationOi",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 大井川（一級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationOi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationOi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationOtsuya",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 大津谷川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationOtsuya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationOtsuya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationSeto",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 瀬戸川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationSeto/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationSeto/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationShidatanaka",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 志太田中川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationShidatanaka/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationShidatanaka/latest/style.json"
+  },
+  {
+    "id": "FloodHazardDurationTochiyama",
+    "category": "防災",
+    "name": "洪水浸水想定区域(浸水継続時間) / 栃山川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationTochiyama/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardDurationTochiyama/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxAll",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 全域",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxAll/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxAll/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxAsahina",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 朝比奈川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxAsahina/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxAsahina/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxHanashi",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 葉梨川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxHanashi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxHanashi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxIshiwaki",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 石脇川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxIshiwaki/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxIshiwaki/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxIzumi",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 泉川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxIzumi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxIzumi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxJoanji",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 成案寺川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxJoanji/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxJoanji/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxKiya",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 木屋川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxKiya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxKiya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxKoishi",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 小石川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxKoishi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxKoishi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxKuroishi",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 黒石川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxKuroishi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxKuroishi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxOi",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 大井川（一級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxOi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxOi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxOtsuya",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 大津谷川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxOtsuya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxOtsuya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxSeto",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 瀬戸川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxSeto/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxSeto/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxShidatanaka",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 志太田中川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxShidatanaka/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxShidatanaka/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxTakakusa",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 高草川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxTakakusa/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxTakakusa/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxTochiyama",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 栃山川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxTochiyama/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxTochiyama/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxUchisetoya",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 内瀬戸谷川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxUchisetoya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxUchisetoya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardMaxUmeda",
+    "category": "防災",
+    "name": "洪水浸水想定区域（想定最大規模） / 梅田川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxUmeda/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardMaxUmeda/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanAll",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 全域",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanAll/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanAll/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanKiya",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 木屋川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanKiya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanKiya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanOi",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 大井川（一級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanOi/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanOi/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanOtsuya",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 大津谷川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanOtsuya/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanOtsuya/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanSeto",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 瀬戸川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanSeto/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanSeto/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanShidatanaka",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 志太田中川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanShidatanaka/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanShidatanaka/latest/style.json"
+  },
+  {
+    "id": "FloodHazardPlanTochiyama",
+    "category": "防災",
+    "name": "洪水浸水想定区域(計画規模) / 栃山川（二級河川）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanTochiyama/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/FloodHazardPlanTochiyama/latest/style.json"
+  },
+  {
+    "id": "LiquefactionForecast",
+    "category": "防災",
+    "name": "地震被害想定（南海トラフ基本） / 液状化の発生予測図",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/LiquefactionForecast/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/LiquefactionForecast/latest/style.json"
+  },
+  {
+    "id": "StormSurgeInundationDepth",
+    "category": "防災",
+    "name": "高潮浸水想定区域（浸水区域及び浸水深）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/StormSurgeInundationDepth/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/StormSurgeInundationDepth/latest/style.json"
+  },
+  {
+    "id": "StormSurgeInundationDuration",
+    "category": "防災",
+    "name": "高潮浸水想定区域（浸水継続時間）",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/StormSurgeInundationDuration/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/StormSurgeInundationDuration/latest/style.json"
+  },
+  {
+    "id": "TsunamiInundationArea",
+    "category": "防災",
+    "name": "津波浸水想定区域 / 静岡県第4次地震被害想定(レベル2重合せ図)",
+    "tileUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/TsunamiInundationArea/latest/tiles/{z}/{x}/{y}.png",
+    "styleUrl": "https://yaizu-city.shizuoka.smartcity.geolonia.com/data/TsunamiInundationArea/latest/style.json"
+  }
+]
